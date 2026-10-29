@@ -1,0 +1,472 @@
+{
+  "checked_at": "2026-10-29",
+  "kind": "reference_index_not_question_bank",
+  "count": 33,
+  "items": [
+    {
+      "id": "REF-GSAT-001",
+      "source_id": "Q01",
+      "question_number": 1,
+      "source_type": "publisher_expected_question",
+      "subtype": "응용계산 문제",
+      "explanation_pdf_page": 18,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        2
+      ]
+    },
+    {
+      "id": "REF-GSAT-002",
+      "source_id": "Q01",
+      "question_number": 2,
+      "source_type": "publisher_expected_question",
+      "subtype": "응용계산 문제",
+      "explanation_pdf_page": 18,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        2
+      ]
+    },
+    {
+      "id": "REF-GSAT-003",
+      "source_id": "Q01",
+      "question_number": 3,
+      "source_type": "publisher_expected_question",
+      "subtype": "응용계산 문제",
+      "explanation_pdf_page": 18,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        3
+      ]
+    },
+    {
+      "id": "REF-GSAT-004",
+      "source_id": "Q01",
+      "question_number": 4,
+      "source_type": "publisher_expected_question",
+      "subtype": "응용계산 문제",
+      "explanation_pdf_page": 18,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        3
+      ]
+    },
+    {
+      "id": "REF-GSAT-005",
+      "source_id": "Q01",
+      "question_number": 5,
+      "source_type": "publisher_expected_question",
+      "subtype": "응용계산 문제",
+      "explanation_pdf_page": 19,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        3
+      ]
+    },
+    {
+      "id": "REF-GSAT-006",
+      "source_id": "Q01",
+      "question_number": 6,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 19,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        4
+      ]
+    },
+    {
+      "id": "REF-GSAT-007",
+      "source_id": "Q01",
+      "question_number": 7,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 19,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        5
+      ]
+    },
+    {
+      "id": "REF-GSAT-008",
+      "source_id": "Q01",
+      "question_number": 8,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 19,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        6
+      ]
+    },
+    {
+      "id": "REF-GSAT-009",
+      "source_id": "Q01",
+      "question_number": 9,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 19,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        6
+      ]
+    },
+    {
+      "id": "REF-GSAT-010",
+      "source_id": "Q01",
+      "question_number": 10,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 20,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "REF-GSAT-011",
+      "source_id": "Q01",
+      "question_number": 11,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 20,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        8
+      ]
+    },
+    {
+      "id": "REF-GSAT-012",
+      "source_id": "Q01",
+      "question_number": 12,
+      "source_type": "publisher_expected_question",
+      "subtype": "자료해석 문제",
+      "explanation_pdf_page": 20,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        8
+      ]
+    },
+    {
+      "id": "REF-GSAT-013",
+      "source_id": "Q01",
+      "question_number": 13,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 20,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "REF-GSAT-014",
+      "source_id": "Q01",
+      "question_number": 14,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 21,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "REF-GSAT-015",
+      "source_id": "Q01",
+      "question_number": 15,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 22,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "REF-GSAT-016",
+      "source_id": "Q01",
+      "question_number": 16,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 22,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "REF-GSAT-017",
+      "source_id": "Q01",
+      "question_number": 17,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 22,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        11
+      ]
+    },
+    {
+      "id": "REF-GSAT-018",
+      "source_id": "Q01",
+      "question_number": 18,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 23,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        11
+      ]
+    },
+    {
+      "id": "REF-GSAT-019",
+      "source_id": "Q01",
+      "question_number": 19,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 24,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        12
+      ]
+    },
+    {
+      "id": "REF-GSAT-020",
+      "source_id": "Q01",
+      "question_number": 20,
+      "source_type": "publisher_expected_question",
+      "subtype": "언어추리 문제",
+      "explanation_pdf_page": 24,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        8,
+        12
+      ]
+    },
+    {
+      "id": "REF-GSAT-021",
+      "source_id": "Q01",
+      "question_number": 21,
+      "source_type": "publisher_expected_question",
+      "subtype": "도형추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "REF-GSAT-022",
+      "source_id": "Q01",
+      "question_number": 22,
+      "source_type": "publisher_expected_question",
+      "subtype": "도형추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "REF-GSAT-023",
+      "source_id": "Q01",
+      "question_number": 23,
+      "source_type": "publisher_expected_question",
+      "subtype": "도형추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "REF-GSAT-024",
+      "source_id": "Q01",
+      "question_number": 24,
+      "source_type": "publisher_expected_question",
+      "subtype": "도식추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "REF-GSAT-025",
+      "source_id": "Q01",
+      "question_number": 25,
+      "source_type": "publisher_expected_question",
+      "subtype": "도식추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "REF-GSAT-026",
+      "source_id": "Q01",
+      "question_number": 26,
+      "source_type": "publisher_expected_question",
+      "subtype": "도식추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "REF-GSAT-027",
+      "source_id": "Q01",
+      "question_number": 27,
+      "source_type": "publisher_expected_question",
+      "subtype": "도식추리 문제",
+      "explanation_pdf_page": 25,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "REF-GSAT-028",
+      "source_id": "Q01",
+      "question_number": 28,
+      "source_type": "publisher_expected_question",
+      "subtype": "단어유추 문제",
+      "explanation_pdf_page": 26,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "REF-GSAT-029",
+      "source_id": "Q01",
+      "question_number": 29,
+      "source_type": "publisher_expected_question",
+      "subtype": "단어유추 문제",
+      "explanation_pdf_page": 26,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "REF-GSAT-030",
+      "source_id": "Q01",
+      "question_number": 30,
+      "source_type": "publisher_expected_question",
+      "subtype": "논리추론 문제",
+      "explanation_pdf_page": 26,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        8,
+        16
+      ]
+    },
+    {
+      "id": "REF-GSAT-031",
+      "source_id": "Q01",
+      "question_number": 31,
+      "source_type": "publisher_expected_question",
+      "subtype": "논리추론 문제",
+      "explanation_pdf_page": 26,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "REF-GSAT-032",
+      "source_id": "Q01",
+      "question_number": 32,
+      "source_type": "publisher_expected_question",
+      "subtype": "논리추론 문제",
+      "explanation_pdf_page": 26,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "REF-GSAT-033",
+      "source_id": "Q01",
+      "question_number": 33,
+      "source_type": "publisher_expected_question",
+      "subtype": "논리추론 문제",
+      "explanation_pdf_page": 26,
+      "source_url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "rights_status": "permission_required",
+      "app_import_allowed": false,
+      "question_pdf_pages": [
+        17
+      ]
+    }
+  ]
+}

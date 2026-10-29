@@ -1,0 +1,131 @@
+{
+  "checked_at": "2026-10-29",
+  "sources": [
+    {
+      "id": "Q01",
+      "source_type": "publisher_expected_pdf",
+      "url": "https://cdn.hackers.com/public_content/hackersbook/hackersbook_20260122/Hackers_GSAT_33.pdf",
+      "verification_status": "downloaded_and_indexed",
+      "indexed_question_count": 33,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "Q02",
+      "source_type": "independent_practice",
+      "url": "https://jobok.co.kr/aptitude",
+      "verification_status": "public_text_checked_full_accuracy_unverified",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "Q03",
+      "source_type": "historical_examples",
+      "url": "https://magazine.hankyung.com/job-joy/article/202102195776d",
+      "verification_status": "article_checked_2016",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "Q04",
+      "source_type": "historical_examples",
+      "url": "https://magazine.hankyung.com/job-joy/article/202102195844d",
+      "verification_status": "search_result_checked_only",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "Q05",
+      "source_type": "historical_mock_pdf",
+      "url": "https://pds.saramin.co.kr/career-information/asset/201203/23/1332492168_asset.pdf",
+      "verification_status": "pdf_text_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "D01",
+      "source_type": "historical_release",
+      "url": "https://info.incruit.com/pr/report_view_mobile.asp?newsno=434438",
+      "verification_status": "release_checked_ebook_not_acquired",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "D02",
+      "source_type": "event",
+      "url": "https://event.yes24.com/detail?eventNo=266722",
+      "verification_status": "event_checked_material_not_acquired",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O01",
+      "source_type": "official_exam_guide",
+      "url": "https://www.samsung.com/sec/about-us/careers/hiring-process-information/kr/",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O02",
+      "source_type": "official_exam_guide",
+      "url": "https://talent.skhynix.com/hub/en/apply/process",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O03",
+      "source_type": "official_exam_guide",
+      "url": "https://connect.lgcns.com/language-masters/ko/careers/how-to-join",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O04",
+      "source_type": "official_exam_guide",
+      "url": "https://recruit.lotte.co.kr/apply/procedure",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O05",
+      "source_type": "official_exam_guide",
+      "url": "https://sustainability.posco.com/S91/S91F10/kor/cmspage.do?mmcd=2645995965009574",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O06",
+      "source_type": "official_exam_guide",
+      "url": "https://www.doosanenerbility.com/en/employment/recruitment",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    },
+    {
+      "id": "O07",
+      "source_type": "official_exam_guide",
+      "url": "https://www.hyundai-imc.com/recruit/recruit_step",
+      "verification_status": "official_description_checked",
+      "indexed_question_count": null,
+      "question_reuse_permission": "not_obtained",
+      "app_import_allowed": false
+    }
+  ]
+}
