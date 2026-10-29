@@ -6,6 +6,8 @@
 
 > JOBFIT AI 로그인 배포에는 `NEXT_PUBLIC_SUPABASE_URL`과 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`를 Production에 설정합니다. 관리자 키·DB 비밀번호는 이 로그인 구현에 필요하지 않습니다. 상세 구성은 [JOBFIT 로그인 안내](JOBFIT_AUTH.md)를 확인하세요.
 
+GitHub 간편 로그인은 Supabase에 제공자 연결을 완료한 뒤 Production의 `GITHUB_AUTH_ENABLED`를 `true`로 설정해 사용합니다. GitHub Client Secret은 Vercel에 넣지 않고 Supabase 제공자 설정에만 저장합니다.
+
 ## 1. 배포 전 로컬 확인
 
 package.json이 있는 프로젝트 폴더에서 실행합니다.

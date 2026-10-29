@@ -48,10 +48,10 @@ status, _, body = request('/api/account')
 account = json.loads(body)
 assert status == 200 and account['configured'] is True
 print('PASS: Supabase configuration detected; this does not test successful login')
-if account.get('googleReady') is False:
-    status, _, _ = request('/api/auth', '{"action":"google"}')
+if account.get('githubReady') is False:
+    status, _, _ = request('/api/auth', '{"action":"github"}')
     assert status == 503
-    print('PASS: Google login stays unavailable until provider setup is enabled')
+    print('PASS: GitHub login stays unavailable until provider setup is enabled')
 status, _, _ = request('/api/practice/hint', '{"questionId":"E001","message":"Explain the first step","history":[]}')
 assert status == (401 if account.get('aiReady') else 503), status
 print('PASS: anonymous hint request never invokes the AI provider')

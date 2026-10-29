@@ -14,7 +14,7 @@
   background: #28203977;
   backdrop-filter: blur(4px);
 }
-.google-login-button {
+.github-login-button {
   width: 100%;
   margin-top: 24px;
   border: 1px solid #dadce0;
@@ -26,15 +26,15 @@
   font-weight: 600;
   cursor: pointer;
 }
-.google-login-button:hover {
+.github-login-button:hover {
   background: #f8f7fc;
   border-color: #b7a7d6;
 }
-.google-login-button:disabled {
+.github-login-button:disabled {
   opacity: 0.6;
   cursor: wait;
 }
-.google-login-note {
+.github-login-note {
   color: #6e647c;
   font-size: 12px;
   text-align: center;

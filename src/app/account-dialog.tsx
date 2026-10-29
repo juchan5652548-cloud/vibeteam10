@@ -13,11 +13,11 @@ type Fields = z.infer<typeof schema>;
 export default function AccountDialog({
   onClose,
   initialMode = 'login',
-  googleReady = false,
+  githubReady = false,
 }: {
   onClose: () => void;
   initialMode?: Mode;
-  googleReady?: boolean;
+  githubReady?: boolean;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const router = useRouter();
@@ -25,7 +25,7 @@ export default function AccountDialog({
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [emailForm, setEmailForm] = useState(initialMode === 'password');
-  const [googlePending, setGooglePending] = useState(false);
+  const [githubPending, setGitHubPending] = useState(false);
   const form = useForm<Fields>({
     resolver: zodResolver(schema),
     defaultValues: { email: '', password: '' },
@@ -38,29 +38,29 @@ export default function AccountDialog({
       if (prior instanceof HTMLElement) prior.focus();
     };
   }, []);
-  async function googleLogin() {
-    if (googlePending) return;
-    setGooglePending(true);
+  async function githubLogin() {
+    if (githubPending) return;
+    setGitHubPending(true);
     setError('');
     try {
       const response = await fetch('/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'google' }),
+        body: JSON.stringify({ action: 'github' }),
         signal: AbortSignal.timeout(15000),
       });
       const body = z
         .object({ url: z.url().optional(), error: z.string().optional() })
         .parse(await response.json());
       if (!response.ok || !body.url) {
-        setError(body.error ?? '구글 로그인에 연결하지 못했어요.');
-        setGooglePending(false);
+        setError(body.error ?? 'GitHub 로그인에 연결하지 못했어요.');
+        setGitHubPending(false);
         return;
       }
       window.location.assign(body.url);
     } catch {
       setError('연결을 확인하고 다시 시도해 주세요.');
-      setGooglePending(false);
+      setGitHubPending(false);
     }
   }
   async function submit(fields: Fields) {
@@ -137,7 +137,7 @@ export default function AccountDialog({
       className="account-dialog"
       aria-labelledby="account-title"
       onCancel={(event) => {
-        if (isSubmitting || googlePending) event.preventDefault();
+        if (isSubmitting || githubPending) event.preventDefault();
         else onClose();
       }}
     >
@@ -146,7 +146,7 @@ export default function AccountDialog({
         <button
           type="button"
           aria-label="로그인 창 닫기"
-          disabled={isSubmitting || googlePending}
+          disabled={isSubmitting || githubPending}
           onClick={onClose}
         >
           ×
@@ -160,17 +160,17 @@ export default function AccountDialog({
         <>
           <button
             type="button"
-            className="google-login-button"
-            disabled={googlePending || isSubmitting || !googleReady}
-            onClick={() => void googleLogin()}
+            className="github-login-button"
+            disabled={githubPending || isSubmitting || !githubReady}
+            onClick={() => void githubLogin()}
           >
-            {googlePending
-              ? '구글 로그인으로 이동 중…'
-              : googleReady
-                ? 'Google 계정으로 계속하기'
-                : 'Google 로그인 연결 준비 중'}
+            {githubPending
+              ? 'GitHub 로그인으로 이동 중…'
+              : githubReady
+                ? 'GitHub 계정으로 계속하기'
+                : 'GitHub 로그인 연결 준비 중'}
           </button>
-          <p className="google-login-note">
+          <p className="github-login-note">
             처음이라도 같은 버튼으로 가입하고 시작해요.
             <br />
             별도의 JOBFIT 비밀번호를 만들지 않아도 돼요.
@@ -183,7 +183,7 @@ export default function AccountDialog({
           <button
             type="button"
             className="text-button email-login-toggle"
-            disabled={googlePending}
+            disabled={githubPending}
             onClick={() => {
               setEmailForm(!emailForm);
               setError('');
@@ -300,7 +300,7 @@ export default function AccountDialog({
       <p className="account-disclosure">
         {emailForm
           ? '이메일과 비밀번호는 Supabase 인증 서비스에서 처리해요.'
-          : 'Google에서 확인한 이메일과 기본 프로필을 로그인에 사용해요. Google 비밀번호는 JOBFIT에 전달되지 않아요.'}{' '}
+          : 'GitHub에서 확인한 이메일과 기본 프로필을 로그인에 사용해요. GitHub 비밀번호는 JOBFIT에 전달되지 않아요.'}{' '}
         게스트 기록은 계정에 자동 합쳐지지 않으며 이 브라우저에 보존돼요.
       </p>
     </dialog>

@@ -2,7 +2,7 @@
 
 ## 연결 구성
 
-2026-10-29 후속 변경: 로그인 창에 Google 간편 로그인 코드를 추가했다. Google Cloud OAuth 클라이언트와 Supabase Google 제공자 설정 완료 전에는 `GOOGLE_AUTH_ENABLED=false`로 유지해 작동하지 않는 인증 경로로 보내지 않는다. 기존 이메일 로그인은 접힌 보조 메뉴에서 계속 이용할 수 있다.
+2026-10-29 후속 변경: 사용자가 Google Cloud 최초 이용 양식의 상업적 이용 확인에 동의하지 않아 해당 설정을 중단했다. 이후 사용자가 GitHub 간편 로그인 전환과 앱 등록·연결 키 저장을 승인했다. 현재 간편 로그인은 GitHub이며, Supabase 제공자 설정과 `GITHUB_AUTH_ENABLED=true`를 함께 사용한다. 기존 이메일 로그인은 접힌 보조 메뉴에서 계속 이용할 수 있다.
 
 Supabase Auth로 이메일·비밀번호 가입, 로그인·로그아웃, 이메일 확인, 비밀번호 복구를 처리한다. 앱은 관리자 키를 사용하지 않는다. 공개 연결 값 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`만 필요하다. 실제 비밀번호·토큰은 저장소나 클라이언트 props에 넣지 않는다.
 
@@ -12,7 +12,7 @@ Supabase Auth로 이메일·비밀번호 가입, 로그인·로그아웃, 이메
 
 ## 이용 흐름
 
-1. Google 연결 완료 후에는 오른쪽 위 로그인 → Google 계정으로 계속하기 → 계정 선택. 이메일 방식은 보조 메뉴에서 회원가입·이메일 확인·로그인을 제공한다.
+1. 오른쪽 위 로그인 → GitHub 계정으로 계속하기 → 기본 프로필·이메일 접근 승인. 처음 이용하면 계정을 만들고, 이후에는 같은 계정으로 로그인한다. 이메일 방식은 보조 메뉴에 유지한다.
 2. 로그인하면 `/my` 개인 오답노트를 연다. 문제 풀이와 북마크가 내 계정에 저장된다.
 3. 오답노트의 ‘내가 고른 답과 해설 보기’에서 선택 답, 정답, 해설, 풀이 시간을 확인한다. 다시 맞히면 해결된다.
 4. 로그아웃하면 화면의 개인 기록을 비우고 게스트 화면으로 돌아간다. `/my`를 다시 열면 로그인 화면으로 이동한다. 계정의 DB 기록은 보존한다.
@@ -57,7 +57,7 @@ Supabase Auth로 이메일·비밀번호 가입, 로그인·로그아웃, 이메
 
 ## 이메일 설정과 운영 전 확인
 
-Google 로그인은 별도 JOBFIT 비밀번호나 Supabase 가입 확인 메일이 필요 없다. Google 제공자에는 `openid`, 이메일, 기본 프로필 범위만 요청한다. 메일·연락처·드라이브 접근 권한이나 Google refresh token용 offline 범위를 요청하지 않는다. Google OAuth Client Secret은 Supabase Google 제공자 설정에만 저장하며 코드·Vercel 공개 변수에 넣지 않는다. [Google 연결 공식 안내](https://supabase.com/docs/guides/auth/social-sign-in/auth-google).
+GitHub 간편 로그인은 별도 JOBFIT 비밀번호나 Supabase 가입 확인 메일이 필요 없다. GitHub 제공자에는 `read:user`, `user:email`만 요청하며 `repo`·저장소 권한은 요청하지 않는다. GitHub OAuth Client Secret은 Supabase GitHub 제공자 설정에만 저장하며 코드·Vercel 공개 변수에 넣지 않는다. 와일드카드 복귀 주소와 Device Flow를 사용하지 않는다. [GitHub 연결 공식 안내](https://supabase.com/docs/guides/auth/social-sign-in/auth-github).
 
 이메일 인증은 끄지 않는다. Supabase 기본 메일 발송은 수신 대상·횟수 제한이 있으므로 일반 참가자에게 공개하기 전 운영용 SMTP 설정과 실제 수신 검증이 필요하다. 메일을 받지 못하면 무조건 가입 완료로 안내하지 않는다. [Supabase SMTP 공식 안내](https://supabase.com/docs/guides/auth/auth-smtp).
 

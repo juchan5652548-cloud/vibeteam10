@@ -11,10 +11,10 @@ import { getPublicQuestions } from '@/lib/question-bank';
 
 export async function GET() {
   const aiReady = Boolean(process.env.OPENAI_API_KEY);
-  const googleReady = process.env.GOOGLE_AUTH_ENABLED === 'true';
+  const githubReady = process.env.GITHUB_AUTH_ENABLED === 'true';
   if (!authConfigured())
     return Response.json(
-      { configured: false, aiReady, googleReady, user: null },
+      { configured: false, aiReady, githubReady, user: null },
       { headers: privateHeaders },
     );
   try {
@@ -30,7 +30,7 @@ export async function GET() {
       )
         throw new Error('AUTH_UNAVAILABLE');
       return Response.json(
-        { configured: true, aiReady, googleReady, user: null },
+        { configured: true, aiReady, githubReady, user: null },
         { headers: privateHeaders },
       );
     }
@@ -40,7 +40,7 @@ export async function GET() {
       {
         configured: true,
         aiReady,
-        googleReady,
+        githubReady,
         user: { id: data.user.id, email: data.user.email ?? '' },
         progress,
       },

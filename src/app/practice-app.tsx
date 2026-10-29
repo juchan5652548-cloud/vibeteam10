@@ -1199,7 +1199,7 @@ export default function PracticeApp({
       {authDialog && (
         <AccountDialog
           initialMode={authDialog}
-          googleReady={account.googleReady}
+          githubReady={account.githubReady}
           onClose={() => {
             setAuthDialog(null);
             window.history.replaceState(null, '', '/');

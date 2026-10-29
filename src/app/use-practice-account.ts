@@ -16,7 +16,7 @@ import type { Attempt } from '@/lib/practice-types';
 const accountSchema = z.object({
   configured: z.boolean(),
   aiReady: z.boolean().default(false),
-  googleReady: z.boolean().default(false),
+  githubReady: z.boolean().default(false),
   user: z.object({ id: z.uuid(), email: z.string() }).nullable(),
   progress: progressSchema.optional(),
 });
@@ -128,7 +128,7 @@ export function usePracticeAccount() {
     error,
     configured: account?.configured ?? false,
     aiReady: account?.aiReady ?? false,
-    googleReady: account?.googleReady ?? false,
+    githubReady: account?.githubReady ?? false,
     recordAttempt,
     bookmark,
   };
