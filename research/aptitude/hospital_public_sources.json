@@ -1,0 +1,126 @@
+{
+  "checked_at": "2026-10-29",
+  "sources": [
+    {
+      "id": "N01",
+      "publisher": "한국산업인력공단",
+      "title": "채용모델 필기문항 목록",
+      "url": "https://www.ncs.go.kr/blind/rh13/bbs_lib_list.do?libDstinCd=48&menuId=MN42030204",
+      "source_type": "official_sample_catalog",
+      "verification_status": "page_body_checked",
+      "scope_note": "영역별 예시자료 제목 확인. 첨부파일 전체 미확보.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "N02",
+      "publisher": "한국산업인력공단",
+      "title": "직업기초능력 모의평가",
+      "url": "https://www.ncs.go.kr/blind/bl16/jobEvalMain.do",
+      "source_type": "official_mock_entry",
+      "verification_status": "entry_url_checked_not_taken",
+      "scope_note": "진입 주소 확인. 실제 응시 미진행.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "H01",
+      "publisher": "서울대학교병원",
+      "title": "2026 상반기 신규 직원 공고",
+      "url": "https://www.snuh.org/about/news/recruit/recruView.do?recruit_id=26031&searchWord=",
+      "source_type": "official_recruitment_notice",
+      "verification_status": "page_body_checked",
+      "scope_note": "직종별 전공 필기와 인성검사 구분.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "H02",
+      "publisher": "국립중앙의료원",
+      "title": "2026 신규간호사 공고 (공고일 2025-10-31)",
+      "url": "https://job.alio.go.kr/mobile2021/recruit/recruitView.do?idx=292488",
+      "source_type": "official_recruitment_notice",
+      "verification_status": "page_body_checked",
+      "scope_note": "전공·직업기초능력·인성 평가 안내. 실제 문항 미확보.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "H03",
+      "publisher": "충남대학교병원",
+      "title": "2026 간호사 면허소지자 공고",
+      "url": "https://job.alio.go.kr/recruitview.do?idx=297620",
+      "source_type": "official_recruitment_notice",
+      "verification_status": "page_body_checked",
+      "scope_note": "필기와 AI역량검사 구분. 필기 세부 과목은 미확정.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "H04",
+      "publisher": "서울특별시",
+      "title": "2026 하반기 통합채용 사전 안내",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=453957",
+      "source_type": "official_policy_announcement",
+      "verification_status": "page_body_checked",
+      "scope_note": "서울의료원 참여 예정. 최종 개별 공고 아님.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "P01",
+      "publisher": "한국수자원공사",
+      "title": "2026 채용사이트 projectid=101",
+      "url": "https://kwater.incruit.com/hire/viewhire.asp?projectid=101",
+      "source_type": "employer_recruitment_site",
+      "verification_status": "search_index_checked_direct_open_redirect_loop",
+      "scope_note": "검색 색인에 전문직 의사소통·수리·문제해결·자원관리 안내. 다른 직렬로 일반화 금지.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "P02",
+      "publisher": "신용보증기금",
+      "title": "공식 NCS 채용 안내",
+      "url": "https://www.kodit.or.kr/kodit/cm/cntnts/cntntsView.do?cntntsId=11181&mi=2514",
+      "source_type": "official_exam_guide",
+      "verification_status": "page_body_checked",
+      "scope_note": "직업기초능력·직무수행능력 구분.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "P03",
+      "publisher": "신용보증기금",
+      "title": "2026 상반기 신입직원 공고",
+      "url": "https://alio.go.kr/mobile/information/informationRecruitDtl.do?seq=298343",
+      "source_type": "official_recruitment_notice",
+      "verification_status": "search_index_checked_direct_open_403",
+      "scope_note": "의사소통·문제해결·수리·자원관리 확인.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "P04",
+      "publisher": "한국전력공사",
+      "title": "2026 하반기 4직급 공고",
+      "url": "https://job.alio.go.kr/recruitview.do?idx=304551",
+      "source_type": "official_recruitment_notice",
+      "verification_status": "search_index_checked",
+      "scope_note": "직무능력검사와 인성·인재상·조직적합도 검사 구분.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    },
+    {
+      "id": "P05",
+      "publisher": "한국철도공사",
+      "title": "2026 상반기 신입사원 공고 수록 페이지",
+      "url": "https://www.ncs.go.kr/blind/bl04/RecrtNotifDetail.do?recrtNo=20260226115135",
+      "source_type": "official_recruitment_catalog",
+      "verification_status": "search_index_checked",
+      "scope_note": "첨부 직무기술서 존재 확인. 세부 시험 구성 미확정.",
+      "actual_exam_questions_obtained": false,
+      "external_content_reuse_permission": "not_confirmed"
+    }
+  ]
+}

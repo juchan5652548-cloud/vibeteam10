@@ -1,0 +1,1128 @@
+{
+  "schema_version": 1,
+  "bank_id": "hospital-public-v1",
+  "created_at": "2026-10-29",
+  "title": "JOBFIT AI 병원 업무 기초역량·공기업 NCS형 자체 연습문제",
+  "notice": "실제 기출·복원·기관 공식 문제 아님. 모든 지문·수치·선택지는 자체 작성한 가상 상황이다. 병원 문항은 비임상 기초역량 연습이며 간호·의료 전공 필기 대비를 대체하지 않는다.",
+  "assessment_limits": {
+    "personality_test": false,
+    "clinical_exam": false,
+    "calibrated_difficulty": false,
+    "calibrated_time": false,
+    "misconception_tags": "선택지에 대응하는 가설이며 개인의 실제 오답 원인 확정 아님",
+    "production_review": "기관별 시험 재현 및 전문가 검수 미완료"
+  },
+  "questions": [
+    {
+      "id": "H001",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "의사소통",
+      "subtype": "안내문 조건 적용",
+      "difficulty": "easy",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원의 교육 신청 안내: 신청은 교육 전날 16:00까지 온라인으로 완료해야 한다. 정원을 초과하면 접수순으로 선발하며, 현장 신청은 받지 않는다. 월요일과 화요일은 모두 정상 운영일이다.",
+      "prompt": "화요일 교육에 월요일 15:50 온라인 신청을 완료한 직원에 대해 반드시 옳은 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "신청 기한은 지켰지만 선발 여부는 정원과 접수순에 따라 달라진다.",
+          "feedback": "정답입니다. 월요일 15:50은 전날 16:00 이전이다. 다만 정원 초과 시 접수순 선발이므로 합격은 확정할 수 없다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "기한을 지켰으므로 반드시 선발된다.",
+          "feedback": "기한 준수만으로 선발이 보장되지 않습니다.",
+          "misconception_tag": "필요조건과충분조건혼동"
+        },
+        {
+          "id": "C",
+          "text": "화요일 현장에서 다시 신청해야 한다.",
+          "feedback": "현장 신청은 받지 않는다고 명시했습니다.",
+          "misconception_tag": "명시정보누락"
+        },
+        {
+          "id": "D",
+          "text": "교육 당일 16:00까지 신청할 수 있다.",
+          "feedback": "마감은 교육 당일이 아니라 전날입니다.",
+          "misconception_tag": "시간조건오독"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "월요일 15:50은 전날 16:00 이전이다. 다만 정원 초과 시 접수순 선발이므로 합격은 확정할 수 없다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01",
+        "H02"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H002",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "의사소통",
+      "subtype": "자료의 주장 범위",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원은 안내 창구를 재배치한 뒤 5일간 평균 대기시간이 18분에서 14분으로 줄었다고 기록했다. 같은 기간 방문자 수도 감소했으며, 창구 재배치 외의 요인은 통제하지 않았다.",
+      "prompt": "이 기록만으로 가장 타당하게 말할 수 있는 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "창구 재배치가 대기시간 감소의 유일한 원인이다.",
+          "feedback": "방문자 수 감소 등 다른 요인이 통제되지 않았습니다.",
+          "misconception_tag": "상관과인과혼동"
+        },
+        {
+          "id": "B",
+          "text": "관찰 기간 대기시간은 줄었지만 감소 원인을 재배치만으로 확정할 수 없다.",
+          "feedback": "정답입니다. 18분에서 14분으로 줄었다는 관찰은 가능하지만 비교 조건이 통제되지 않아 단일 원인을 확정할 수 없다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "모든 병원에서 재배치하면 대기시간이 4분 줄어든다.",
+          "feedback": "한 병원의 짧은 관찰을 모든 병원에 일반화할 수 없습니다.",
+          "misconception_tag": "표본범위과잉일반화"
+        },
+        {
+          "id": "D",
+          "text": "방문자 감소가 없었으므로 결과를 바로 일반화할 수 있다.",
+          "feedback": "지문에는 방문자 수도 감소했다고 적혀 있습니다.",
+          "misconception_tag": "지문사실반대로읽기"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "18분에서 14분으로 줄었다는 관찰은 가능하지만 비교 조건이 통제되지 않아 단일 원인을 확정할 수 없다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01",
+        "H02"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H003",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "수리",
+      "subtype": "가중평균",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원의 오전 접수: 창구 A는 40건, 건당 평균 대기시간 12분이다. 창구 B는 60건, 건당 평균 대기시간 7분이다. 두 창구의 접수 건은 서로 중복되지 않는다.",
+      "prompt": "오전 전체 100건의 평균 대기시간은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "9.5분",
+          "feedback": "12분과 7분을 단순 평균하면 처리 건수 차이를 무시합니다.",
+          "misconception_tag": "가중치무시"
+        },
+        {
+          "id": "B",
+          "text": "8분",
+          "feedback": "각 평균에 해당 건수를 곱한 뒤 총 건수로 나누어야 합니다.",
+          "misconception_tag": "가중평균계산오류"
+        },
+        {
+          "id": "C",
+          "text": "9분",
+          "feedback": "정답입니다. (40×12+60×7)÷100=900÷100=9분이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "19분",
+          "feedback": "두 평균을 더한 값은 전체 평균이 아닙니다.",
+          "misconception_tag": "평균대신합계사용"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "(40×12+60×7)÷100=900÷100=9분이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H004",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "자원관리",
+      "subtype": "안전재고와 발주량",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 사무용 봉투 재고는 86개다. 앞으로 4일 동안 매일 18개씩 사용하고 추가 입고는 없다. 4일째 사용을 마친 뒤 재고를 최소 20개 유지하려고 한다. 오늘 주문한 봉투는 사용 시작 전에 입고된다.",
+      "prompt": "최소 주문 수량은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "14개",
+          "feedback": "14개는 주문하지 않았을 때 남는 재고입니다.",
+          "misconception_tag": "남은재고를발주량으로혼동"
+        },
+        {
+          "id": "B",
+          "text": "20개",
+          "feedback": "목표 재고 전체를 주문할 필요는 없습니다.",
+          "misconception_tag": "기존재고무시"
+        },
+        {
+          "id": "C",
+          "text": "72개",
+          "feedback": "72개는 4일간 사용량이며 기존 재고를 고려해야 합니다.",
+          "misconception_tag": "사용량을발주량으로혼동"
+        },
+        {
+          "id": "D",
+          "text": "6개",
+          "feedback": "정답입니다. 총 사용량은 18×4=72개, 기존 잔량은 86−72=14개다. 목표 20개까지 6개가 부족하다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "총 사용량은 18×4=72개, 기존 잔량은 86−72=14개다. 목표 20개까지 6개가 부족하다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H005",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "문제해결",
+      "subtype": "순서 제약",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 교육 A·B·C·D를 1번부터 4번까지 한 번씩 배치한다. C는 A보다 먼저, B는 D의 바로 다음이며, A는 마지막 순서가 아니다.",
+      "prompt": "모든 조건을 만족하는 교육 순서는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "C → A → D → B",
+          "feedback": "정답입니다. D와 B를 연속 묶음으로 보고 C가 A보다 앞에 오게 배치하면, A가 마지막이 아닌 가능한 순서는 C·A·D·B뿐이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "D → B → C → A",
+          "feedback": "A가 마지막이어서 조건을 어깁니다.",
+          "misconception_tag": "부정조건누락"
+        },
+        {
+          "id": "C",
+          "text": "C → D → A → B",
+          "feedback": "B가 D의 바로 다음이 아닙니다.",
+          "misconception_tag": "바로다음과이후혼동"
+        },
+        {
+          "id": "D",
+          "text": "A → C → D → B",
+          "feedback": "C가 A보다 먼저여야 합니다.",
+          "misconception_tag": "선후조건반전"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "D와 B를 연속 묶음으로 보고 C가 A보다 앞에 오게 배치하면, A가 마지막이 아닌 가능한 순서는 C·A·D·B뿐이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01",
+        "H02"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H006",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "문제해결",
+      "subtype": "병렬 작업 소요시간",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 안내자료 제작에서 번역(12분)과 도표 작성(18분)은 서로 다른 직원이 동시에 시작한다. 두 작업이 모두 끝나야 검토(10분)를 시작할 수 있다. 검토 후 출력(5분)을 한다. 작업 사이 대기와 이동시간은 없다.",
+      "prompt": "전체 작업의 최소 완료 시간은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "45분",
+          "feedback": "동시에 하는 12분과 18분을 모두 더하지 않습니다.",
+          "misconception_tag": "병렬작업직렬합산"
+        },
+        {
+          "id": "B",
+          "text": "33분",
+          "feedback": "정답입니다. 병렬 구간은 max(12,18)=18분이다. 이어서 검토 10분과 출력 5분이 필요하므로 33분이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "27분",
+          "feedback": "검토는 18분짜리 도표 작성도 끝나야 시작할 수 있습니다.",
+          "misconception_tag": "짧은병렬경로선택"
+        },
+        {
+          "id": "D",
+          "text": "28분",
+          "feedback": "18분과 검토 10분 뒤 출력 5분을 더해야 합니다.",
+          "misconception_tag": "후속작업누락"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "병렬 구간은 max(12,18)=18분이다. 이어서 검토 10분과 출력 5분이 필요하므로 33분이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01",
+        "H02"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H007",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "수리",
+      "subtype": "퍼센트와 퍼센트포인트",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 교육의 미참석률이 지난달 10%에서 이번 달 6%로 낮아졌다.",
+      "prompt": "지난달 미참석률을 기준으로 한 상대 감소율은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "4%",
+          "feedback": "4는 퍼센트포인트 차이입니다. 상대 감소율은 기존 10%로 나눕니다.",
+          "misconception_tag": "퍼센트포인트와감소율혼동"
+        },
+        {
+          "id": "B",
+          "text": "60%",
+          "feedback": "6÷10은 남은 비율이고 감소 비율이 아닙니다.",
+          "misconception_tag": "잔존비율과감소율혼동"
+        },
+        {
+          "id": "C",
+          "text": "40%",
+          "feedback": "정답입니다. (10−6)÷10×100=40%다. 절대 차이는 4%p이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "66.7%",
+          "feedback": "기준은 이번 달 6%가 아니라 지난달 10%입니다.",
+          "misconception_tag": "증감률기준값혼동"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "(10−6)÷10×100=40%다. 절대 차이는 4%p이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H008",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "수리",
+      "subtype": "처리량과 대기량",
+      "difficulty": "easy",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 안내 창구 두 곳은 각각 1시간에 정확히 10건을 처리한다. 09:00에 대기 건은 없었다. 09:00부터 10:00까지 총 27건이 들어왔고, 두 창구는 이 구간에 각각 10건씩 처리를 완료했다. 취소나 이관은 없다.",
+      "prompt": "10:00 기준 아직 처리가 끝나지 않은 건수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "17건",
+          "feedback": "창구 하나가 아니라 두 곳의 완료량을 빼야 합니다.",
+          "misconception_tag": "복수자원처리량누락"
+        },
+        {
+          "id": "B",
+          "text": "20건",
+          "feedback": "20건은 두 창구의 처리 완료량입니다.",
+          "misconception_tag": "완료건수와미완료혼동"
+        },
+        {
+          "id": "C",
+          "text": "0건",
+          "feedback": "27건 유입 중 완료는 20건뿐입니다.",
+          "misconception_tag": "유입량과처리량불일치무시"
+        },
+        {
+          "id": "D",
+          "text": "7건",
+          "feedback": "정답입니다. 총 유입 27건에서 완료 10×2=20건을 빼면 7건이다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "총 유입 27건에서 완료 10×2=20건을 빼면 7건이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H009",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "정보",
+      "subtype": "복합키 중복 판별",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 교육 출석 자료는 (교육일, 직원번호)가 모두 같으면 중복 기록이다. 같은 직원이 다른 날 참석한 기록은 유지한다. 기록: ① 11월 2일·101번 ② 11월 2일·102번 ③ 11월 3일·101번 ④ 11월 2일·101번.",
+      "prompt": "각 고유 출석을 한 번씩 남길 때 제거할 중복 기록 수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "1개",
+          "feedback": "정답입니다. ①과 ④만 같은 복합키다. 둘 중 하나만 지우므로 제거 수는 1개다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "2개",
+          "feedback": "직원번호만 같고 교육일이 다른 ③은 유지합니다.",
+          "misconception_tag": "복합키일부만비교"
+        },
+        {
+          "id": "C",
+          "text": "0개",
+          "feedback": "①과 ④는 교육일과 직원번호가 모두 같습니다.",
+          "misconception_tag": "완전중복누락"
+        },
+        {
+          "id": "D",
+          "text": "3개",
+          "feedback": "같은 기록이 반복돼도 대표 기록 하나는 남겨야 합니다.",
+          "misconception_tag": "중복그룹전체삭제"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "①과 ④만 같은 복합키다. 둘 중 하나만 지우므로 제거 수는 1개다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H010",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "대인관계",
+      "subtype": "업무 충돌 조정",
+      "difficulty": "easy",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 협업 원칙: 요청이 충돌하면 우선 각 업무의 마감과 영향을 확인하고, 담당자들과 우선순위를 합의한다. 합의가 어려우면 책임자에게 조정을 요청한다. 두 부서가 같은 시간에 안내 직원 한 명의 지원을 요청했다.",
+      "prompt": "위 원칙에 따른 첫 행동으로 가장 적절한 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "더 친한 부서의 요청을 먼저 처리한다.",
+          "feedback": "원칙은 친분이 아니라 마감과 영향에 근거한 조정입니다.",
+          "misconception_tag": "사적관계우선"
+        },
+        {
+          "id": "B",
+          "text": "각 요청의 마감과 영향을 확인한 뒤 담당자들과 조정한다.",
+          "feedback": "정답입니다. 제시된 절차의 첫 단계는 마감과 영향 확인이다. 이후 합의하고, 합의 실패 시 책임자에게 조정을 요청한다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "마감 확인 없이 두 요청을 모두 확정 수락한다.",
+          "feedback": "한 명의 지원 시간이 겹치므로 확인과 조정이 먼저입니다.",
+          "misconception_tag": "수행가능성확인누락"
+        },
+        {
+          "id": "D",
+          "text": "두 요청을 모두 무시하고 답변하지 않는다.",
+          "feedback": "원칙은 요청을 방치하는 것이 아니라 조정하는 것입니다.",
+          "misconception_tag": "갈등회피"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "제시된 절차의 첫 단계는 마감과 영향 확인이다. 이후 합의하고, 합의 실패 시 책임자에게 조정을 요청한다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01",
+        "H02"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H011",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "직업윤리",
+      "subtype": "가상 내부자료 제공 규칙",
+      "difficulty": "easy",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 규칙: 개인별 교육명단은 외부에 제공하지 않는다. 외부 요청에는 승인된 집계 통계만 지정 창구에서 제공한다. 외부 지인이 개인별 교육명단을 보내 달라고 요청했다.",
+      "prompt": "제시된 규칙에 맞는 대응은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "지인이므로 개인별 명단을 보낸다.",
+          "feedback": "규칙에 친분에 따른 예외가 없습니다.",
+          "misconception_tag": "친분을예외로취급"
+        },
+        {
+          "id": "B",
+          "text": "이름만 지우고 다른 개인별 정보는 임의로 보낸다.",
+          "feedback": "승인된 집계 통계를 지정 창구에서 제공해야 합니다.",
+          "misconception_tag": "집계와부분삭제혼동"
+        },
+        {
+          "id": "C",
+          "text": "개인별 명단 제공은 거절하고 집계 통계 요청 창구를 안내한다.",
+          "feedback": "정답입니다. 문제에 제시된 가상 규칙상 개인별 명단은 제공할 수 없고 승인된 집계 자료 요청 창구를 이용해야 한다. 실제 법률 판단 문제는 아니다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "개인 메신저를 쓰면 제공해도 된다.",
+          "feedback": "전달 수단을 바꿔도 금지된 제공이 허용되지 않습니다.",
+          "misconception_tag": "전달수단과권한혼동"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "문제에 제시된 가상 규칙상 개인별 명단은 제공할 수 없고 승인된 집계 자료 요청 창구를 이용해야 한다. 실제 법률 판단 문제는 아니다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "H012",
+      "track": "hospital",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "문제해결",
+      "subtype": "명제의 대우",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 병원 요청 분류에 대해 다음이 참이다. 모든 긴급분류 요청은 담당자 확인이 완료되었다. 확인이 완료된 요청 중 일부는 첨부서류가 부족하다.",
+      "prompt": "반드시 참인 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "담당자 확인이 완료된 모든 요청은 긴급분류다.",
+          "feedback": "긴급이면 확인완료라는 말의 역은 보장되지 않습니다.",
+          "misconception_tag": "명제의역을참으로판단"
+        },
+        {
+          "id": "B",
+          "text": "서류가 부족한 모든 요청은 긴급분류다.",
+          "feedback": "서류 부족 여부와 긴급분류의 포함 관계는 주어지지 않았습니다.",
+          "misconception_tag": "일부조건을전체로확장"
+        },
+        {
+          "id": "C",
+          "text": "긴급분류 요청은 모두 첨부서류가 완비되어 있다.",
+          "feedback": "확인완료와 서류완비는 다른 조건입니다.",
+          "misconception_tag": "무관조건추론"
+        },
+        {
+          "id": "D",
+          "text": "담당자 확인이 완료되지 않은 요청은 긴급분류 요청이 아니다.",
+          "feedback": "정답입니다. 긴급 → 확인완료의 대우는 확인미완료 → 긴급 아님이다. 다른 선택지는 주어진 조건으로 확정할 수 없다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "긴급 → 확인완료의 대우는 확인미완료 → 긴급 아님이다. 다른 선택지는 주어진 조건으로 확정할 수 없다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01",
+        "H02"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P001",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "의사소통",
+      "subtype": "지원 자격과 선발 조건",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공공기관 사업은 신청서와 예산표를 모두 기한 내 제출한 단체만 심사한다. 심사점수가 80점 이상이어도 예산 범위 안에서 고득점순 선발한다. A단체는 두 서류를 기한 내 냈고 85점을 받았다. 배정 예산과 다른 단체 점수는 알려지지 않았다.",
+      "prompt": "A단체에 대해 반드시 옳은 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "심사 요건과 점수 기준은 충족했지만 최종 선발 여부는 확정할 수 없다.",
+          "feedback": "정답입니다. 필수 서류와 80점 기준은 충족했으나 예산 내 고득점순 조건의 추가 정보가 없어 최종 선발을 단정할 수 없다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "85점이므로 반드시 선발된다.",
+          "feedback": "예산과 다른 단체의 점수도 선발에 영향을 줍니다.",
+          "misconception_tag": "필요조건과충분조건혼동"
+        },
+        {
+          "id": "C",
+          "text": "90점 미만이므로 심사 대상이 아니다.",
+          "feedback": "점수 기준은 80점이며 두 서류도 기한 내 제출했습니다.",
+          "misconception_tag": "없는기준추가"
+        },
+        {
+          "id": "D",
+          "text": "예산표는 신청서 제출 후에는 필요 없다.",
+          "feedback": "지문은 두 서류를 모두 제출해야 한다고 명시합니다.",
+          "misconception_tag": "필수서류조건누락"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "필수 서류와 80점 기준은 충족했으나 예산 내 고득점순 조건의 추가 정보가 없어 최종 선발을 단정할 수 없다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P002",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "의사소통",
+      "subtype": "문단 배열",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가: 이에 접수 단계에서 누락 항목을 안내하는 시범사업을 제안한다.\n나: 최근 접수된 신청서에서 필수 항목 누락이 늘었다.\n다: 사업 시행 뒤에는 누락률 변화를 측정해 확대 여부를 결정한다.\n라: 누락 원인을 살펴보니 제출 직전 확인 절차가 없다는 점이 확인되었다.",
+      "prompt": "문제 제기 → 원인 분석 → 개선안 → 평가 계획의 순서로 배열한 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "나 → 가 → 다 → 라",
+          "feedback": "원인 분석인 라가 개선안과 평가 계획보다 뒤에 있습니다.",
+          "misconception_tag": "원인분석순서누락"
+        },
+        {
+          "id": "B",
+          "text": "나 → 라 → 가 → 다",
+          "feedback": "정답입니다. 나는 현상, 라는 원인, 가는 개선안, 다는 시행 후 평가를 설명한다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "다 → 나 → 라 → 가",
+          "feedback": "평가 계획은 사업 제안 뒤에 오는 것이 제시 순서에 맞습니다.",
+          "misconception_tag": "평가계획선행"
+        },
+        {
+          "id": "D",
+          "text": "라 → 나 → 다 → 가",
+          "feedback": "문제 제기가 먼저이고 개선안이 평가 계획보다 앞이어야 합니다.",
+          "misconception_tag": "담화구조혼동"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "나는 현상, 라는 원인, 가는 개선안, 다는 시행 후 평가를 설명한다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P003",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "자료해석",
+      "subtype": "전체 처리율",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사 민원 현황: A지역은 접수 150건 중 120건 완료, B지역은 접수 90건 중 54건 완료다. 접수 건은 서로 중복되지 않는다.",
+      "prompt": "두 지역을 합친 완료율은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "70%",
+          "feedback": "80%와 60%를 단순 평균하면 접수 건수 차이가 반영되지 않습니다.",
+          "misconception_tag": "지역별비율단순평균"
+        },
+        {
+          "id": "B",
+          "text": "80%",
+          "feedback": "80%는 A지역의 완료율입니다.",
+          "misconception_tag": "일부집단만반영"
+        },
+        {
+          "id": "C",
+          "text": "72.5%",
+          "feedback": "정답입니다. 전체 완료 174건, 접수 240건이므로 174÷240×100=72.5%다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "60%",
+          "feedback": "60%는 B지역의 완료율입니다.",
+          "misconception_tag": "일부집단만반영"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "전체 완료 174건, 접수 240건이므로 174÷240×100=72.5%다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P004",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "수리",
+      "subtype": "복합 비율과 기준값",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사의 올해 사업 예산은 800만원이며 600만원을 집행했다. 내년 예산은 올해 예산보다 25% 증가하고, 내년 집행액 목표는 내년 예산의 80%다.",
+      "prompt": "내년 집행액 목표는 올해 실제 집행액보다 얼마나 많은가?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "40만원",
+          "feedback": "800×80%에서 올해 집행액을 빼면 예산 증가를 누락합니다.",
+          "misconception_tag": "증액전예산에집행률적용"
+        },
+        {
+          "id": "B",
+          "text": "400만원",
+          "feedback": "내년 예산 전체 1000만원을 집행액 목표와 혼동했습니다.",
+          "misconception_tag": "집행률누락"
+        },
+        {
+          "id": "C",
+          "text": "150만원",
+          "feedback": "600만원에 25%를 곱하면 예산 증가율을 집행액에 잘못 적용합니다.",
+          "misconception_tag": "예산과실제집행액혼동"
+        },
+        {
+          "id": "D",
+          "text": "200만원",
+          "feedback": "정답입니다. 내년 예산은 800×1.25=1000만원, 목표 집행액은 1000×0.8=800만원이다. 올해 600만원보다 200만원 많다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "내년 예산은 800×1.25=1000만원, 목표 집행액은 1000×0.8=800만원이다. 올해 600만원보다 200만원 많다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P005",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "문제해결",
+      "subtype": "배치 가능성",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사의 발표 A·B·C·D를 1~4번에 한 번씩 배치한다. A는 B보다 먼저, C는 1번이 아니며, D는 B의 바로 앞이다.",
+      "prompt": "모든 조건을 만족하는 배치는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A → D → B → C",
+          "feedback": "정답입니다. A·D·B·C는 A가 B보다 먼저이고 D가 바로 앞이며 C도 1번이 아니므로 모든 조건을 충족한다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "C → A → D → B",
+          "feedback": "C는 1번에 올 수 없습니다.",
+          "misconception_tag": "금지위치조건누락"
+        },
+        {
+          "id": "C",
+          "text": "A → D → C → B",
+          "feedback": "D가 B의 바로 앞이 아닙니다.",
+          "misconception_tag": "인접조건누락"
+        },
+        {
+          "id": "D",
+          "text": "D → B → A → C",
+          "feedback": "A는 B보다 먼저여야 합니다.",
+          "misconception_tag": "선후관계반전"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "A·D·B·C는 A가 B보다 먼저이고 D가 바로 앞이며 C도 1번이 아니므로 모든 조건을 충족한다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P006",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "자원관리",
+      "subtype": "예산 내 조합 최적화",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공공기관은 예산 15만원 안에서 사업을 고른다. A는 비용 8만원·효과 13점, B는 7만원·10점, C는 5만원·8점이다. 각 사업은 최대 한 번만 선택하고 부분 수행은 불가하며, 효과 점수는 합산한다.",
+      "prompt": "총 효과가 가장 큰 선택은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A와 C: 비용 13만원, 효과 21점",
+          "feedback": "예산 내이지만 A와 B의 효과 23점보다 작습니다.",
+          "misconception_tag": "가능해중최적해탐색누락"
+        },
+        {
+          "id": "B",
+          "text": "A와 B: 비용 15만원, 효과 23점",
+          "feedback": "정답입니다. 가능한 두 사업 조합은 AB=23점, AC=21점, BC=18점이다. 세 사업은 예산을 넘고 단일 사업도 23점보다 낮아 AB가 최적이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "B와 C: 비용 12만원, 효과 18점",
+          "feedback": "비용이 적더라도 문제의 목표는 예산 내 최대 효과입니다.",
+          "misconception_tag": "비용최소와효과최대혼동"
+        },
+        {
+          "id": "D",
+          "text": "A와 B와 C: 비용 20만원, 효과 31점",
+          "feedback": "총 비용이 예산 15만원을 초과합니다.",
+          "misconception_tag": "예산제약무시"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "가능한 두 사업 조합은 AB=23점, AC=21점, BC=18점이다. 세 사업은 예산을 넘고 단일 사업도 23점보다 낮아 AB가 최적이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P007",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "자료해석",
+      "subtype": "증감률과 증감량 구분",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사의 신청 건수: A사업은 전년 80건·올해 100건, B사업은 120건·144건, C사업은 200건·230건이다.",
+      "prompt": "전년 대비 증가율이 가장 높은 사업과 그 증가율은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "B사업, 20%",
+          "feedback": "B의 20%보다 A의 25%가 높습니다.",
+          "misconception_tag": "일부비율만비교"
+        },
+        {
+          "id": "B",
+          "text": "C사업, 15%",
+          "feedback": "C의 증가량 30건이 가장 크지만 증가율은 15%입니다.",
+          "misconception_tag": "증가량과증가율혼동"
+        },
+        {
+          "id": "C",
+          "text": "A사업, 25%",
+          "feedback": "정답입니다. A=(100−80)÷80=25%, B=24÷120=20%, C=30÷200=15%이므로 A가 가장 높다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "A사업, 20%",
+          "feedback": "20÷100은 올해를 분모로 쓴 값입니다. 전년 80을 기준으로 합니다.",
+          "misconception_tag": "증감률분모오류"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "A=(100−80)÷80=25%, B=24÷120=20%, C=30÷200=15%이므로 A가 가장 높다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P008",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "정보",
+      "subtype": "스프레드시트 복합 조건",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공공기관 신청 자료: ① 예산 90만원·상태 완료 ② 예산 130만원·상태 완료 ③ 예산 150만원·상태 검토중 ④ 예산 100만원·상태 완료. 필터 조건은 예산 100만원 이상이면서 상태가 완료인 행이다.",
+      "prompt": "필터를 통과하는 행은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "①과 ②와 ④",
+          "feedback": "①은 상태는 완료지만 예산이 100만원 미만입니다.",
+          "misconception_tag": "금액하한조건누락"
+        },
+        {
+          "id": "B",
+          "text": "②와 ③과 ④",
+          "feedback": "③은 상태가 검토중입니다.",
+          "misconception_tag": "상태조건누락"
+        },
+        {
+          "id": "C",
+          "text": "②만",
+          "feedback": "100만원 이상에는 정확히 100만원인 ④도 포함됩니다.",
+          "misconception_tag": "이상과초과혼동"
+        },
+        {
+          "id": "D",
+          "text": "②와 ④",
+          "feedback": "정답입니다. 두 조건을 동시에 만족하는 130만원·완료와 100만원·완료만 남으므로 ②와 ④다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "두 조건을 동시에 만족하는 130만원·완료와 100만원·완료만 남으므로 ②와 ④다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P009",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "조직이해",
+      "subtype": "업무 분장과 승인 경로",
+      "difficulty": "easy",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사의 업무 분장: 운영팀은 자료 작성, 재무팀은 금액 검증, 팀장은 최종 승인만 담당한다. 오류 발견 시 해당 검증 담당팀에 먼저 확인한다. 운영팀이 만든 보고서에서 합계 금액 오류가 발견되었다.",
+      "prompt": "명시된 분장에 따라 먼저 확인을 요청할 곳은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "재무팀",
+          "feedback": "정답입니다. 금액 검증은 재무팀의 역할이며 오류 발견 시 해당 검증팀에 먼저 확인한다는 규칙이 있다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "최종 승인만 하는 팀장",
+          "feedback": "오류는 해당 검증 담당팀에 먼저 확인해야 합니다.",
+          "misconception_tag": "승인과검증역할혼동"
+        },
+        {
+          "id": "C",
+          "text": "보고서를 받지 않은 외부 업체",
+          "feedback": "제시된 분장에 외부 업체의 검증 역할은 없습니다.",
+          "misconception_tag": "조직역할외부전가"
+        },
+        {
+          "id": "D",
+          "text": "자료 작성만 담당하는 운영팀",
+          "feedback": "금액 검증의 담당은 재무팀입니다.",
+          "misconception_tag": "작성과전문검증역할혼동"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "금액 검증은 재무팀의 역할이며 오류 발견 시 해당 검증팀에 먼저 확인한다는 규칙이 있다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P010",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "직업윤리",
+      "subtype": "이해충돌 상황의 절차",
+      "difficulty": "easy",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공공기관 내부 규칙: 평가위원은 심사 대상 업체와 사적 이해관계가 있으면 담당자에게 알리고 해당 업체 평가에서 빠진다. 위원은 형제가 운영하는 업체가 심사 대상임을 알게 되었다.",
+      "prompt": "이 규칙에 맞는 행동은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "관계를 숨기고 보통 점수를 준다.",
+          "feedback": "점수와 무관하게 관계를 알리고 평가에서 빠져야 합니다.",
+          "misconception_tag": "결과공정성으로절차대체"
+        },
+        {
+          "id": "B",
+          "text": "관계를 알리고 해당 업체 평가에 참여하지 않는다.",
+          "feedback": "정답입니다. 제시된 가상 내부 규칙이 요구하는 관계 고지와 해당 업체 평가 불참을 모두 수행하는 선택지다. 실제 법률 해석 문제는 아니다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "형제 업체에 불이익을 주면 알리지 않아도 된다.",
+          "feedback": "낮은 점수를 줘도 신고·회피 절차를 대신할 수 없습니다.",
+          "misconception_tag": "역차별로신고의무대체"
+        },
+        {
+          "id": "D",
+          "text": "심사 결과 발표 후에만 관계를 공개한다.",
+          "feedback": "대상임을 알게 되었을 때 알리고 평가에서 빠지는 규칙입니다.",
+          "misconception_tag": "사전절차를사후로대체"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "제시된 가상 내부 규칙이 요구하는 관계 고지와 해당 업체 평가 불참을 모두 수행하는 선택지다. 실제 법률 해석 문제는 아니다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P011",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "수리",
+      "subtype": "일률과 공동 작업",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사의 동일한 자료 묶음을 A는 혼자 6시간, B는 혼자 3시간에 처리한다. 두 사람의 처리속도는 일정하고, 업무를 나누어 동시에 처리하며 중복이나 협업 손실은 없다.",
+      "prompt": "둘이 함께 전체 자료를 처리하는 데 걸리는 시간은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "4.5시간",
+          "feedback": "완료시간이 아니라 시간당 처리 비율을 더해야 합니다.",
+          "misconception_tag": "완료시간단순평균"
+        },
+        {
+          "id": "B",
+          "text": "3시간",
+          "feedback": "B 혼자 걸리는 시간으로 A의 기여를 반영하지 않았습니다.",
+          "misconception_tag": "추가작업자기여누락"
+        },
+        {
+          "id": "C",
+          "text": "2시간",
+          "feedback": "정답입니다. 시간당 처리량은 1/6+1/3=1/2이므로 전체 1을 처리하는 시간은 2시간이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "9시간",
+          "feedback": "두 사람이 동시에 일하므로 개인 완료시간을 더하지 않습니다.",
+          "misconception_tag": "공동작업시간합산"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "시간당 처리량은 1/6+1/3=1/2이므로 전체 1을 처리하는 시간은 2시간이다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    },
+    {
+      "id": "P012",
+      "track": "public_ncs",
+      "origin_type": "original_practice",
+      "institution": null,
+      "area": "문제해결",
+      "subtype": "가중 평가 점수",
+      "difficulty": "medium",
+      "difficulty_status": "author_estimate_unvalidated",
+      "passage": "가상 공사는 대안의 총점을 비용점수 40%와 서비스점수 60%로 계산하며 총점이 높을수록 우선한다. 비용점수도 높을수록 유리하도록 이미 환산했다. X는 비용 90점·서비스 60점, Y는 70점·80점, Z는 60점·85점이다.",
+      "prompt": "우선할 대안과 총점은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "X, 75점",
+          "feedback": "X의 단순 평균은 75점이지만 가중 총점은 72점입니다.",
+          "misconception_tag": "가중치무시"
+        },
+        {
+          "id": "B",
+          "text": "Z, 75점",
+          "feedback": "Z의 총점 75점은 맞지만 Y의 76점보다 낮습니다.",
+          "misconception_tag": "최대값비교오류"
+        },
+        {
+          "id": "C",
+          "text": "X, 78점",
+          "feedback": "X에 60%와 40%를 반대로 적용한 값입니다.",
+          "misconception_tag": "가중치뒤바꿈"
+        },
+        {
+          "id": "D",
+          "text": "Y, 76점",
+          "feedback": "정답입니다. X=90×0.4+60×0.6=72, Y=70×0.4+80×0.6=76, Z=60×0.4+85×0.6=75다. 최대는 Y다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "X=90×0.4+60×0.6=72, Y=70×0.4+80×0.6=76, Z=60×0.4+85×0.6=75다. 최대는 Y다.",
+      "suggested_seconds": null,
+      "reference_ids": [
+        "N01"
+      ],
+      "reference_relation": "competency_or_exam_scope_only_not_adaptation",
+      "review_status": "agent_reviewed_not_expert_validated"
+    }
+  ],
+  "taxonomy": "JOBFIT internal practice tags; not a complete official NCS taxonomy"
+}
