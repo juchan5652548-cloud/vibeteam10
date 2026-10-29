@@ -26,6 +26,14 @@ export default function AccountDialog({
   const [error, setError] = useState('');
   const [emailForm, setEmailForm] = useState(initialMode === 'password');
   const [githubPending, setGitHubPending] = useState(false);
+  const [cooldowns, setCooldowns] = useState<Record<Mode, number>>({
+    login: 0,
+    signup: 0,
+    recover: 0,
+    password: 0,
+  });
+  const cooldown = cooldowns[mode];
+  const waiting = Object.values(cooldowns).some((seconds) => seconds > 0);
   const form = useForm<Fields>({
     resolver: zodResolver(schema),
     defaultValues: { email: '', password: '' },
@@ -38,6 +46,20 @@ export default function AccountDialog({
       if (prior instanceof HTMLElement) prior.focus();
     };
   }, []);
+  useEffect(() => {
+    if (!waiting) return;
+    const timer = window.setInterval(
+      () =>
+        setCooldowns((values) => ({
+          login: Math.max(0, values.login - 1),
+          signup: Math.max(0, values.signup - 1),
+          recover: Math.max(0, values.recover - 1),
+          password: Math.max(0, values.password - 1),
+        })),
+      1000,
+    );
+    return () => window.clearInterval(timer);
+  }, [waiting]);
   async function githubLogin() {
     if (githubPending) return;
     setGitHubPending(true);
@@ -64,6 +86,7 @@ export default function AccountDialog({
     }
   }
   async function submit(fields: Fields) {
+    if (cooldown > 0) return;
     setError('');
     setMessage('');
     if (
@@ -100,9 +123,16 @@ export default function AccountDialog({
           error: z.string().optional(),
           message: z.string().optional(),
           signedIn: z.boolean().optional(),
+          retryAfterSeconds: z.number().int().min(1).max(3600).optional(),
         })
         .parse(await response.json());
       if (!response.ok) {
+        if (response.status === 429) {
+          setCooldowns((values) => ({
+            ...values,
+            [mode]: body.retryAfterSeconds ?? 60,
+          }));
+        }
         setError(body.error ?? '요청을 처리하지 못했어요.');
         return;
       }
@@ -183,7 +213,7 @@ export default function AccountDialog({
           <button
             type="button"
             className="text-button email-login-toggle"
-            disabled={githubPending}
+            disabled={githubPending || isSubmitting}
             onClick={() => {
               setEmailForm(!emailForm);
               setError('');
@@ -276,11 +306,21 @@ export default function AccountDialog({
             )}
             <button
               className="button primary"
-              disabled={isSubmitting}
+              disabled={isSubmitting || cooldown > 0}
               type="submit"
             >
-              {isSubmitting ? '처리 중…' : title}
+              {isSubmitting
+                ? '처리 중…'
+                : cooldown > 0
+                  ? `${cooldown}초 후 다시 시도`
+                  : title}
             </button>
+            {cooldown > 0 && (
+              <p className="muted">
+                반복 요청을 줄이기 위한 대기시간이에요. 메일 발송 한도가
+                해제되는 시간과는 다를 수 있어요.
+              </p>
+            )}
           </form>
           {mode === 'login' && (
             <button

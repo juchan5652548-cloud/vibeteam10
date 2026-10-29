@@ -8,9 +8,10 @@ import {
 import { loadAccountProgress } from '@/lib/account-progress';
 import { readLimitedJson } from '@/lib/limited-json';
 import { getPublicQuestions } from '@/lib/question-bank';
+import { hintConfigured } from '@/lib/ai-hint';
 
 export async function GET() {
-  const aiReady = Boolean(process.env.OPENAI_API_KEY);
+  const aiReady = hintConfigured();
   const githubReady = process.env.GITHUB_AUTH_ENABLED === 'true';
   if (!authConfigured())
     return Response.json(

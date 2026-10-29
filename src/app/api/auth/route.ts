@@ -28,6 +28,28 @@ const inputSchema = z.union([
     })
     .strict(),
 ]);
+
+function authLimitResponse(error: { status?: number; code?: string } | null) {
+  const emailLimited = error?.code === 'over_email_send_rate_limit';
+  const requestLimited = error?.code === 'over_request_rate_limit';
+  if (!emailLimited && !requestLimited && error?.status !== 429) return null;
+  return Response.json(
+    {
+      code: emailLimited
+        ? 'EMAIL_SEND_LIMITED'
+        : requestLimited
+          ? 'AUTH_REQUEST_LIMITED'
+          : 'AUTH_RATE_LIMITED',
+      error: emailLimited
+        ? '인증 메일 발송 한도에 도달했어요. 계속되면 운영자의 메일 발송 설정 확인이 필요해요. GitHub 간편 로그인은 이용할 수 있어요.'
+        : '짧은 시간에 인증 요청이 반복됐어요. 잠시 기다린 뒤 다시 시도해 주세요.',
+      // A pause between submissions, not the provider quota reset time.
+      retryAfterSeconds: 60,
+    },
+    { status: 429, headers: privateHeaders },
+  );
+}
+
 export async function POST(request: Request) {
   if (!sameOrigin(request))
     return Response.json(
@@ -97,11 +119,8 @@ export async function POST(request: Request) {
       const { error } = await client.auth.resetPasswordForEmail(input.email, {
         redirectTo: `${origin}/auth/callback?recovery=1`,
       });
-      if (error?.status === 429)
-        return Response.json(
-          { error: '요청이 많아요. 잠시 후 다시 시도해 주세요.' },
-          { status: 429, headers: privateHeaders },
-        );
+      const limited = authLimitResponse(error);
+      if (limited) return limited;
       if (error) throw new Error('RECOVERY_FAILED');
       return Response.json(
         {
@@ -138,16 +157,16 @@ export async function POST(request: Request) {
             options: { emailRedirectTo: `${origin}/auth/callback` },
           });
     if (result.error) {
-      const limited = result.error.status === 429;
+      const limited = authLimitResponse(result.error);
+      if (limited) return limited;
       return Response.json(
         {
-          error: limited
-            ? '요청이 많아요. 잠시 후 다시 시도해 주세요.'
-            : input.action === 'login'
+          error:
+            input.action === 'login'
               ? '이메일·비밀번호 또는 이메일 인증 여부를 확인해 주세요.'
               : '가입하지 못했어요. 입력 정보와 메일 발송 상태를 확인하거나 로그인을 시도해 주세요.',
         },
-        { status: limited ? 429 : 400, headers: privateHeaders },
+        { status: 400, headers: privateHeaders },
       );
     }
     return Response.json(

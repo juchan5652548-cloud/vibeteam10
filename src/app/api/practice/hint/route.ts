@@ -42,12 +42,12 @@ export async function POST(request: Request) {
       { error: '문제를 찾을 수 없어요.' },
       { status: 404, headers },
     );
-  const key = process.env.OPENAI_API_KEY;
+  const key = process.env.GEMINI_API_KEY;
   if (!key)
     return Response.json(
       {
         error:
-          'AI 선생님을 연결하는 중이에요. 운영자가 OpenAI API 키를 등록하면 실제 힌트를 받을 수 있어요.',
+          '무료 AI 연결을 준비하고 있어요. 지금은 채점 후 문제 해설을 확인해 주세요.',
         code: 'AI_NOT_CONFIGURED',
       },
       { status: 503, headers },
@@ -98,7 +98,7 @@ export async function POST(request: Request) {
       code === 'PROVIDER_AUTH'
         ? 'AI 연결 설정을 확인하고 있어요. 잠시 후 다시 시도해 주세요.'
         : code === 'PROVIDER_LIMIT'
-          ? 'AI 사용 한도에 도달했어요. 잠시 후 다시 시도해 주세요.'
+          ? '무료 AI 사용 한도에 도달했어요. 한도가 초기화된 뒤 다시 이용해 주세요. 문제 채점과 기본 해설은 계속 볼 수 있어요.'
           : 'AI 답변을 받지 못했어요. 질문은 유지되니 다시 시도해 주세요.';
     return Response.json(
       { error },

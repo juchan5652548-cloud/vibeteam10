@@ -457,6 +457,1450 @@
       "answer_id": "A",
       "explanation": "적어도 하나를 한 사람은 40+35−20=55명이다. 전체 65명에서 빼면 10명이다.",
       "origin_type": "original_practice"
+    },
+    {
+      "id": "E013",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "핵심 주장 요약",
+      "difficulty": "easy",
+      "passage": "한 제조사는 포장재를 줄이기 위해 일회용 상자를 회수형 용기로 바꾸었다. 하지만 회수 일정을 정하지 않아 일부 용기가 현장에 쌓였다. 담당자는 자원 절약이라는 목표를 실현하려면 용기 도입뿐 아니라 회수·세척·재공급 과정까지 설계해야 한다고 말했다.",
+      "prompt": "담당자의 핵심 주장으로 가장 적절한 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "재사용 용기는 언제나 일회용 상자보다 비싸다.",
+          "feedback": "비용 비교는 제시되지 않았으며 핵심은 회수와 재공급 과정이다.",
+          "misconception_tag": "미제시정보추가"
+        },
+        {
+          "id": "B",
+          "text": "모든 포장재 사용을 즉시 중단해야 한다.",
+          "feedback": "포장재 전면 중단이 아니라 재사용 체계를 완성하자는 주장이다.",
+          "misconception_tag": "주장범위확대"
+        },
+        {
+          "id": "C",
+          "text": "재사용 용기 도입과 함께 순환 운영 과정도 설계해야 한다.",
+          "feedback": "용기 도입이라는 한 단계만으로는 목표가 실현되지 않았다. 회수·세척·재공급을 포함한 전체 운영 과정 설계가 핵심이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "회수형 용기를 도입하기만 하면 자원 절약이 완성된다.",
+          "feedback": "용기 도입만으로 부족해 운영 과정까지 설계해야 한다는 주장과 반대다.",
+          "misconception_tag": "핵심조건누락"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "용기 도입이라는 한 단계만으로는 목표가 실현되지 않았다. 회수·세척·재공급을 포함한 전체 운영 과정 설계가 핵심이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E014",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "문장 배열과 지시어",
+      "difficulty": "easy",
+      "passage": "가. 한 팀에서 회의실 예약이 겹쳐 업무가 지연되는 문제가 발생했다.\n나. 이 문제를 해결하려고 팀은 모든 예약을 하나의 달력에 등록하도록 했다.\n다. 이 방식을 한 달간 운영한 결과 중복 예약이 줄었다.\n라. 이러한 결과를 바탕으로 다른 팀에도 같은 방식을 도입하기로 했다.",
+      "prompt": "지시어의 연결과 사건 흐름에 맞는 배열은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "가 → 나 → 다 → 라",
+          "feedback": "문제 발생 가, 해결 방식 도입 나, 운영 결과 다, 결과를 근거로 확대 라 순서다. 각 지시어도 바로 앞 단계의 내용을 받는다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "나 → 가 → 다 → 라",
+          "feedback": "나의 ‘이 문제’가 가리키는 중복 예약 문제가 먼저 제시되어야 한다.",
+          "misconception_tag": "지시대상선후혼동"
+        },
+        {
+          "id": "C",
+          "text": "가 → 나 → 라 → 다",
+          "feedback": "라의 ‘이러한 결과’는 다에서 확인한 운영 결과를 가리킨다.",
+          "misconception_tag": "결과와확대순서혼동"
+        },
+        {
+          "id": "D",
+          "text": "가 → 다 → 나 → 라",
+          "feedback": "다의 ‘이 방식’은 나에서 제시하는 공동 달력 등록 방식이다.",
+          "misconception_tag": "해결방식선행누락"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "문제 발생 가, 해결 방식 도입 나, 운영 결과 다, 결과를 근거로 확대 라 순서다. 각 지시어도 바로 앞 단계의 내용을 받는다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E015",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "접속 표현의 관계",
+      "difficulty": "easy",
+      "passage": "새 예약 시스템은 직원이 원하는 시간대를 직접 고를 수 있어 편리하다. (     ) 도입 초기에는 기존 예약을 옮기고 사용법을 익히는 데 추가 시간이 필요하다.",
+      "prompt": "빈칸에 들어갈 말로 가장 적절한 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "예를 들어",
+          "feedback": "뒤 문장은 편리함의 사례가 아니라 도입 초기의 부담을 제시한다.",
+          "misconception_tag": "대조를예시로오독"
+        },
+        {
+          "id": "B",
+          "text": "마찬가지로",
+          "feedback": "장점과 초기 부담은 같은 방향의 유사한 내용이 아니다.",
+          "misconception_tag": "대조를유사로오독"
+        },
+        {
+          "id": "C",
+          "text": "그러나",
+          "feedback": "앞은 이용 편의라는 장점, 뒤는 초기 학습과 이전 부담이라는 한계를 제시한다. 대조를 나타내는 ‘그러나’가 적절하다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "따라서",
+          "feedback": "앞 문장의 편리함이 뒤 문장의 추가 시간 필요를 직접 결론짓지는 않는다.",
+          "misconception_tag": "대조를인과로오독"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "앞은 이용 편의라는 장점, 뒤는 초기 학습과 이전 부담이라는 한계를 제시한다. 대조를 나타내는 ‘그러나’가 적절하다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E016",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "규정 조건 적용",
+      "difficulty": "easy",
+      "passage": "가상 사내 매점의 교환 규정: 구매일 다음 날을 1일째로 세어 7일 이내이고, 영수증이 있으며, 미개봉 상태일 때에만 단순 변심 교환이 가능하다. 아래 사례에는 하자나 별도 예외가 없다.",
+      "prompt": "규정상 단순 변심 교환이 가능한 사례는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "구매 후 3일째이고 미개봉 상태지만 영수증이 없다.",
+          "feedback": "기간과 미개봉 조건을 만족해도 영수증 조건이 빠졌다.",
+          "misconception_tag": "필수조건누락"
+        },
+        {
+          "id": "B",
+          "text": "구매 후 2일째이고 영수증이 있지만 이미 개봉했다.",
+          "feedback": "미개봉 조건을 만족하지 못하며 별도 예외도 없다.",
+          "misconception_tag": "동시조건누락"
+        },
+        {
+          "id": "C",
+          "text": "구매 후 8일째이고 영수증이 있으며 미개봉 상태다.",
+          "feedback": "7일 이내라는 기간 조건을 충족하지 못한다.",
+          "misconception_tag": "기간조건누락"
+        },
+        {
+          "id": "D",
+          "text": "구매 후 5일째이고 영수증이 있으며 미개봉 상태다.",
+          "feedback": "기간·영수증·미개봉의 세 조건을 모두 만족해야 한다. 5일째이며 영수증이 있고 미개봉인 사례만 세 조건을 충족한다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "기간·영수증·미개봉의 세 조건을 모두 만족해야 한다. 5일째이며 영수증이 있고 미개봉인 사례만 세 조건을 충족한다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E017",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "주장 강화",
+      "difficulty": "medium",
+      "passage": "한 팀은 자주 묻는 업무 질문을 검색 가능한 안내문으로 제공하면 반복 문의가 줄어든다고 주장했다. 이를 확인하려고 안내문을 제공한 집단과 제공하지 않은 집단을 비교하려 한다.",
+      "prompt": "이 주장을 가장 강하게 뒷받침하는 추가 결과는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "안내문 파일의 용량이 전보다 커졌다.",
+          "feedback": "파일 크기 증가는 반복 문의 감소 효과의 근거가 아니다.",
+          "misconception_tag": "관련성없는근거"
+        },
+        {
+          "id": "B",
+          "text": "직무·인원·업무량이 비슷한 두 집단을 무작위로 나누었더니 안내문 제공 집단의 반복 문의가 더 크게 줄었다.",
+          "feedback": "다른 주요 조건을 비슷하게 하고 무작위로 나눈 비교에서 제공 집단의 반복 문의가 더 감소했다면 안내문의 효과라는 주장에 가장 직접적인 근거가 된다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "안내문에 사용한 글꼴을 모든 직원이 좋아했다.",
+          "feedback": "글꼴 선호가 반복 문의 감소를 직접 입증하지는 않는다.",
+          "misconception_tag": "선호와효과혼동"
+        },
+        {
+          "id": "D",
+          "text": "안내문 제공 집단의 인원이 절반으로 줄어 문의 건수가 감소했다.",
+          "feedback": "인원 감소만으로 문의 건수가 줄 수 있어 안내문의 효과를 분리하지 못한다.",
+          "misconception_tag": "비교조건통제누락"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "다른 주요 조건을 비슷하게 하고 무작위로 나눈 비교에서 제공 집단의 반복 문의가 더 감소했다면 안내문의 효과라는 주장에 가장 직접적인 근거가 된다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E018",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "주장 약화",
+      "difficulty": "medium",
+      "passage": "어느 부서는 재택근무를 시작한 뒤 문서 처리량이 늘었다. 부서장은 증가가 재택근무 덕분이라고 주장했다. 같은 시기에 새 문서 자동화 프로그램도 도입되었다.",
+      "prompt": "부서장의 인과 주장에 가장 강한 의문을 제기하는 정보는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "재택근무 없이 같은 자동화 프로그램만 도입한 유사 부서에서도 처리량이 비슷하게 늘었다.",
+          "feedback": "재택근무를 하지 않은 비교 부서도 자동화 프로그램으로 비슷한 증가를 보였다면 프로그램이라는 대안 원인이 더 설득력 있어진다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "새 프로그램의 이름이 이전 프로그램과 다르다.",
+          "feedback": "이름 차이는 처리량 변화의 대안 원인에 대한 근거가 아니다.",
+          "misconception_tag": "관련성없는차이"
+        },
+        {
+          "id": "C",
+          "text": "해당 부서에서 재택근무를 희망하는 직원이 있었다.",
+          "feedback": "희망자가 있다는 사실은 처리량 증가의 원인을 구분해 주지 않는다.",
+          "misconception_tag": "선호와인과혼동"
+        },
+        {
+          "id": "D",
+          "text": "부서장은 다음 달에도 재택근무를 유지할 생각이다.",
+          "feedback": "향후 계획만으로 현재 증가 원인에 대한 주장이 약해지지 않는다.",
+          "misconception_tag": "계획과증거혼동"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "재택근무를 하지 않은 비교 부서도 자동화 프로그램으로 비슷한 증가를 보였다면 프로그램이라는 대안 원인이 더 설득력 있어진다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E019",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "문맥상 어휘 의미",
+      "difficulty": "easy",
+      "passage": "처음에는 제안이 서로 달랐지만 논의를 거치며 여러 의견이 하나의 실행안으로 수렴했다.",
+      "prompt": "이 문맥에서 ‘수렴했다’의 뜻으로 가장 적절한 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "의견 수를 조사하지 않고 논의를 중단했다.",
+          "feedback": "문장은 논의를 거쳐 하나의 실행안에 이른 결과를 말한다.",
+          "misconception_tag": "문맥반대해석"
+        },
+        {
+          "id": "B",
+          "text": "여러 방향의 의견이 하나의 안으로 모아졌다.",
+          "feedback": "여러 의견이 논의를 통해 하나의 실행안으로 모였다는 문장이므로 방향이나 생각이 한곳으로 모인다는 뜻이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "참석자들에게 금전을 거두었다.",
+          "feedback": "수렴의 다른 용례를 문맥에 맞지 않게 적용한 것이다.",
+          "misconception_tag": "동음용례혼동"
+        },
+        {
+          "id": "D",
+          "text": "모든 의견이 이전보다 더 멀리 갈라졌다.",
+          "feedback": "서로 갈라지는 것은 이 문맥의 수렴과 반대 방향이다.",
+          "misconception_tag": "어휘반의혼동"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "여러 의견이 논의를 통해 하나의 실행안으로 모였다는 문장이므로 방향이나 생각이 한곳으로 모인다는 뜻이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E020",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "주장과 근거 구분",
+      "difficulty": "easy",
+      "passage": "부서는 월말마다 종이 보고서를 300부 출력했지만 실제 수령자는 평균 90명이었다. 담당자는 출력량을 실수요에 맞추어 줄여야 한다고 제안했다.",
+      "prompt": "제안의 직접적인 근거로 제시된 사실은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "내년에는 보고서를 전혀 만들지 않을 것이다.",
+          "feedback": "장래의 보고서 전면 폐지 계획은 제시되지 않았다.",
+          "misconception_tag": "미제시계획추가"
+        },
+        {
+          "id": "B",
+          "text": "출력은 300부인 데 비해 실제 수령자는 평균 90명이었다.",
+          "feedback": "300부를 출력하지만 실제 수령자는 평균 90명이라는 차이가 실수요에 맞춰 출력량을 줄이자는 제안의 사실 근거다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "모든 직원이 종이 보고서를 불편해한다.",
+          "feedback": "모든 직원의 선호를 조사했다는 정보는 없다.",
+          "misconception_tag": "미제시정보추가"
+        },
+        {
+          "id": "D",
+          "text": "출력량을 실수요에 맞추어 줄여야 한다.",
+          "feedback": "이 문장은 근거가 아니라 근거를 바탕으로 한 제안 자체다.",
+          "misconception_tag": "주장과근거혼동"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "300부를 출력하지만 실제 수령자는 평균 90명이라는 차이가 실수요에 맞춰 출력량을 줄이자는 제안의 사실 근거다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E021",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "논증의 숨은 전제",
+      "difficulty": "medium",
+      "passage": "한 담당자는 온라인 신청서 제출 전에 필수 항목 누락을 자동으로 알려 주면, 제출 후 담당자가 보완 요청을 보내는 일이 줄어들 것이라고 주장했다.",
+      "prompt": "이 주장이 성립하는 데 가장 필요한 전제는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "제출 전 안내가 있으면 신청자 수가 반드시 두 배가 된다.",
+          "feedback": "신청자 수 증가 여부는 누락으로 인한 보완 요청 감소의 필수 전제가 아니다.",
+          "misconception_tag": "불필요한전제추가"
+        },
+        {
+          "id": "B",
+          "text": "필수 항목 누락 때문에 발생하는 보완 요청이 있으며, 제출 전 안내로 그중 일부를 예방할 수 있다.",
+          "feedback": "안내가 대상으로 삼는 누락이 실제 보완 요청의 원인 중 하나여야 하고, 안내가 그 누락 일부를 예방할 수 있어야 제시된 효과가 설명된다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "신청자는 제출 전에 어떤 안내도 볼 수 없다.",
+          "feedback": "제출 전 안내를 통해 누락을 예방한다는 주장과 양립하기 어렵다.",
+          "misconception_tag": "전제와주장충돌"
+        },
+        {
+          "id": "D",
+          "text": "모든 보완 요청은 반드시 시스템 고장 때문에 발생한다.",
+          "feedback": "모든 보완 요청이 시스템 고장 때문이라면 필수 항목 안내의 효과를 설명하기 어렵다.",
+          "misconception_tag": "원인과해결책불일치"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "안내가 대상으로 삼는 누락이 실제 보완 요청의 원인 중 하나여야 하고, 안내가 그 누락 일부를 예방할 수 있어야 제시된 효과가 설명된다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E022",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "중의적 문장 명료화",
+      "difficulty": "medium",
+      "passage": "문장 ‘관리자는 직원에게 전화를 건 고객을 안내했다’는 누가 누구에게 전화를 했는지 빠르게 읽을 때 혼동하기 쉽다. 실제 상황은 고객이 직원에게 전화했고, 그 고객을 관리자가 안내한 것이다.",
+      "prompt": "실제 상황을 가장 명확하게 표현한 문장은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "직원에게 전화를 건 사람은 고객이었고, 관리자는 그 고객을 안내했다.",
+          "feedback": "통화한 사람을 고객으로, 전화받은 사람을 직원으로 명시한 뒤 관리자가 안내한 대상이 그 고객이라고 연결하면 실제 상황이 분명해진다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "직원이 관리자에게 전화했고 고객은 안내를 하지 않았다.",
+          "feedback": "관리자가 고객을 안내한 핵심 사실을 표현하지 않고 다른 상황을 추가했다.",
+          "misconception_tag": "원문사실변경"
+        },
+        {
+          "id": "C",
+          "text": "고객에게 전화를 건 사람은 직원이었고, 관리자는 그 고객을 안내했다.",
+          "feedback": "실제 상황에서는 고객이 직원에게 전화를 했으므로 통화의 방향이 바뀌었다.",
+          "misconception_tag": "행위주체뒤바꿈"
+        },
+        {
+          "id": "D",
+          "text": "관리자는 고객에게 전화한 직원을 안내했다.",
+          "feedback": "안내받은 사람은 직원이 아니라 고객이며 통화 주체도 바뀌었다.",
+          "misconception_tag": "대상과주체혼동"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "통화한 사람을 고객으로, 전화받은 사람을 직원으로 명시한 뒤 관리자가 안내한 대상이 그 고객이라고 연결하면 실제 상황이 분명해진다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E023",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "문단의 통일성",
+      "difficulty": "easy",
+      "passage": "가. 배송 상품의 파손을 줄이려면 완충재의 두께를 상품 특성에 맞추어야 한다.\n나. 상자 내부의 빈 공간을 줄이면 이동 중 흔들림을 줄일 수 있다.\n다. 이번 여름휴가는 직원별로 희망하는 날짜가 다르다.\n라. 포장 후 낙하 시험을 하면 취약한 부분을 미리 확인할 수 있다.",
+      "prompt": "문단의 중심 내용과 가장 관련이 적은 문장은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "가",
+          "feedback": "완충재의 두께는 배송 중 파손을 줄이는 포장 방법과 직접 관련된다.",
+          "misconception_tag": "주제관련문장제외"
+        },
+        {
+          "id": "B",
+          "text": "다",
+          "feedback": "가·나·라는 배송 상품의 파손 방지를 위한 포장과 점검을 다룬다. 직원 휴가 날짜를 말하는 다는 이 중심 내용에서 벗어난다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "나",
+          "feedback": "빈 공간과 흔들림을 줄이는 내용은 상품 파손 방지와 관련된다.",
+          "misconception_tag": "주제관련문장제외"
+        },
+        {
+          "id": "D",
+          "text": "라",
+          "feedback": "낙하 시험을 통한 취약점 확인은 포장 안전성 확보와 관련된다.",
+          "misconception_tag": "주제관련문장제외"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "가·나·라는 배송 상품의 파손 방지를 위한 포장과 점검을 다룬다. 직원 휴가 날짜를 말하는 다는 이 중심 내용에서 벗어난다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E024",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "출발 시차와 만남",
+      "difficulty": "medium",
+      "passage": "서로 300km 떨어진 두 지점에서 A와 B가 서로를 향해 이동한다. A는 오전 8시에 시속 60km로 출발하고 B는 오전 9시에 시속 90km로 출발한다. 두 사람의 속도는 일정하고 중간에 멈추지 않는다.",
+      "prompt": "두 사람이 만나는 시각은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "오전 10시 36분",
+          "feedback": "오전 9시까지 A가 60km를 가서 남은 거리는 240km다. 이후 접근 속도는 60+90=150km/h이므로 240÷150=1.6시간=1시간 36분 후인 오전 10시 36분에 만난다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "오전 11시",
+          "feedback": "B 출발 후에는 A와 B가 모두 거리를 줄이므로 한 사람의 속도만 사용하면 안 된다.",
+          "misconception_tag": "상대속도누락"
+        },
+        {
+          "id": "C",
+          "text": "오전 10시 24분",
+          "feedback": "240÷150=1.6시간의 0.6시간은 24분이 아니라 36분이다.",
+          "misconception_tag": "시간소수변환오류"
+        },
+        {
+          "id": "D",
+          "text": "오전 10시",
+          "feedback": "B가 출발할 때의 남은 거리 240km를 두 사람의 합한 속도 150km/h로 나누어야 한다.",
+          "misconception_tag": "출발시차누락"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "오전 9시까지 A가 60km를 가서 남은 거리는 240km다. 이후 접근 속도는 60+90=150km/h이므로 240÷150=1.6시간=1시간 36분 후인 오전 10시 36분에 만난다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E025",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "최소공배수와 범위",
+      "difficulty": "easy",
+      "passage": "동일한 부품을 12개씩 상자에 담아도 남지 않고 18개씩 상자에 담아도 남지 않는다. 부품은 100개보다 많다.",
+      "prompt": "가능한 부품 수 중 가장 적은 수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "108개",
+          "feedback": "12=2²×3, 18=2×3²이므로 최소공배수는 36이다. 36의 배수 36, 72, 108 중 처음으로 100을 넘는 수는 108이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "144개",
+          "feedback": "144도 두 수의 공배수지만 100보다 큰 가장 작은 공배수 108이 먼저 있다.",
+          "misconception_tag": "최솟값조건누락"
+        },
+        {
+          "id": "C",
+          "text": "126개",
+          "feedback": "126은 18의 배수지만 12로 나누면 나머지가 생긴다.",
+          "misconception_tag": "공배수조건누락"
+        },
+        {
+          "id": "D",
+          "text": "120개",
+          "feedback": "120은 12의 배수지만 18로 나누면 나머지가 생긴다.",
+          "misconception_tag": "공배수조건누락"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "12=2²×3, 18=2×3²이므로 최소공배수는 36이다. 36의 배수 36, 72, 108 중 처음으로 100을 넘는 수는 108이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E026",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "연립방정식과 수량",
+      "difficulty": "easy",
+      "passage": "행사 입장권은 일반권이 3,000원, 특별권이 5,000원이다. 할인 없이 총 28장을 판매해 104,000원을 받았다.",
+      "prompt": "판매한 특별권은 몇 장인가?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "10장",
+          "feedback": "모두 일반권이라고 보면 28×3,000=84,000원이다. 실제와의 차이 20,000원을 장당 가격 차이 2,000원으로 나누면 특별권은 10장이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "8장",
+          "feedback": "특별권 8장과 일반권 20장이면 매출은 100,000원으로 주어진 금액보다 작다.",
+          "misconception_tag": "총액검산누락"
+        },
+        {
+          "id": "C",
+          "text": "14장",
+          "feedback": "각각 14장이라면 매출이 112,000원이라 조건과 맞지 않는다.",
+          "misconception_tag": "수량임의균등배분"
+        },
+        {
+          "id": "D",
+          "text": "18장",
+          "feedback": "특별권 18장과 일반권 10장이면 매출이 120,000원이 된다.",
+          "misconception_tag": "총액검산누락"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "모두 일반권이라고 보면 28×3,000=84,000원이다. 실제와의 차이 20,000원을 장당 가격 차이 2,000원으로 나누면 특별권은 10장이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E027",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "왕복 평균 속력",
+      "difficulty": "medium",
+      "passage": "같은 두 지점 사이 편도 거리는 40km다. 갈 때는 시속 60km, 올 때는 시속 40km로 같은 길을 이동했다. 멈춘 시간은 없다.",
+      "prompt": "왕복 전체의 평균 속력은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "시속 45km",
+          "feedback": "총거리 80km와 총시간 5/3시간을 사용해 나누어야 한다.",
+          "misconception_tag": "총시간계산오류"
+        },
+        {
+          "id": "B",
+          "text": "시속 52km",
+          "feedback": "왕복 평균 속력은 80÷(40/60+40/40)으로 계산하며 52가 나오지 않는다.",
+          "misconception_tag": "총거리시간비율오류"
+        },
+        {
+          "id": "C",
+          "text": "시속 50km",
+          "feedback": "서로 다른 시간 동안 이동했으므로 두 속력을 단순 평균하면 안 된다.",
+          "misconception_tag": "속력단순평균"
+        },
+        {
+          "id": "D",
+          "text": "시속 48km",
+          "feedback": "갈 때 2/3시간, 올 때 1시간이 걸려 총시간은 5/3시간이다. 총거리 80km를 나누면 80÷(5/3)=48km/h다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "갈 때 2/3시간, 올 때 1시간이 걸려 총시간은 5/3시간이다. 총거리 80km를 나누면 80÷(5/3)=48km/h다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E028",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "맞물린 톱니바퀴의 비례",
+      "difficulty": "easy",
+      "passage": "톱니 수가 12개인 A와 30개인 B가 미끄럼 없이 맞물려 돈다. A는 1분에 75바퀴 회전한다.",
+      "prompt": "B가 1분 동안 회전하는 횟수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "45바퀴",
+          "feedback": "B가 45바퀴 돌면 톱니가 30×45=1,350개 지나가 A의 12×75=900개와 같지 않다.",
+          "misconception_tag": "비례를차이로처리"
+        },
+        {
+          "id": "B",
+          "text": "60바퀴",
+          "feedback": "두 바퀴를 통과하는 톱니 수 12×75와 30×B가 같아야 한다.",
+          "misconception_tag": "비례계수누락"
+        },
+        {
+          "id": "C",
+          "text": "187.5바퀴",
+          "feedback": "톱니가 많은 B는 더 천천히 돈다. 톱니 수 비율을 반대로 적용했다.",
+          "misconception_tag": "반비례방향혼동"
+        },
+        {
+          "id": "D",
+          "text": "30바퀴",
+          "feedback": "같은 시간에 맞물려 지나가는 톱니 수는 같다. 12×75=30×B이므로 B=900÷30=30바퀴다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "같은 시간에 맞물려 지나가는 톱니 수는 같다. 12×75=30×B이므로 B=900÷30=30바퀴다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E029",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "조건을 갖춘 조합",
+      "difficulty": "medium",
+      "passage": "개발자 5명과 디자이너 3명 중 개발자 2명과 디자이너 1명으로 이루어진 3인 팀을 만든다. 구성원이 같으면 선발 순서와 관계없이 같은 팀이다.",
+      "prompt": "만들 수 있는 서로 다른 팀의 수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "56개",
+          "feedback": "8C3=56은 개발자 수와 디자이너 수 조건을 무시한 모든 3인 팀의 수다.",
+          "misconception_tag": "선발구성조건누락"
+        },
+        {
+          "id": "B",
+          "text": "24개",
+          "feedback": "개발자 2명을 고르는 조합은 5C2=10가지다. 이를 디자이너 3가지와 곱한다.",
+          "misconception_tag": "조건별조합계산오류"
+        },
+        {
+          "id": "C",
+          "text": "40개",
+          "feedback": "개발자와 디자이너의 선택 경우는 각각 10가지와 3가지여서 곱은 30이다.",
+          "misconception_tag": "곱의법칙계산오류"
+        },
+        {
+          "id": "D",
+          "text": "30개",
+          "feedback": "개발자 2명을 고르는 경우는 5×4÷2=10가지다. 각 경우에 디자이너 1명을 3가지로 고를 수 있어 10×3=30가지다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "개발자 2명을 고르는 경우는 5×4÷2=10가지다. 각 경우에 디자이너 1명을 3가지로 고를 수 있어 10×3=30가지다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E030",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "연결된 비의 통일",
+      "difficulty": "medium",
+      "passage": "세 부서 A·B·C의 인원 비는 A:B=3:5, B:C=10:7이다. 세 부서 인원 합계는 460명이고 중복 소속은 없다.",
+      "prompt": "A 부서의 인원은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "100명",
+          "feedback": "통일한 비 A:B:C=6:10:7의 합은 23이며 A 몫은 6/23이다.",
+          "misconception_tag": "전체비율기준오류"
+        },
+        {
+          "id": "B",
+          "text": "60명",
+          "feedback": "A:B의 3:5를 B:C의 10:7과 연결하려면 B를 10으로 맞추어 A를 6으로 바꿔야 한다.",
+          "misconception_tag": "공통항비율통일누락"
+        },
+        {
+          "id": "C",
+          "text": "200명",
+          "feedback": "200명은 B의 몫 10/23에 해당하며 A의 몫은 6/23이다.",
+          "misconception_tag": "대상부서혼동"
+        },
+        {
+          "id": "D",
+          "text": "120명",
+          "feedback": "A:B=3:5를 두 배 하면 6:10이다. 따라서 A:B:C=6:10:7이며 한 단위는 460÷23=20명이다. A는 6×20=120명이다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "A:B=3:5를 두 배 하면 6:10이다. 따라서 A:B:C=6:10:7이며 한 단위는 460÷23=20명이다. A는 6×20=120명이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E031",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "기간별 복리 계산",
+      "difficulty": "medium",
+      "passage": "가상 계산 규칙에서 원금 100만원에 매년 말 잔액의 10%를 이자로 붙인다. 이자는 인출하지 않으며 수수료나 세금은 없다고 가정한다.",
+      "prompt": "2년 뒤 원금을 제외한 총 이자는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "20만원",
+          "feedback": "매년 원금에만 10%를 적용한 단리 계산이다. 2년째에는 첫해 이자에도 이자가 붙는다.",
+          "misconception_tag": "단리와복리혼동"
+        },
+        {
+          "id": "B",
+          "text": "21만원",
+          "feedback": "1년 뒤 잔액은 100×1.1=110만원, 2년 뒤에는 110×1.1=121만원이다. 원금 100만원을 빼면 총 이자는 21만원이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "11만원",
+          "feedback": "11만원은 2년째에 새로 붙는 이자다. 첫해 이자 10만원도 합해야 한다.",
+          "misconception_tag": "해당기간이자만집계"
+        },
+        {
+          "id": "D",
+          "text": "22.1만원",
+          "feedback": "첫해 이자 10만원에 셋째 해 기준 이자 12.1만원을 더한 값이다. 둘째 해 이자는 110만원의 10%인 11만원이다.",
+          "misconception_tag": "계산기간과잉적용"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "1년 뒤 잔액은 100×1.1=110만원, 2년 뒤에는 110×1.1=121만원이다. 원금 100만원을 빼면 총 이자는 21만원이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E032",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "손익분기와 정수 조건",
+      "difficulty": "medium",
+      "passage": "가상 상품 판매에는 수량과 무관하게 고정비 20,000원이 들고, 상품 1개당 추가 비용은 3,000원이다. 판매가격은 개당 5,000원이며 만든 수량을 모두 판매한다.",
+      "prompt": "총수입이 총비용보다 커지기 위한 최소 판매 수량은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "11개",
+          "feedback": "판매 수량을 n이라 하면 5,000n>20,000+3,000n이어야 한다. 2,000n>20,000이므로 n>10이고, 최소 정수는 11이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "9개",
+          "feedback": "9개일 때 수입 45,000원보다 총비용 47,000원이 커서 손실이다.",
+          "misconception_tag": "손익검산누락"
+        },
+        {
+          "id": "C",
+          "text": "20개",
+          "feedback": "20개면 이익이 나지만 11개부터 이익이 나므로 최소 수량은 아니다.",
+          "misconception_tag": "최솟값조건누락"
+        },
+        {
+          "id": "D",
+          "text": "10개",
+          "feedback": "10개일 때 수입과 총비용이 모두 50,000원으로 같아서 이익이 양수가 아니다.",
+          "misconception_tag": "초과와이상혼동"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "판매 수량을 n이라 하면 5,000n>20,000+3,000n이어야 한다. 2,000n>20,000이므로 n>10이고, 최소 정수는 11이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E033",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "구성비와 퍼센트포인트",
+      "difficulty": "easy",
+      "passage": "가상 공장의 생산량은 전년에 A제품 40개·B제품 60개, 올해 A제품 50개·B제품 50개였다. 각 연도의 총생산량은 100개다.",
+      "prompt": "전체 생산량 중 A제품의 비중은 전년보다 얼마나 커졌는가?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "25%포인트",
+          "feedback": "25%는 A 생산량 또는 비중의 상대 증가율이다. 비중 차이는 50−40=10%포인트다.",
+          "misconception_tag": "상대변화와비중차이혼동"
+        },
+        {
+          "id": "B",
+          "text": "50%포인트",
+          "feedback": "50%는 올해 비중 자체이며 전년과의 차이가 아니다.",
+          "misconception_tag": "현재값과변화량혼동"
+        },
+        {
+          "id": "C",
+          "text": "10%포인트",
+          "feedback": "전년 A 비중은 40/100=40%, 올해는 50/100=50%다. 비중의 차이는 50−40=10%포인트다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "10%",
+          "feedback": "40%에서 50%로의 비중 차이는 10%포인트이며 상대 증가율은 25%다.",
+          "misconception_tag": "퍼센트와퍼센트포인트혼동"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "전년 A 비중은 40/100=40%, 올해는 50/100=50%다. 비중의 차이는 50−40=10%포인트다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E034",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "매출액 대비 이익률",
+      "difficulty": "medium",
+      "passage": "가상 사업별 자료(단위: 백만원)\nA: 매출액 100, 비용 80\nB: 매출액 150, 비용 115\nC: 매출액 120, 비용 96\n이익률은 (매출액−비용)÷매출액으로 정의한다.",
+      "prompt": "이익률이 가장 높은 사업은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "B사업",
+          "feedback": "A는 (100−80)/100=20%, B는 (150−115)/150=약 23.3%, C는 (120−96)/120=20%다. B가 가장 높다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "A사업",
+          "feedback": "A 이익률은 20/100=20%로 B의 35/150보다 낮다.",
+          "misconception_tag": "이익률비교계산오류"
+        },
+        {
+          "id": "C",
+          "text": "C사업",
+          "feedback": "C 이익률은 24/120=20%로 B의 약 23.3%보다 낮다.",
+          "misconception_tag": "기준값대비비율오류"
+        },
+        {
+          "id": "D",
+          "text": "세 사업의 이익률은 모두 같다.",
+          "feedback": "A와 C는 20%로 같지만 B는 약 23.3%라 더 높다.",
+          "misconception_tag": "일부동률전체일반화"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "A는 (100−80)/100=20%, B는 (150−115)/150=약 23.3%, C는 (120−96)/120=20%다. B가 가장 높다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E035",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "중앙값과 평균 구분",
+      "difficulty": "easy",
+      "passage": "6개 지점의 일별 오류 건수를 작은 순서로 정리하면 3, 7, 9, 10, 11, 20건이다. 자료 수가 짝수일 때 중앙값은 가운데 두 값의 평균으로 정의한다.",
+      "prompt": "오류 건수의 중앙값은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "9건",
+          "feedback": "짝수 개 자료에서는 세 번째 값 하나만 고르지 않고 세 번째와 네 번째 값을 평균한다.",
+          "misconception_tag": "짝수중앙값처리누락"
+        },
+        {
+          "id": "B",
+          "text": "11건",
+          "feedback": "11은 다섯 번째 값으로 가운데 두 위치인 세 번째·네 번째 값이 아니다.",
+          "misconception_tag": "자료위치오독"
+        },
+        {
+          "id": "C",
+          "text": "9.5건",
+          "feedback": "자료가 6개이므로 가운데 위치는 세 번째와 네 번째다. 두 값 9와 10의 평균인 (9+10)/2=9.5건이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "10건",
+          "feedback": "10은 이 자료의 산술평균이기도 하지만 중앙값은 (9+10)/2=9.5다.",
+          "misconception_tag": "평균과중앙값혼동"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "자료가 6개이므로 가운데 위치는 세 번째와 네 번째다. 두 값 9와 10의 평균인 (9+10)/2=9.5건이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E036",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "기준지수 환산",
+      "difficulty": "easy",
+      "passage": "가상 물류팀의 2024년 운송량은 80톤이다. 2024년 운송량을 지수 100으로 정했을 때 2025년 운송량 지수는 125였다.",
+      "prompt": "2025년 실제 운송량은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "105톤",
+          "feedback": "지수 증가분 25를 실제 톤수 80에 그대로 더할 수 없다.",
+          "misconception_tag": "지수차를실제량에가산"
+        },
+        {
+          "id": "B",
+          "text": "64톤",
+          "feedback": "80÷1.25=64는 비율을 반대로 적용한 계산이다.",
+          "misconception_tag": "지수환산방향혼동"
+        },
+        {
+          "id": "C",
+          "text": "100톤",
+          "feedback": "지수 100이 80톤에 대응하므로 지수 125는 80×125/100=100톤에 대응한다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "125톤",
+          "feedback": "125는 지수이며 실제 톤수가 아니다. 기준량 80톤에 125/100을 곱해야 한다.",
+          "misconception_tag": "지수와실제값혼동"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "지수 100이 80톤에 대응하므로 지수 125는 80×125/100=100톤에 대응한다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E037",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "기존 인원 유지율",
+      "difficulty": "medium",
+      "passage": "가상 교육팀별 현황\nA팀: 처음 참여 200명, 그중 계속 참여 150명, 신규 참여 40명\nB팀: 처음 참여 120명, 그중 계속 참여 96명, 신규 참여 30명\nC팀: 처음 참여 180명, 그중 계속 참여 126명, 신규 참여 80명\n유지율은 처음 참여자 중 계속 참여한 사람의 비율이다.",
+      "prompt": "유지율이 가장 높은 팀과 그 비율은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "B팀, 80%",
+          "feedback": "A는 150/200=75%, B는 96/120=80%, C는 126/180=70%다. 신규 참여자는 유지율 계산에서 제외하며 B가 가장 높다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "C팀, 약 114.4%",
+          "feedback": "(126+80)/180은 신규 참여자까지 더한 비율이다. 유지율 분자에는 기존 참여자 중 계속 참여한 사람만 넣는다.",
+          "misconception_tag": "비율분자범위혼동"
+        },
+        {
+          "id": "C",
+          "text": "C팀, 70%",
+          "feedback": "C의 126/180=70%는 맞지만 세 팀 중 가장 낮다.",
+          "misconception_tag": "최댓값비교누락"
+        },
+        {
+          "id": "D",
+          "text": "A팀, 75%",
+          "feedback": "A의 150/200=75%는 맞지만 B의 96/120=80%보다 낮다.",
+          "misconception_tag": "최댓값비교누락"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "A는 150/200=75%, B는 96/120=80%, C는 126/180=70%다. 신규 참여자는 유지율 계산에서 제외하며 B가 가장 높다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E038",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "누적값에서 기간값 구하기",
+      "difficulty": "easy",
+      "passage": "가상 판매팀의 연초부터 월말까지 누적 판매량은 1월 말 80개, 2월 말 150개, 3월 말 250개, 4월 말 370개다. 반품은 없다.",
+      "prompt": "3월 한 달 동안 판매한 수량은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "100개",
+          "feedback": "3월 판매량은 3월 말 누적 250개에서 2월 말 누적 150개를 뺀 100개다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "170개",
+          "feedback": "250−80=170은 2월과 3월 판매량의 합이다. 3월만 구하려면 150을 뺀다.",
+          "misconception_tag": "차감기준시점혼동"
+        },
+        {
+          "id": "C",
+          "text": "150개",
+          "feedback": "150개는 2월 말까지의 누적값으로 3월 단독 판매량이 아니다.",
+          "misconception_tag": "기준시점오독"
+        },
+        {
+          "id": "D",
+          "text": "250개",
+          "feedback": "250개는 1월부터 3월 말까지의 누적값이다. 2월 말 누적값을 빼야 한다.",
+          "misconception_tag": "누적값과기간값혼동"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "3월 판매량은 3월 말 누적 250개에서 2월 말 누적 150개를 뺀 100개다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E039",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "부분집단과 전체 비율",
+      "difficulty": "medium",
+      "passage": "가상 공장 검사 자료\n전기: A부서 검사 100개 중 불량 1개, B부서 검사 900개 중 불량 90개\n후기: A부서 검사 900개 중 불량 18개, B부서 검사 100개 중 불량 11개\n각 기간 두 부서의 검사 대상은 중복되지 않는다.",
+      "prompt": "자료에 대한 올바른 설명은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "두 부서의 불량률이 각각 감소했고 전체 불량률도 감소했다.",
+          "feedback": "A는 1%에서 2%, B는 10%에서 11%로 각각 증가했다.",
+          "misconception_tag": "부서별분모무시"
+        },
+        {
+          "id": "B",
+          "text": "두 부서의 불량률은 각각 증가했지만 전체 불량률은 감소했다.",
+          "feedback": "A 불량률은 1/100=1%에서 18/900=2%, B는 90/900=10%에서 11/100=11%로 상승했다. 전체는 전기 91/1000=9.1%, 후기 29/1000=2.9%다. 검사량의 부서별 비중이 달라 전체 비율은 감소할 수 있다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "두 부서의 검사량 합계가 같으므로 전체 불량률은 같다.",
+          "feedback": "총검사량이 같아도 불량 개수가 91개에서 29개로 달라지면 전체 비율도 달라진다.",
+          "misconception_tag": "같은분모를같은비율로오독"
+        },
+        {
+          "id": "D",
+          "text": "두 부서의 불량률이 각각 증가했으므로 전체 불량률도 증가했다.",
+          "feedback": "전체는 전기 91/1000=9.1%, 후기 29/1000=2.9%로 감소했다.",
+          "misconception_tag": "부분변화전체단정"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "A 불량률은 1/100=1%에서 18/900=2%, B는 90/900=10%에서 11/100=11%로 상승했다. 전체는 전기 91/1000=9.1%, 후기 29/1000=2.9%다. 검사량의 부서별 비중이 달라 전체 비율은 감소할 수 있다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E040",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "통합 가동률",
+      "difficulty": "medium",
+      "passage": "가상 설비의 하루 자료\nA설비: 가동 가능 시간 40시간, 실제 가동 30시간\nB설비: 가동 가능 시간 60시간, 실제 가동 42시간\n통합 가동률은 두 설비의 실제 가동 시간 합을 가동 가능 시간 합으로 나눈 값이다. 시간은 여러 장비를 합산한 값이다.",
+      "prompt": "통합 가동률은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "72.5%",
+          "feedback": "A 75%와 B 70%를 단순 평균한 값이다. 가동 가능 시간이 다르므로 합계로 계산해야 한다.",
+          "misconception_tag": "비율단순평균"
+        },
+        {
+          "id": "B",
+          "text": "75%",
+          "feedback": "75%는 A설비의 가동률이며 B설비를 포함한 통합 값이 아니다.",
+          "misconception_tag": "일부집단값대체"
+        },
+        {
+          "id": "C",
+          "text": "70%",
+          "feedback": "70%는 B설비의 가동률이며 A설비의 가동 시간도 합해야 한다.",
+          "misconception_tag": "일부집단값대체"
+        },
+        {
+          "id": "D",
+          "text": "72%",
+          "feedback": "실제 가동 시간은 30+42=72시간, 가능 시간은 40+60=100시간이다. 통합 가동률은 72/100=72%다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "실제 가동 시간은 30+42=72시간, 가능 시간은 40+60=100시간이다. 통합 가동률은 72/100=72%다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E041",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "복수 조건과 효율 비교",
+      "difficulty": "medium",
+      "passage": "가상 프로젝트 자료(비용 단위: 만원)\nA: 비용 8, 효과 32점, 소요 6일\nB: 비용 10, 효과 35점, 소요 5일\nC: 비용 6, 효과 24점, 소요 8일\nD: 비용 9, 효과 27점, 소요 4일\n선정 조건은 비용 9만원 이하이면서 소요 6일 이하다. 효율은 효과÷비용으로 계산한다.",
+      "prompt": "선정 조건을 만족하는 프로젝트 중 효율이 가장 높은 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "C프로젝트",
+          "feedback": "C의 효율은 4점/만원이지만 소요 8일이 기간 한도 6일을 넘는다.",
+          "misconception_tag": "기간조건누락"
+        },
+        {
+          "id": "B",
+          "text": "D프로젝트",
+          "feedback": "D는 조건을 만족하지만 효율 27/9=3으로 A의 32/8=4보다 낮다.",
+          "misconception_tag": "조건충족후최적화누락"
+        },
+        {
+          "id": "C",
+          "text": "B프로젝트",
+          "feedback": "B는 5일로 기간 조건을 만족하지만 비용 10만원이 예산 9만원을 넘는다.",
+          "misconception_tag": "예산조건누락"
+        },
+        {
+          "id": "D",
+          "text": "A프로젝트",
+          "feedback": "B는 비용, C는 기간 조건에서 제외된다. 남은 A와 D의 효율은 각각 32/8=4, 27/9=3이므로 A가 가장 높다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "B는 비용, C는 기간 조건에서 제외된다. 남은 A와 D의 효율은 각각 32/8=4, 27/9=3이므로 A가 가장 높다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E042",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "진술의 참 개수",
+      "difficulty": "medium",
+      "passage": "A·B·C 세 사람 중 정확히 한 명이 가상 사건의 당사자다.\nA: 나는 당사자가 아니다.\nB: A가 당사자다.\nC: B가 당사자다.\n세 진술 중 정확히 두 개가 참이다.",
+      "prompt": "당사자는 누구인가?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A",
+          "feedback": "A가 당사자이면 A의 말은 거짓, B의 말만 참, C의 말은 거짓이 되어 참이 한 개다.",
+          "misconception_tag": "참진술개수검증누락"
+        },
+        {
+          "id": "B",
+          "text": "주어진 조건으로는 알 수 없다.",
+          "feedback": "A·B·C를 각각 가정하면 참이 두 개인 경우는 B가 당사자인 경우 하나뿐이다.",
+          "misconception_tag": "경우검토미완료"
+        },
+        {
+          "id": "C",
+          "text": "B",
+          "feedback": "A가 당사자이면 진릿값은 거짓·참·거짓이다. B이면 참·거짓·참, C이면 참·거짓·거짓이다. 정확히 두 개가 참인 경우는 B뿐이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "C",
+          "feedback": "C가 당사자이면 A의 말만 참이고 B·C의 말은 거짓이어서 참이 한 개다.",
+          "misconception_tag": "참진술개수검증누락"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "A가 당사자이면 진릿값은 거짓·참·거짓이다. B이면 참·거짓·참, C이면 참·거짓·거짓이다. 정확히 두 개가 참인 경우는 B뿐이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E043",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "조건부 선발",
+      "difficulty": "medium",
+      "passage": "A·B·C·D 중 정확히 두 명을 선발한다. A를 선발하면 B도 선발한다. C를 선발하면 B는 선발하지 않는다. D를 선발하면 C도 선발한다.",
+      "prompt": "다음 중 가능한 선발 조합은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "B와 C",
+          "feedback": "C를 선발하면 B는 제외해야 하므로 두 사람을 함께 선발할 수 없다.",
+          "misconception_tag": "배타조건누락"
+        },
+        {
+          "id": "B",
+          "text": "A와 C",
+          "feedback": "A를 선발하면 B도 필요하므로 A와 C만 두 명 선발하는 것은 불가능하다.",
+          "misconception_tag": "조건부동반선발누락"
+        },
+        {
+          "id": "C",
+          "text": "A와 B",
+          "feedback": "A와 B를 선발하면 A→B를 만족하며 C·D가 없어 다른 조건에도 어긋나지 않는다. 나머지 제시 조합은 동반 선발 또는 배타 조건을 위반한다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "B와 D",
+          "feedback": "D를 선발하면 C도 필요하고 C는 B와 함께 선발할 수 없으므로 조건에 맞지 않는다.",
+          "misconception_tag": "조건연쇄누락"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "A와 B를 선발하면 A→B를 만족하며 C·D가 없어 다른 조건에도 어긋나지 않는다. 나머지 제시 조합은 동반 선발 또는 배타 조건을 위반한다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E044",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "승패표의 제약",
+      "difficulty": "medium",
+      "passage": "A·B·C·D가 서로 한 번씩 경기했고 무승부는 없다. 최종 승수는 A가 3승, B·C·D는 각각 1승이다. B는 C에게 이겼다.",
+      "prompt": "반드시 참인 경기 결과는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "B는 A에게 이겼다.",
+          "feedback": "A가 3승이므로 A는 다른 세 사람에게 모두 이겼다.",
+          "misconception_tag": "전체승수조건누락"
+        },
+        {
+          "id": "B",
+          "text": "D는 B에게 이겼다.",
+          "feedback": "A는 전승이다. B는 A에게 지고 C에게 이겨 이미 1승이므로 D에게 져야 한다. 따라서 D는 B에게 이겼고 C는 D에게 이겼다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "C는 D에게 졌다.",
+          "feedback": "C는 A·B에게 져서 자신의 1승을 D에게서 얻어야 한다.",
+          "misconception_tag": "잔여승수추론오류"
+        },
+        {
+          "id": "D",
+          "text": "D는 C에게 이겼다.",
+          "feedback": "C가 1승을 채우려면 D에게 이겨야 하므로 D는 C에게 진다.",
+          "misconception_tag": "승패방향혼동"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "A는 전승이다. B는 A에게 지고 C에게 이겨 이미 1승이므로 D에게 져야 한다. 따라서 D는 B에게 이겼고 C는 D에게 이겼다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E045",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "정의된 연산 적용",
+      "difficulty": "easy",
+      "passage": "두 수 a와 b에 대해 a★b=2a+b²로 연산 ★를 정의한다. 괄호 안 연산을 먼저 계산한다.",
+      "prompt": "(2★3)★1의 값은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "26",
+          "feedback": "13★1에서는 2×13뿐 아니라 1²도 더해야 한다.",
+          "misconception_tag": "마지막항누락"
+        },
+        {
+          "id": "B",
+          "text": "27",
+          "feedback": "먼저 2★3=2×2+3²=13이다. 이어서 13★1=2×13+1²=27이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "15",
+          "feedback": "2★3=13을 구한 뒤 다시 13★1=2×13+1²로 계산해야 한다.",
+          "misconception_tag": "중첩연산미완료"
+        },
+        {
+          "id": "D",
+          "text": "19",
+          "feedback": "b²를 계산하고 각 단계에서 정의 2a+b²를 그대로 적용해야 한다.",
+          "misconception_tag": "연산정의대입오류"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "먼저 2★3=2×2+3²=13이다. 이어서 13★1=2×13+1²=27이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E046",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "방향 이동과 상쇄",
+      "difficulty": "easy",
+      "passage": "직원은 출발점에서 동쪽으로 3칸, 북쪽으로 4칸, 서쪽으로 1칸, 남쪽으로 1칸을 차례로 이동했다. 모든 칸의 크기는 같고 지도 위쪽이 북쪽이다.",
+      "prompt": "마지막 위치를 출발점 기준으로 옳게 표현한 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "동쪽 3칸, 북쪽 4칸",
+          "feedback": "마지막 서쪽 1칸과 남쪽 1칸을 반영하지 않았다.",
+          "misconception_tag": "후속이동누락"
+        },
+        {
+          "id": "B",
+          "text": "동쪽 4칸, 북쪽 5칸",
+          "feedback": "서쪽·남쪽 이동은 앞선 동쪽·북쪽 이동에서 빼야 하며 더하지 않는다.",
+          "misconception_tag": "반대방향합산"
+        },
+        {
+          "id": "C",
+          "text": "서쪽 2칸, 남쪽 3칸",
+          "feedback": "각 축의 크기는 맞지만 동서와 남북 방향을 반대로 표시했다.",
+          "misconception_tag": "최종방향뒤집음"
+        },
+        {
+          "id": "D",
+          "text": "동쪽 2칸, 북쪽 3칸",
+          "feedback": "동서 방향은 동쪽 3−서쪽 1=동쪽 2칸이다. 남북 방향은 북쪽 4−남쪽 1=북쪽 3칸이다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "동서 방향은 동쪽 3−서쪽 1=동쪽 2칸이다. 남북 방향은 북쪽 4−남쪽 1=북쪽 3칸이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E047",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "인접 금지 배열의 수",
+      "difficulty": "medium",
+      "passage": "0과 1로 이루어진 길이 4의 코드에서 1은 정확히 두 번 나타나고 두 1은 서로 이웃할 수 없다. 맨 앞에 0이 오는 코드도 허용한다.",
+      "prompt": "만들 수 있는 서로 다른 코드의 수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "4개",
+          "feedback": "가능한 코드를 직접 나열하면 1010·1001·0101 세 가지이며 네 번째는 없다.",
+          "misconception_tag": "배열중복또는금지포함"
+        },
+        {
+          "id": "B",
+          "text": "2개",
+          "feedback": "1010과 0101뿐 아니라 1001도 1이 이웃하지 않는 유효한 코드다.",
+          "misconception_tag": "비교대배열누락"
+        },
+        {
+          "id": "C",
+          "text": "3개",
+          "feedback": "두 1의 자리 조합은 (1,3), (1,4), (2,4)뿐이다. 각각 1010, 1001, 0101이므로 3개다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "6개",
+          "feedback": "4개 자리에서 두 자리를 고르는 전체 6가지에는 1100·0110·0011처럼 1이 이웃한 경우가 포함된다.",
+          "misconception_tag": "인접금지조건누락"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "두 1의 자리 조합은 (1,3), (1,4), (2,4)뿐이다. 각각 1010, 1001, 0101이므로 3개다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E048",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "연속 순서와 배제 조건",
+      "difficulty": "medium",
+      "passage": "A·B·C·D 작업을 월·화·수·목요일에 하루 하나씩 서로 다른 날에 한다. D는 월요일이다. A의 바로 다음 날에 B를 하며, C는 목요일에 하지 않는다.",
+      "prompt": "C를 하는 요일은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "목요일",
+          "feedback": "C는 목요일에 하지 않는다고 명시했다.",
+          "misconception_tag": "명시적배제조건누락"
+        },
+        {
+          "id": "B",
+          "text": "화요일",
+          "feedback": "D가 월요일이므로 A·B는 화·수 또는 수·목에 연속 배치되어야 한다. 화·수에 두면 C가 목요일이 되어 금지 조건에 어긋난다. 따라서 수·목에 A·B, 화요일에 C다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "수요일",
+          "feedback": "C가 수요일이면 A·B에 남는 화요일·목요일이 연속되지 않아 바로 다음 날 조건을 만족하지 못한다.",
+          "misconception_tag": "연속조건누락"
+        },
+        {
+          "id": "D",
+          "text": "월요일",
+          "feedback": "월요일은 D로 이미 정해져 있어 C를 함께 배정할 수 없다.",
+          "misconception_tag": "하루한작업조건누락"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "D가 월요일이므로 A·B는 화·수 또는 수·목에 연속 배치되어야 한다. 화·수에 두면 C가 목요일이 되어 금지 조건에 어긋난다. 따라서 수·목에 A·B, 화요일에 C다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E049",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "존재 명제와 집합 배제",
+      "difficulty": "medium",
+      "passage": "어떤 디자이너는 개발자다. 개발자 중 관리자도 겸하는 사람은 한 명도 없다.",
+      "prompt": "두 문장으로부터 반드시 참인 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "모든 관리자는 개발자다.",
+          "feedback": "개발자와 관리자는 겹치지 않는다는 조건이므로 이 방향의 포함 관계는 도출되지 않는다.",
+          "misconception_tag": "배제와포함혼동"
+        },
+        {
+          "id": "B",
+          "text": "모든 디자이너는 관리자가 아니다.",
+          "feedback": "개발자인 일부 디자이너에 대해서만 관리자 아님을 알며 나머지 디자이너는 알 수 없다.",
+          "misconception_tag": "일부를전체로확대"
+        },
+        {
+          "id": "C",
+          "text": "관리자가 아닌 디자이너가 적어도 한 명 있다.",
+          "feedback": "개발자인 디자이너가 적어도 한 명 존재한다. 그 사람은 개발자이므로 관리자가 아니다. 따라서 관리자가 아닌 디자이너가 적어도 한 명 존재한다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "어떤 디자이너도 개발자가 아니다.",
+          "feedback": "적어도 한 명의 디자이너가 개발자라는 첫 문장과 모순이다.",
+          "misconception_tag": "존재조건부정"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "개발자인 디자이너가 적어도 한 명 존재한다. 그 사람은 개발자이므로 관리자가 아니다. 따라서 관리자가 아닌 디자이너가 적어도 한 명 존재한다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E050",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "조건 명제의 반례 검사",
+      "difficulty": "medium",
+      "passage": "카드 네 장의 보이는 면에는 각각 A, K, 4, 7이 적혀 있다. 모든 카드는 한쪽 면에 알파벳 한 글자, 다른 면에 숫자 하나가 적혀 있다. 규칙은 ‘한쪽이 모음이면 다른 쪽 숫자는 짝수다’이다. A는 모음, K는 자음이다.",
+      "prompt": "규칙 위반 카드가 있는지 확실히 검사하려면 최소한 어떤 두 장을 뒤집어야 하는가?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "K와 4",
+          "feedback": "자음이나 짝수의 반대쪽은 규칙을 직접 위반하는 반례를 만들지 못한다. A와 홀수 7을 확인해야 한다.",
+          "misconception_tag": "위반가능조건미검사"
+        },
+        {
+          "id": "B",
+          "text": "K와 7",
+          "feedback": "7 확인은 필요하지만 A 뒤에 홀수가 있는지 확인하지 않으면 위반을 놓칠 수 있다.",
+          "misconception_tag": "선행조건검사누락"
+        },
+        {
+          "id": "C",
+          "text": "A와 4",
+          "feedback": "짝수 4 뒤에는 자음이 와도 규칙 위반이 아니다. 대신 홀수 7 뒤에 모음이 있는지를 검사해야 한다.",
+          "misconception_tag": "명제의역을검사"
+        },
+        {
+          "id": "D",
+          "text": "A와 7",
+          "feedback": "규칙 위반은 모음과 홀수가 한 카드에 있는 경우다. A 뒤가 홀수인지, 7 뒤가 모음인지 검사해야 한다. K 뒤의 숫자와 4 뒤의 글자는 무엇이든 주어진 규칙을 위반하지 않는다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "규칙 위반은 모음과 홀수가 한 카드에 있는 경우다. A 뒤가 홀수인지, 7 뒤가 모음인지 검사해야 한다. K 뒤의 숫자와 4 뒤의 글자는 무엇이든 주어진 규칙을 위반하지 않는다.",
+      "origin_type": "original_practice"
     }
   ]
 }

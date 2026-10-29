@@ -8,6 +8,8 @@
 
 GitHub 간편 로그인은 Supabase에 제공자 연결을 완료한 뒤 Production의 `GITHUB_AUTH_ENABLED`를 `true`로 설정해 사용합니다. GitHub Client Secret은 Vercel에 넣지 않고 Supabase 제공자 설정에만 저장합니다.
 
+현재 JOBFIT AI 힌트는 결제를 연결하지 않은 Google AI Studio 무료 등급 프로젝트의 `GEMINI_API_KEY`를 Production Secret으로 사용합니다. 공개 변수로 등록하거나 Preview에 복사하지 않습니다. 코드에서 OpenAI를 호출하거나 무료 한도 초과 시 유료 모델로 자동 전환하지 않습니다. 키 설정 후 새 배포가 필요하며 상세 조건과 검증 상태는 [AI 힌트 안내](JOBFIT_AI_HINT.md)를 확인하세요.
+
 ## 1. 배포 전 로컬 확인
 
 package.json이 있는 프로젝트 폴더에서 실행합니다.

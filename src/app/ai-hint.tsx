@@ -204,9 +204,10 @@ export default function AiHint({
             </div>
           </form>
           <p className="ai-disclosure">
-            연결 후 질문과 현재 문제, 최근 대화가 OpenAI에 전송돼요. 개인정보는
-            적지 마세요. AI 힌트는 틀릴 수 있어요. 최종 답은 문제 해설로
-            확인하세요.{model && <span>응답 모델: {model}</span>}
+            무료 할당량 안에서 이용해요. 질문과 현재 문제, 최근 대화가 Google
+            Gemini에 전송되며 무료 서비스의 제품 개선에 사용될 수 있어요.
+            개인정보는 적지 마세요. AI 힌트는 틀릴 수 있어요. 최종 답은 문제
+            해설로 확인하세요.{model && <span>응답 모델: {model}</span>}
           </p>
         </div>
       )}

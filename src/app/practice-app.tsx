@@ -930,8 +930,9 @@ export default function PracticeApp({
                 <h2>문제와 학습 기록 안내</h2>
                 <ul>
                   <li>
-                    현재 36개 문항은 JOBFIT AI 자체 연습문제예요. 실제
-                    기출·복원·기업이나 병원의 공식 문제는 아니에요.
+                    현재 {questions.length}개 문항은 JOBFIT AI 자체
+                    연습문제예요. 실제 기출·복원·기업이나 병원의 공식 문제는
+                    아니에요.
                   </li>
                   <li>
                     대기업은 공통 수리·자료해석·추리 유형이며 특정 기업의 시험
