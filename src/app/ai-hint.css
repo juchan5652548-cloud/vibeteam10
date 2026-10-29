@@ -1,0 +1,210 @@
+.ai-hint-panel {
+  margin-top: 26px;
+  border: 1px solid #e3d9f4;
+  border-radius: 12px;
+  background: #fcfaff;
+  overflow: hidden;
+}
+.ai-hint-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 17px 19px;
+  width: 100%;
+}
+.ai-toggle-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #9676cb;
+  background: #f0e9fb;
+  border-radius: 10px;
+}
+.ai-hint-toggle strong {
+  display: block;
+  font-size: 13px;
+  color: #7757a7;
+}
+.ai-hint-toggle small {
+  display: block;
+  font-size: 10px;
+  color: #a194b4;
+  margin-top: 2px;
+}
+.ai-toggle-label {
+  font-size: 10px;
+  margin-left: auto;
+  white-space: nowrap;
+  color: #a18abd;
+}
+.ai-hint-body {
+  padding: 21px;
+  border-top: 1px solid #ece4f6;
+}
+.ai-first-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+.ai-avatar {
+  display: grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  background: #eee6f9;
+  color: #a78acb;
+  border-radius: 9px;
+}
+.ai-first-message p {
+  font-size: 12px;
+  color: #a195b2;
+  line-height: 1.9;
+}
+.ai-first-message strong {
+  font-weight: 500;
+  color: #8d7c9f;
+}
+.hint-suggestions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0 5px;
+}
+.hint-suggestions button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #e5d9f2;
+  padding: 8px 10px;
+  border-radius: 7px;
+  color: #9378b6;
+  font-size: 10px;
+  background: white;
+}
+.hint-messages {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+.hint-message {
+  max-width: 94%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid #ede6f6;
+}
+.hint-message.user {
+  margin-left: auto;
+  background: #f0eafb;
+  border-color: #e9e0f5;
+}
+.hint-message > span {
+  font-size: 9px;
+  font-weight: 650;
+  color: #a38cbd;
+}
+.hint-message p {
+  font-size: 12px;
+  line-height: 1.95;
+  color: #7f728f;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+}
+.ai-thinking {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #a18db9;
+}
+.ai-thinking > span {
+  width: 7px;
+  height: 7px;
+  background: #b49bd4;
+  border-radius: 50%;
+  animation: hint-pulse 1.2s infinite alternate;
+}
+.hint-form {
+  border: 1px solid #e4daef;
+  background: white;
+  border-radius: 9px;
+  margin-top: 19px;
+  overflow: hidden;
+}
+.hint-form textarea {
+  border: 0;
+  background: none;
+  padding: 14px 15px;
+  width: 100%;
+  outline: none;
+  resize: vertical;
+  min-height: 68px;
+  color: #766585;
+  font-size: 12px;
+  display: block;
+}
+.hint-form textarea::placeholder {
+  color: #b4a8c0;
+}
+.hint-form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 11px 10px;
+}
+.hint-form > div > span {
+  font-size: 9px;
+  color: #b4a6c2;
+  padding-left: 4px;
+}
+.hint-form .button {
+  font-size: 10px;
+  min-height: 33px;
+  padding: 7px 11px;
+}
+.ai-disclosure {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #a99ab7;
+  margin-top: 13px;
+}
+.ai-disclosure > span {
+  display: block;
+  margin-top: 4px;
+}
+@keyframes hint-pulse {
+  to {
+    opacity: 0.35;
+  }
+}
+@media (max-width: 700px) {
+  .ai-hint-toggle {
+    padding: 15px 13px;
+    gap: 9px;
+  }
+  .ai-hint-toggle strong {
+    font-size: 12px;
+  }
+  .ai-hint-toggle small {
+    font-size: 9px;
+    max-width: 190px;
+  }
+  .ai-toggle-label {
+    font-size: 9px;
+  }
+  .ai-hint-body {
+    padding: 16px 13px;
+  }
+  .hint-suggestions button {
+    font-size: 9px;
+  }
+  .ai-disclosure {
+    font-size: 8px;
+  }
+  .hint-message {
+    max-width: 100%;
+  }
+}

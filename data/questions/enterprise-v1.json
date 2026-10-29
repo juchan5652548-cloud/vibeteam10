@@ -1,0 +1,462 @@
+{
+  "title": "대기업 공통 인적성 자체 연습문제",
+  "notice": "실제 기출·복원·기업 공식 문제가 아닙니다. 기업별 시험 구성을 재현하지 않습니다.",
+  "questions": [
+    {
+      "id": "E001",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "손익과 할인",
+      "difficulty": "medium",
+      "passage": "상품 원가가 800원이다. 원가에 20% 이익을 붙여 정가를 정하고, 정가에서 10% 할인해 판매했다.",
+      "prompt": "원가 대비 실제 이익률은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "8%",
+          "feedback": "정가 960원, 판매가 864원이다. 이익 64원을 원가 800원으로 나누면 8%다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "10%",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "할인율의 기준값"
+        },
+        {
+          "id": "C",
+          "text": "12%",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "할인율의 기준값"
+        },
+        {
+          "id": "D",
+          "text": "18%",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "할인율의 기준값"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "정가 960원, 판매가 864원이다. 이익 64원을 원가 800원으로 나누면 8%다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E002",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "가중평균",
+      "difficulty": "medium",
+      "passage": "A팀 60명의 평균 점수는 80점, B팀 40명의 평균 점수는 65점이다. 중복 인원은 없다.",
+      "prompt": "두 팀 전체 100명의 평균 점수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "70점",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "가중치 적용"
+        },
+        {
+          "id": "B",
+          "text": "72.5점",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "가중치 적용"
+        },
+        {
+          "id": "C",
+          "text": "74점",
+          "feedback": "(60×80+40×65)÷100=7400÷100=74점이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "75점",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "가중치 적용"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "(60×80+40×65)÷100=7400÷100=74점이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E003",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "수열 규칙",
+      "difficulty": "medium",
+      "passage": "다음 수열은 동일한 규칙을 반복 적용한다.\n3, 8, 18, 38, 78, ( ? )",
+      "prompt": "빈칸에 들어갈 수는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "118",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "반복 규칙 찾기"
+        },
+        {
+          "id": "B",
+          "text": "148",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "반복 규칙 찾기"
+        },
+        {
+          "id": "C",
+          "text": "156",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "반복 규칙 찾기"
+        },
+        {
+          "id": "D",
+          "text": "158",
+          "feedback": "앞 항에 2를 곱하고 2를 더한다. 78×2+2=158이다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "앞 항에 2를 곱하고 2를 더한다. 78×2+2=158이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E004",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "공동 작업",
+      "difficulty": "medium",
+      "passage": "동일한 작업을 A는 혼자 8시간, B는 혼자 12시간에 끝낸다. 두 사람의 속도는 일정하며 동시에 나누어 일하고 중복 작업이나 손실은 없다.",
+      "prompt": "함께 작업하면 완료까지 걸리는 시간은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "4시간",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "시간당 처리량 합산"
+        },
+        {
+          "id": "B",
+          "text": "4시간 48분",
+          "feedback": "시간당 처리량은 1/8+1/12=5/24다. 완료 시간은 24/5시간, 즉 4시간 48분이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "5시간",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "시간당 처리량 합산"
+        },
+        {
+          "id": "D",
+          "text": "10시간",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "시간당 처리량 합산"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "시간당 처리량은 1/8+1/12=5/24다. 완료 시간은 24/5시간, 즉 4시간 48분이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E005",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "조건 배치",
+      "difficulty": "medium",
+      "passage": "A·B·C·D·E 프로젝트를 한 번씩 순서대로 진행한다. A는 B보다 먼저, D는 C보다 먼저 진행하며 E는 세 번째다.",
+      "prompt": "모든 조건을 만족하는 순서는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A → D → E → B → C",
+          "feedback": "A가 B보다 앞이고 D가 C보다 앞이며 E가 세 번째인 선택지는 A·D·E·B·C뿐이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "B → A → E → D → C",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "다중 조건 점검"
+        },
+        {
+          "id": "C",
+          "text": "A → C → E → D → B",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "다중 조건 점검"
+        },
+        {
+          "id": "D",
+          "text": "A → D → B → E → C",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "다중 조건 점검"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "A가 B보다 앞이고 D가 C보다 앞이며 E가 세 번째인 선택지는 A·D·E·B·C뿐이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E006",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "비복원 추출 확률",
+      "difficulty": "medium",
+      "passage": "상자에 빨간 공 5개와 파란 공 3개가 있다. 공은 각각 구별되며, 무작위로 2개를 한꺼번에 꺼낸다.",
+      "prompt": "두 공이 모두 파란색일 확률은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "9/64",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "비복원 추출"
+        },
+        {
+          "id": "B",
+          "text": "3/28",
+          "feedback": "전체 조합은 8C2=28, 파란 공 두 개의 조합은 3C2=3이므로 3/28이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "3/8",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "비복원 추출"
+        },
+        {
+          "id": "D",
+          "text": "1/4",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "비복원 추출"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "전체 조합은 8C2=28, 파란 공 두 개의 조합은 3C2=3이므로 3/28이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E007",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "증가율 비교",
+      "difficulty": "medium",
+      "passage": "매출(백만원): A사업 전년 100·올해 120, B사업 전년 200·올해 230, C사업 전년 150·올해 180.",
+      "prompt": "전년 대비 증가율이 같은 두 사업은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A와 B",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "증가량과 증가율 구분"
+        },
+        {
+          "id": "B",
+          "text": "B와 C",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "증가량과 증가율 구분"
+        },
+        {
+          "id": "C",
+          "text": "A와 C",
+          "feedback": "A는 20/100=20%, B는 30/200=15%, C는 30/150=20%다. A와 C가 같다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "세 사업 모두",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "증가량과 증가율 구분"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "A는 20/100=20%, B는 30/200=15%, C는 30/150=20%다. A와 C가 같다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E008",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "명제 판단",
+      "difficulty": "medium",
+      "passage": "모든 분석 담당자는 보안교육을 이수했다. 보안교육을 이수한 모든 직원은 서약서를 제출했다.",
+      "prompt": "반드시 참인 것은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "서약서를 제출한 모든 직원은 분석 담당자다.",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "명제의 방향"
+        },
+        {
+          "id": "B",
+          "text": "보안교육 이수자는 모두 분석 담당자다.",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "명제의 방향"
+        },
+        {
+          "id": "C",
+          "text": "분석 담당자 중 서약서를 제출하지 않은 직원이 있다.",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "명제의 방향"
+        },
+        {
+          "id": "D",
+          "text": "모든 분석 담당자는 서약서를 제출했다.",
+          "feedback": "분석 담당자 → 교육 이수 → 서약서 제출이므로 분석 담당자는 모두 서약서를 제출했다. 역방향은 보장되지 않는다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "분석 담당자 → 교육 이수 → 서약서 제출이므로 분석 담당자는 모두 서약서를 제출했다. 역방향은 보장되지 않는다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E009",
+      "track": "enterprise",
+      "area": "언어",
+      "subtype": "주장 범위",
+      "difficulty": "medium",
+      "passage": "한 기업은 2개 팀에서 2주간 회의시간을 줄이는 시범제도를 운영했다. 그 기간 보고서 작성량이 늘었지만 인력 충원도 동시에 이루어졌다. 다른 팀은 조사하지 않았다.",
+      "prompt": "이 자료에 대한 가장 적절한 해석은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "회의시간 단축만이 작성량 증가의 원인이다.",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "인과관계와 일반화"
+        },
+        {
+          "id": "B",
+          "text": "모든 기업이 같은 제도로 동일한 효과를 얻는다.",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "인과관계와 일반화"
+        },
+        {
+          "id": "C",
+          "text": "관찰된 증가만으로 제도의 단독 효과를 확정하기 어렵다.",
+          "feedback": "인력 충원이라는 다른 요인이 있고 조사 대상도 제한되어 단독 인과관계나 보편적 효과를 확정할 수 없다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "D",
+          "text": "인력 충원이 없었으므로 제도 효과는 확실하다.",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "인과관계와 일반화"
+        }
+      ],
+      "answer_id": "C",
+      "explanation": "인력 충원이라는 다른 요인이 있고 조사 대상도 제한되어 단독 인과관계나 보편적 효과를 확정할 수 없다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E010",
+      "track": "enterprise",
+      "area": "추리",
+      "subtype": "순위 추론",
+      "difficulty": "medium",
+      "passage": "J·K·L·M·N 다섯 명이 1등부터 5등까지 서로 다른 순위를 차지했다. M은 1등, N은 5등이고 J는 K보다 앞, K는 L보다 앞이다.",
+      "prompt": "3등인 사람은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "J",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "연쇄 순서 추론"
+        },
+        {
+          "id": "B",
+          "text": "K",
+          "feedback": "남은 2·3·4등은 J<K<L 순서이므로 J는 2등, K는 3등, L은 4등이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "C",
+          "text": "L",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "연쇄 순서 추론"
+        },
+        {
+          "id": "D",
+          "text": "M",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "연쇄 순서 추론"
+        }
+      ],
+      "answer_id": "B",
+      "explanation": "남은 2·3·4등은 J<K<L 순서이므로 J는 2등, K는 3등, L은 4등이다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E011",
+      "track": "enterprise",
+      "area": "응용수리",
+      "subtype": "농도와 질량 보존",
+      "difficulty": "medium",
+      "passage": "소금 농도가 20%인 소금물 300g에 물 200g을 더했다. 증발이나 유출은 없다.",
+      "prompt": "새 소금물의 농도는?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "8%",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "보존량과 전체량"
+        },
+        {
+          "id": "B",
+          "text": "10%",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "보존량과 전체량"
+        },
+        {
+          "id": "C",
+          "text": "15%",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "보존량과 전체량"
+        },
+        {
+          "id": "D",
+          "text": "12%",
+          "feedback": "소금은 300×0.2=60g으로 유지된다. 전체 500g이므로 60÷500×100=12%다.",
+          "misconception_tag": null
+        }
+      ],
+      "answer_id": "D",
+      "explanation": "소금은 300×0.2=60g으로 유지된다. 전체 500g이므로 60÷500×100=12%다.",
+      "origin_type": "original_practice"
+    },
+    {
+      "id": "E012",
+      "track": "enterprise",
+      "area": "자료해석",
+      "subtype": "중복 집계",
+      "difficulty": "medium",
+      "passage": "65명 중 언어 연습을 한 사람은 40명, 수리 연습을 한 사람은 35명이고 두 연습을 모두 한 사람은 20명이다.",
+      "prompt": "두 연습 모두 하지 않은 사람은?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "10명",
+          "feedback": "적어도 하나를 한 사람은 40+35−20=55명이다. 전체 65명에서 빼면 10명이다.",
+          "misconception_tag": null
+        },
+        {
+          "id": "B",
+          "text": "15명",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "포함과 배제"
+        },
+        {
+          "id": "C",
+          "text": "20명",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "포함과 배제"
+        },
+        {
+          "id": "D",
+          "text": "30명",
+          "feedback": "해설의 조건과 계산 순서를 다시 확인해 보세요.",
+          "misconception_tag": "포함과 배제"
+        }
+      ],
+      "answer_id": "A",
+      "explanation": "적어도 하나를 한 사람은 40+35−20=55명이다. 전체 65명에서 빼면 10명이다.",
+      "origin_type": "original_practice"
+    }
+  ]
+}

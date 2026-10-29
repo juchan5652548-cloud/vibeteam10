@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: '바이브 코딩 시작 안내',
+  title: 'JOBFIT AI | 나에게 맞는 인적성 문제은행',
   description:
-    '요구사항 분석부터 DB·서버·화면 구현과 검증까지, 비개발자를 위한 개발 순서 안내',
+    '대기업 인적성, 공기업 NCS, 병원 업무 기초역량을 한 곳에서. 문제 풀이와 해설, 오답 복습으로 나만의 취업 준비를 시작하세요.',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
