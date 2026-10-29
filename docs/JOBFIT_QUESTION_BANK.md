@@ -61,3 +61,7 @@
 - Node24 `npm run check`, `npm run build` 통과. 인증 경계 검사와 외부 공급자 호출 없는 인증·AI fixture 검사 통과.
 - 로컬 브라우저에서 분야별 카드50개·총150개, 더보기12→24개, E050검색·보기 선택·정답 채점·해설 표시 확인. 이 브라우저 게스트 기록에 E050 확인용 정답1건을 추가했다.
 - Production 반영과 무료 AI 왕복은 배포 후 추가 기록한다.
+
+### 확대판 Production 확인
+
+소스 `75d6d46`의 배포 `HAsBhJHLFw9QkfpTs8oL8jVeeL4p`가 Ready인 것을 확인했다. 실제 사이트에서 세 분야 카드가 각각50문항, 공기업 필터가50문항이며 P050 검색과 접근이 가능함을 확인했다. H030의 새 상태 전이 지문과 선택지 표시도 확인했다. 후속 AI 보완 소스 `993d478` / 배포 `8JS6jrJHBCEphdXNR8QmeZc8jven`도 Production Ready다. 기존 로그인 세션을 유지한 채 새 문제를 열고 AI 답변을 받았다.
