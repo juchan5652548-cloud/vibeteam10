@@ -83,8 +83,7 @@ export default function Home() {
             바이브 코딩 시작 안내
           </p>
           <h1 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight break-keep sm:text-5xl">
-            원하는 기능을,
-            <br />한 단계씩 만들어 보세요.
+            나의 첫 웹앱
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 break-keep text-zinc-600 dark:text-zinc-400">
             데이터 저장이 필요한 새 기능을 만들 때 참고하는 기본 흐름입니다.
