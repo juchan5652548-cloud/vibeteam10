@@ -19,12 +19,14 @@ export default function PracticeQuiz({
   onAttempt,
   onClose,
   signedIn = false,
+  aiReady = false,
 }: {
   questions: PublicQuestion[];
   title: string;
   onAttempt: (attempt: Attempt) => void;
   onClose: () => void;
   signedIn?: boolean;
+  aiReady?: boolean;
 }) {
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState('');
@@ -273,7 +275,12 @@ export default function PracticeQuiz({
               )}
             </div>
           )}
-          <AiHint key={question.id} questionId={question.id} />
+          <AiHint
+            key={question.id}
+            questionId={question.id}
+            signedIn={signedIn}
+            ready={aiReady}
+          />
           <div className="question-footer">
             <span className="subtle">
               자체 제작 연습문제 · 난이도{' '}

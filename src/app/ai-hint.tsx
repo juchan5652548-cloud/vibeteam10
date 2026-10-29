@@ -10,7 +10,16 @@ const hintResponse = z.object({
   model: z.string(),
 });
 
-export default function AiHint({ questionId }: { questionId: string }) {
+export default function AiHint({
+  questionId,
+  ready,
+  signedIn,
+}: {
+  questionId: string;
+  ready: boolean;
+  signedIn: boolean;
+}) {
+  const canAsk = ready && signedIn;
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [history, setHistory] = useState<Message[]>([]);
@@ -23,7 +32,7 @@ export default function AiHint({ questionId }: { questionId: string }) {
 
   async function ask(value = message) {
     const question = value.trim();
-    if (!question || question.length > 300 || locked.current) return;
+    if (!question || question.length > 300 || locked.current || !canAsk) return;
     locked.current = true;
     setPending(true);
     setError('');
@@ -93,7 +102,11 @@ export default function AiHint({ questionId }: { questionId: string }) {
         <span>
           <strong>AI한테 물어보기</strong>
           <small>
-            AI 연결 준비 중 · 지금은 채점 후 문제 해설을 확인해 주세요.
+            {!signedIn
+              ? '로그인하면 AI에게 이 문제의 풀이 방향을 질문할 수 있어요.'
+              : ready
+                ? '막히는 순간, 정답 대신 풀이의 실마리를 찾아요.'
+                : 'AI 연결 준비 중 · 지금은 채점 후 문제 해설을 확인해 주세요.'}
           </small>
         </span>
         <span className="ai-toggle-label">
@@ -110,7 +123,11 @@ export default function AiHint({ questionId }: { questionId: string }) {
               어디서 막혔나요?
               <br />
               <strong>
-                API 연결이 완료되면 이곳에서 풀이 방향을 질문할 수 있어요.
+                {!signedIn
+                  ? '로그인 후 이용해 주세요. 채점과 기본 해설은 지금도 볼 수 있어요.'
+                  : ready
+                    ? '필요한 개념과 첫 풀이 단계를 함께 찾아볼게요.'
+                    : 'AI 연결이 완료되면 이곳에서 풀이 방향을 질문할 수 있어요.'}
               </strong>
             </p>
           </div>
@@ -122,7 +139,7 @@ export default function AiHint({ questionId }: { questionId: string }) {
               ].map((text) => (
                 <button
                   key={text}
-                  disabled={pending}
+                  disabled={pending || !canAsk}
                   onClick={() => {
                     setMessage(text);
                     void ask(text);
@@ -171,7 +188,7 @@ export default function AiHint({ questionId }: { questionId: string }) {
               maxLength={300}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              disabled={pending}
+              disabled={pending || !canAsk}
               rows={2}
             />
             <div>
@@ -179,7 +196,7 @@ export default function AiHint({ questionId }: { questionId: string }) {
               <button
                 type="submit"
                 className="button primary"
-                disabled={!message.trim() || pending}
+                disabled={!message.trim() || pending || !canAsk}
               >
                 {pending ? '답변 기다리는 중…' : 'AI에게 질문하기'}
                 <Icon name="arrow" size={15} />

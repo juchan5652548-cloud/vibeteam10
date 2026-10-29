@@ -1,11 +1,13 @@
 import { getPublicQuestions } from '@/lib/question-bank';
 import { acquireHintSlot, generateHint, hintInputSchema } from '@/lib/ai-hint';
 import { readLimitedJson } from '@/lib/limited-json';
+import { authClient, authConfigured, privateHeaders } from '@/lib/auth-server';
 
 export const maxDuration = 30;
-const headers = { 'Cache-Control': 'no-store' };
+const headers = privateHeaders;
 
 export async function POST(request: Request) {
+  const deadline = AbortSignal.timeout(25_000);
   const origin = request.headers.get('origin');
   if (!origin || origin !== new URL(request.url).origin)
     return Response.json(
@@ -50,9 +52,28 @@ export async function POST(request: Request) {
       },
       { status: 503, headers },
     );
-  const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'local';
-  const release = acquireHintSlot(ip, key);
+  if (!authConfigured())
+    return Response.json(
+      { error: '로그인 후 AI 질문을 이용해 주세요.' },
+      { status: 401, headers },
+    );
+  let userId: string;
+  try {
+    const client = await authClient();
+    const { data, error } = await client.auth.getUser();
+    if (error || !data.user)
+      return Response.json(
+        { error: '로그인 후 AI 질문을 이용해 주세요.' },
+        { status: 401, headers },
+      );
+    userId = data.user.id;
+  } catch {
+    return Response.json(
+      { error: '로그인 상태를 확인하지 못했어요. 잠시 후 다시 시도해 주세요.' },
+      { status: 503, headers },
+    );
+  }
+  const release = acquireHintSlot(userId, key);
   if (!release)
     return Response.json(
       {
@@ -62,7 +83,15 @@ export async function POST(request: Request) {
       { status: 429, headers: { ...headers, 'Retry-After': '60' } },
     );
   try {
-    return Response.json(await generateHint(question, input, key), { headers });
+    return Response.json(
+      await generateHint(
+        question,
+        input,
+        key,
+        AbortSignal.any([deadline, request.signal]),
+      ),
+      { headers },
+    );
   } catch (cause) {
     const code = cause instanceof Error ? cause.message : '';
     const error =

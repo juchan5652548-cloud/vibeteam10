@@ -11,11 +11,11 @@ const buckets = new Map<
 >();
 let globalBucket = { count: 0, expires: 0 };
 
-export function acquireHintSlot(ip: string, secret: string) {
+export function acquireHintSlot(actorId: string, secret: string) {
   const now = Date.now();
   for (const [key, bucket] of buckets)
     if (bucket.expires < now && !bucket.busy) buckets.delete(key);
-  const key = createHash('sha256').update(`${secret}:${ip}`).digest('hex');
+  const key = createHash('sha256').update(`${secret}:${actorId}`).digest('hex');
   if (globalBucket.expires < now)
     globalBucket = { count: 0, expires: now + 3_600_000 };
   const bucket = buckets.get(key) ?? {
@@ -73,6 +73,7 @@ export async function generateHint(
   question: PublicQuestion,
   input: z.infer<typeof hintInputSchema>,
   key: string,
+  signal?: AbortSignal,
 ) {
   const model = process.env.OPENAI_HINT_MODEL || 'gpt-5.4-mini';
   const response = await fetch('https://api.openai.com/v1/responses', {
@@ -82,7 +83,7 @@ export async function generateHint(
       'Content-Type': 'application/json',
     },
     cache: 'no-store',
-    signal: AbortSignal.timeout(25_000),
+    signal: signal ?? AbortSignal.timeout(25_000),
     body: JSON.stringify({
       model,
       store: false,

@@ -10,9 +10,11 @@ import { readLimitedJson } from '@/lib/limited-json';
 import { getPublicQuestions } from '@/lib/question-bank';
 
 export async function GET() {
+  const aiReady = Boolean(process.env.OPENAI_API_KEY);
+  const googleReady = process.env.GOOGLE_AUTH_ENABLED === 'true';
   if (!authConfigured())
     return Response.json(
-      { configured: false, user: null },
+      { configured: false, aiReady, googleReady, user: null },
       { headers: privateHeaders },
     );
   try {
@@ -28,7 +30,7 @@ export async function GET() {
       )
         throw new Error('AUTH_UNAVAILABLE');
       return Response.json(
-        { configured: true, user: null },
+        { configured: true, aiReady, googleReady, user: null },
         { headers: privateHeaders },
       );
     }
@@ -37,6 +39,8 @@ export async function GET() {
     return Response.json(
       {
         configured: true,
+        aiReady,
+        googleReady,
         user: { id: data.user.id, email: data.user.email ?? '' },
         progress,
       },

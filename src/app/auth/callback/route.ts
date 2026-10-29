@@ -10,7 +10,10 @@ export async function GET(request: Request) {
         url.searchParams.get('code')!,
       );
       if (!error) {
-        const next = new URL('/', url.origin);
+        const next = new URL(
+          url.searchParams.get('recovery') === '1' ? '/' : '/my',
+          url.origin,
+        );
         if (url.searchParams.get('recovery') === '1')
           next.searchParams.set('reset', '1');
         return NextResponse.redirect(next, {

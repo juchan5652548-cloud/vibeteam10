@@ -551,6 +551,7 @@ export default function PracticeApp({
               onAttempt={recordAttempt}
               onClose={() => navigate('bank')}
               signedIn={Boolean(account.user)}
+              aiReady={account.aiReady}
             />
           ) : view === 'home' ? (
             <>
@@ -1198,6 +1199,7 @@ export default function PracticeApp({
       {authDialog && (
         <AccountDialog
           initialMode={authDialog}
+          googleReady={account.googleReady}
           onClose={() => {
             setAuthDialog(null);
             window.history.replaceState(null, '', '/');

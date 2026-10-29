@@ -16,6 +16,7 @@ const credentials = z
   .strict();
 const inputSchema = z.union([
   credentials,
+  z.object({ action: z.literal('google') }).strict(),
   z.object({ action: z.literal('logout') }).strict(),
   z
     .object({ action: z.literal('recover'), email: z.email().max(254).trim() })
@@ -53,6 +54,41 @@ export async function POST(request: Request) {
     const client = await authClient();
     const input = parsed.data;
     const origin = new URL(request.url).origin;
+    if (input.action === 'google') {
+      if (process.env.GOOGLE_AUTH_ENABLED !== 'true')
+        return Response.json(
+          {
+            error:
+              '구글 로그인 연결을 준비하고 있어요. 잠시 후 다시 시도해 주세요.',
+          },
+          { status: 503, headers: privateHeaders },
+        );
+      const { data, error } = await client.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${origin}/auth/callback`,
+          skipBrowserRedirect: true,
+          scopes: 'openid email profile',
+          queryParams: { prompt: 'select_account' },
+        },
+      });
+      if (error || !data.url)
+        return Response.json(
+          {
+            error:
+              '구글 로그인 연결을 준비하고 있어요. 잠시 후 다시 시도해 주세요.',
+          },
+          { status: 503, headers: privateHeaders },
+        );
+      const target = new URL(data.url);
+      if (
+        target.origin !==
+          new URL(process.env.NEXT_PUBLIC_SUPABASE_URL!).origin ||
+        target.pathname !== '/auth/v1/authorize'
+      )
+        throw new Error('INVALID_AUTH_DESTINATION');
+      return Response.json({ url: target.href }, { headers: privateHeaders });
+    }
     if (input.action === 'logout') {
       const { error } = await client.auth.signOut({ scope: 'local' });
       if (error) throw new Error('AUTH_FAILED');

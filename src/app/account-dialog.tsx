@@ -13,15 +13,19 @@ type Fields = z.infer<typeof schema>;
 export default function AccountDialog({
   onClose,
   initialMode = 'login',
+  googleReady = false,
 }: {
   onClose: () => void;
   initialMode?: Mode;
+  googleReady?: boolean;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const router = useRouter();
   const [mode, setMode] = useState<Mode>(initialMode);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [emailForm, setEmailForm] = useState(initialMode === 'password');
+  const [googlePending, setGooglePending] = useState(false);
   const form = useForm<Fields>({
     resolver: zodResolver(schema),
     defaultValues: { email: '', password: '' },
@@ -34,6 +38,31 @@ export default function AccountDialog({
       if (prior instanceof HTMLElement) prior.focus();
     };
   }, []);
+  async function googleLogin() {
+    if (googlePending) return;
+    setGooglePending(true);
+    setError('');
+    try {
+      const response = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'google' }),
+        signal: AbortSignal.timeout(15000),
+      });
+      const body = z
+        .object({ url: z.url().optional(), error: z.string().optional() })
+        .parse(await response.json());
+      if (!response.ok || !body.url) {
+        setError(body.error ?? '구글 로그인에 연결하지 못했어요.');
+        setGooglePending(false);
+        return;
+      }
+      window.location.assign(body.url);
+    } catch {
+      setError('연결을 확인하고 다시 시도해 주세요.');
+      setGooglePending(false);
+    }
+  }
   async function submit(fields: Fields) {
     setError('');
     setMessage('');
@@ -108,7 +137,7 @@ export default function AccountDialog({
       className="account-dialog"
       aria-labelledby="account-title"
       onCancel={(event) => {
-        if (isSubmitting) event.preventDefault();
+        if (isSubmitting || googlePending) event.preventDefault();
         else onClose();
       }}
     >
@@ -117,119 +146,162 @@ export default function AccountDialog({
         <button
           type="button"
           aria-label="로그인 창 닫기"
-          disabled={isSubmitting}
+          disabled={isSubmitting || googlePending}
           onClick={onClose}
         >
           ×
         </button>
       </div>
-      <h2 id="account-title">{title}</h2>
+      <h2 id="account-title">{emailForm ? title : '간편하게 시작하세요'}</h2>
       <p className="muted">
         로그인하면 나의 풀이 기록과 오답노트를 다른 기기에서도 이어볼 수 있어요.
       </p>
       {mode !== 'password' && (
-        <div className="account-tabs">
+        <>
           <button
             type="button"
-            className={mode === 'login' ? 'selected' : ''}
-            disabled={isSubmitting}
-            onClick={() => {
-              setMode('login');
-              setError('');
-              setMessage('');
-              form.clearErrors();
-            }}
+            className="google-login-button"
+            disabled={googlePending || isSubmitting || !googleReady}
+            onClick={() => void googleLogin()}
           >
-            로그인
+            {googlePending
+              ? '구글 로그인으로 이동 중…'
+              : googleReady
+                ? 'Google 계정으로 계속하기'
+                : 'Google 로그인 연결 준비 중'}
           </button>
+          <p className="google-login-note">
+            처음이라도 같은 버튼으로 가입하고 시작해요.
+            <br />
+            별도의 JOBFIT 비밀번호를 만들지 않아도 돼요.
+          </p>
+          {!emailForm && error && (
+            <p className="error-notice" role="alert">
+              {error}
+            </p>
+          )}
           <button
             type="button"
-            className={mode === 'signup' ? 'selected' : ''}
-            disabled={isSubmitting}
+            className="text-button email-login-toggle"
+            disabled={googlePending}
             onClick={() => {
-              setMode('signup');
+              setEmailForm(!emailForm);
               setError('');
-              setMessage('');
-              form.clearErrors();
             }}
           >
-            회원가입
+            {emailForm ? '간편 로그인만 보기' : '이메일 로그인 / 회원가입'}
           </button>
-        </div>
+        </>
       )}
-      <form onSubmit={form.handleSubmit(submit)} noValidate>
-        {mode !== 'password' && (
-          <label htmlFor="account-email">
-            이메일
-            <input
-              id="account-email"
-              type="email"
-              autoComplete="email"
-              maxLength={254}
+      {emailForm && (
+        <>
+          {mode !== 'password' && (
+            <div className="account-tabs">
+              <button
+                type="button"
+                className={mode === 'login' ? 'selected' : ''}
+                disabled={isSubmitting}
+                onClick={() => {
+                  setMode('login');
+                  setError('');
+                  setMessage('');
+                  form.clearErrors();
+                }}
+              >
+                로그인
+              </button>
+              <button
+                type="button"
+                className={mode === 'signup' ? 'selected' : ''}
+                disabled={isSubmitting}
+                onClick={() => {
+                  setMode('signup');
+                  setError('');
+                  setMessage('');
+                  form.clearErrors();
+                }}
+              >
+                회원가입
+              </button>
+            </div>
+          )}
+          <form onSubmit={form.handleSubmit(submit)} noValidate>
+            {mode !== 'password' && (
+              <label htmlFor="account-email">
+                이메일
+                <input
+                  id="account-email"
+                  type="email"
+                  autoComplete="email"
+                  maxLength={254}
+                  disabled={isSubmitting}
+                  {...form.register('email')}
+                  aria-invalid={Boolean(form.formState.errors.email)}
+                  aria-describedby="account-email-error"
+                />
+                <small id="account-email-error" className="field-error">
+                  {form.formState.errors.email?.message}
+                </small>
+              </label>
+            )}
+            {mode !== 'recover' && (
+              <label htmlFor="account-password">
+                {mode === 'password' ? '새 비밀번호' : '비밀번호'}
+                <input
+                  id="account-password"
+                  type="password"
+                  autoComplete={
+                    mode === 'login' ? 'current-password' : 'new-password'
+                  }
+                  maxLength={128}
+                  disabled={isSubmitting}
+                  {...form.register('password')}
+                  aria-invalid={Boolean(form.formState.errors.password)}
+                  aria-describedby="account-password-error"
+                />
+                <small id="account-password-error" className="field-error">
+                  {form.formState.errors.password?.message}
+                </small>
+              </label>
+            )}
+            {error && (
+              <p className="error-notice" role="alert">
+                {error}
+              </p>
+            )}
+            {message && (
+              <p className="account-success" role="status">
+                {message}
+              </p>
+            )}
+            <button
+              className="button primary"
               disabled={isSubmitting}
-              {...form.register('email')}
-              aria-invalid={Boolean(form.formState.errors.email)}
-              aria-describedby="account-email-error"
-            />
-            <small id="account-email-error" className="field-error">
-              {form.formState.errors.email?.message}
-            </small>
-          </label>
-        )}
-        {mode !== 'recover' && (
-          <label htmlFor="account-password">
-            {mode === 'password' ? '새 비밀번호' : '비밀번호'}
-            <input
-              id="account-password"
-              type="password"
-              autoComplete={
-                mode === 'login' ? 'current-password' : 'new-password'
-              }
-              maxLength={128}
+              type="submit"
+            >
+              {isSubmitting ? '처리 중…' : title}
+            </button>
+          </form>
+          {mode === 'login' && (
+            <button
+              className="text-button recovery-link"
               disabled={isSubmitting}
-              {...form.register('password')}
-              aria-invalid={Boolean(form.formState.errors.password)}
-              aria-describedby="account-password-error"
-            />
-            <small id="account-password-error" className="field-error">
-              {form.formState.errors.password?.message}
-            </small>
-          </label>
-        )}
-        {error && (
-          <p className="error-notice" role="alert">
-            {error}
-          </p>
-        )}
-        {message && (
-          <p className="account-success" role="status">
-            {message}
-          </p>
-        )}
-        <button
-          className="button primary"
-          disabled={isSubmitting}
-          type="submit"
-        >
-          {isSubmitting ? '처리 중…' : title}
-        </button>
-      </form>
-      {mode === 'login' && (
-        <button
-          className="text-button recovery-link"
-          disabled={isSubmitting}
-          onClick={() => {
-            setMode('recover');
-            setError('');
-            setMessage('');
-          }}
-        >
-          비밀번호를 잊으셨나요?
-        </button>
+              onClick={() => {
+                setMode('recover');
+                setError('');
+                setMessage('');
+              }}
+            >
+              비밀번호를 잊으셨나요?
+            </button>
+          )}
+        </>
       )}
       <p className="account-disclosure">
-        이메일과 비밀번호는 Supabase 인증 서비스에서 처리해요. 게스트 기록은
-        계정에 자동 합쳐지지 않으며 이 브라우저에 보존돼요.
+        {emailForm
+          ? '이메일과 비밀번호는 Supabase 인증 서비스에서 처리해요.'
+          : 'Google에서 확인한 이메일과 기본 프로필을 로그인에 사용해요. Google 비밀번호는 JOBFIT에 전달되지 않아요.'}{' '}
+        게스트 기록은 계정에 자동 합쳐지지 않으며 이 브라우저에 보존돼요.
       </p>
     </dialog>
   );

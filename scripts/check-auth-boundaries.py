@@ -45,5 +45,13 @@ for name, path, payload, origin, expected in cases:
     assert status == expected, (name, status)
 print('PASS: protected page redirect, protected API 401, rejected anonymous writes, Origin, format, extra fields, size and choice validation')
 status, _, body = request('/api/account')
-assert status == 200 and json.loads(body)['configured'] is True
+account = json.loads(body)
+assert status == 200 and account['configured'] is True
 print('PASS: Supabase configuration detected; this does not test successful login')
+if account.get('googleReady') is False:
+    status, _, _ = request('/api/auth', '{"action":"google"}')
+    assert status == 503
+    print('PASS: Google login stays unavailable until provider setup is enabled')
+status, _, _ = request('/api/practice/hint', '{"questionId":"E001","message":"Explain the first step","history":[]}')
+assert status == (401 if account.get('aiReady') else 503), status
+print('PASS: anonymous hint request never invokes the AI provider')
