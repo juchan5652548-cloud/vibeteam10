@@ -1,13 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
-import {
-  getProgressSnapshot,
-  getServerProgressSnapshot,
-  parseProgress,
-  subscribeProgress,
-  updateProgress,
-} from '@/lib/practice-storage';
+import { usePracticeAccount } from './use-practice-account';
+import AccountDialog from './account-dialog';
 import {
   formatTime,
   koreaDay,
@@ -54,16 +49,19 @@ const getServerToday = () => '';
 
 export default function PracticeApp({
   questions,
+  initialView = 'home',
 }: {
   questions: PublicQuestion[];
+  initialView?: PageView;
 }) {
-  const snapshot = useSyncExternalStore(
-    subscribeProgress,
-    getProgressSnapshot,
-    getServerProgressSnapshot,
+  const account = usePracticeAccount();
+  const { progress } = account;
+  const [authDialog, setAuthDialog] = useState<'login' | 'password' | null>(
+    null,
   );
-  const progress = useMemo(() => parseProgress(snapshot), [snapshot]);
-  const [view, setView] = useState<PageView>('home');
+  const [loggingOut, setLoggingOut] = useState(false);
+  const [bookmarkBusy, setBookmarkBusy] = useState(false);
+  const [view, setView] = useState<PageView>(initialView);
   const [track, setTrack] = useState<Track | 'all'>('all');
   const [area, setArea] = useState('all');
   const [difficulty, setDifficulty] = useState('all');
@@ -153,6 +151,20 @@ export default function PracticeApp({
     const id = window.setTimeout(() => setToast(''), 4500);
     return () => window.clearTimeout(id);
   }, [toast]);
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const timer = window.setTimeout(() => {
+      if (query.has('reset')) setAuthDialog('password');
+      if (query.has('login')) setAuthDialog('login');
+      if (query.has('auth_error')) {
+        setAuthDialog('login');
+        setToast(
+          '인증 링크가 만료됐거나 다른 브라우저에서 열렸어요. 다시 로그인하거나 메일을 재요청해 주세요.',
+        );
+      }
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
   function navigate(next: PageView) {
     setView(next);
     setSession(null);
@@ -168,6 +180,12 @@ export default function PracticeApp({
     setTrack(id);
   }
   function startPractice(items: PublicQuestion[], title: string) {
+    if (!account.ready) {
+      setToast(
+        account.error || '학습 기록을 불러오고 있어요. 잠시만 기다려 주세요.',
+      );
+      return;
+    }
     if (!items.length) {
       setToast('선택한 조건에 해당하는 문제가 없어요. 필터를 바꿔 주세요.');
       return;
@@ -186,28 +204,44 @@ export default function PracticeApp({
     );
   }
   function recordAttempt(attempt: Attempt) {
-    if (
-      !updateProgress((current) => ({
-        ...current,
-        attempts: [...current.attempts, attempt].slice(-500),
-      }))
-    )
+    if (!account.recordAttempt(attempt))
       setToast(
         '이 브라우저에서 기록을 저장할 수 없어요. 저장 공간 또는 브라우저 설정을 확인해 주세요.',
       );
   }
-  function toggleBookmark(id: string) {
-    if (
-      !updateProgress((current) => ({
-        ...current,
-        bookmarks: current.bookmarks.includes(id)
-          ? current.bookmarks.filter((value) => value !== id)
-          : [...current.bookmarks, id],
-      }))
-    )
+  async function toggleBookmark(id: string) {
+    if (bookmarkBusy) return;
+    setBookmarkBusy(true);
+    const ok = await account.bookmark(id, !progress.bookmarks.includes(id));
+    setBookmarkBusy(false);
+    if (!ok)
       setToast(
-        '북마크를 저장하지 못했어요. 브라우저 저장 공간을 확인해 주세요.',
+        '북마크를 저장하지 못했어요. 연결과 로그인 상태를 확인해 주세요.',
       );
+  }
+  async function logout() {
+    if (loggingOut) return;
+    setLoggingOut(true);
+    try {
+      const response = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'logout' }),
+        signal: AbortSignal.timeout(15000),
+      });
+      if (!response.ok) throw new Error('LOGOUT_FAILED');
+      try {
+        window.localStorage.removeItem('jobfit-auth-event');
+        window.localStorage.setItem('jobfit-auth-event', 'changed');
+      } catch {
+        /* Logout still clears this tab without localStorage. */
+      }
+      window.history.replaceState(null, '', '/');
+      window.location.reload();
+    } catch {
+      setToast('로그아웃하지 못했어요. 다시 시도해 주세요.');
+      setLoggingOut(false);
+    }
   }
   const metricCards = [
     {
@@ -322,6 +356,35 @@ export default function PracticeApp({
                   <Icon name="arrow" size={19} />
                 </button>
               </div>
+              {view === 'mistakes' && last && !last.correct && (
+                <details className="review-details">
+                  <summary>내가 고른 답과 해설 보기</summary>
+                  <p className="chosen-answer">
+                    내 답:{' '}
+                    {
+                      q.choices.find((choice) => choice.id === last.choiceId)
+                        ?.text
+                    }
+                  </p>
+                  <p className="correct-answer">
+                    정답:{' '}
+                    {
+                      q.choices.find((choice) => choice.id === last.answerId)
+                        ?.text
+                    }
+                  </p>
+                  <p>{last.explanation}</p>
+                  <p>{last.feedback}</p>
+                  <small>
+                    풀이 시간 {formatTime(last.elapsedSeconds)} ·{' '}
+                    {new Intl.DateTimeFormat('ko-KR', {
+                      timeZone: 'Asia/Seoul',
+                      dateStyle: 'medium',
+                      timeStyle: 'short',
+                    }).format(new Date(last.completedAt))}
+                  </small>
+                </details>
+              )}
             </article>
           );
         })}
@@ -418,21 +481,68 @@ export default function PracticeApp({
               />
               <kbd>검색</kbd>
             </label>
-            <button
-              className="guest-profile"
-              onClick={() => navigate('stats')}
-              aria-label="게스트 학습 기록 보기"
-            >
-              <span>
-                <Icon name="user" size={19} />
-              </span>
-              <div>
-                게스트 학습자<small>나의 가능성을 발견하는 중</small>
-              </div>
-            </button>
+            <div className="account-actions">
+              <button
+                className="guest-profile"
+                onClick={() =>
+                  account.user ? navigate('stats') : setAuthDialog('login')
+                }
+                aria-label={
+                  account.user ? '내 계정 학습 기록 보기' : '로그인 및 회원가입'
+                }
+              >
+                <span>
+                  <Icon name="user" size={19} />
+                </span>
+                <div>
+                  {account.user ? '나의 계정' : '로그인'}
+                  <small>
+                    {account.user
+                      ? '계정에 학습 기록 저장 중'
+                      : '회원가입하고 기록 이어가기'}
+                  </small>
+                </div>
+              </button>
+              {account.user && (
+                <button
+                  className="logout-button"
+                  disabled={loggingOut}
+                  onClick={() => void logout()}
+                >
+                  {loggingOut ? '처리 중…' : '로그아웃'}
+                </button>
+              )}
+            </div>
           </div>
         </header>
         <main id="main-content" className="main-content">
+          {!account.ready && (
+            <p className="account-banner" role="status">
+              {account.error || '로그인 상태와 학습 기록을 확인하고 있어요…'}
+              {account.error && (
+                <button
+                  className="text-button"
+                  onClick={() => window.location.reload()}
+                >
+                  다시 불러오기
+                </button>
+              )}
+            </p>
+          )}
+          {account.ready &&
+            !account.user &&
+            (view === 'mistakes' || view === 'stats') && (
+              <div className="account-banner">
+                지금은 이 브라우저의 게스트 기록이에요. 로그인 후 푼 문제는
+                계정에 저장돼요.{' '}
+                <button
+                  className="text-button"
+                  onClick={() => setAuthDialog('login')}
+                >
+                  로그인 / 회원가입
+                </button>
+              </div>
+            )}
           {session ? (
             <PracticeQuiz
               key={session.key}
@@ -440,6 +550,7 @@ export default function PracticeApp({
               title={session.title}
               onAttempt={recordAttempt}
               onClose={() => navigate('bank')}
+              signedIn={Boolean(account.user)}
             />
           ) : view === 'home' ? (
             <>
@@ -666,7 +777,9 @@ export default function PracticeApp({
                   <p className="eyebrow">MY LEARNING INSIGHTS</p>
                   <h1>기록이 쌓이면, 방향이 보여요.</h1>
                   <p className="muted">
-                    이 브라우저에서 푼 최근 500회 기록을 분석해요.
+                    {account.user
+                      ? '내 계정의 최근 500회 풀이 기록을 분석해요.'
+                      : '이 브라우저에서 푼 최근 500회 기록을 분석해요.'}
                   </p>
                 </div>
                 <button className="button primary" onClick={diagnostic}>
@@ -802,7 +915,7 @@ export default function PracticeApp({
                   {
                     n: '03',
                     title: '기록으로 방향을 찾아요',
-                    text: '영역별 정답률과 풀이 시간으로 학습을 돌아보세요. 기록과 북마크는 이 브라우저에만 저장돼요.',
+                    text: '영역별 정답률과 풀이 시간으로 학습을 돌아보세요. 로그인하면 기록과 북마크가 내 계정에 저장돼요.',
                   },
                 ].map((item) => (
                   <article className="card guide-card" key={item.n}>
@@ -832,8 +945,9 @@ export default function PracticeApp({
                     전이에요.
                   </li>
                   <li>
-                    로그인·기기 간 동기화 기능은 아직 없어요. 브라우저 데이터를
-                    삭제하면 기록도 사라져요. 민감한 개인정보는 입력하지 않아요.
+                    로그인하면 풀이 기록과 북마크가 내 계정에 저장돼요. 게스트
+                    기록은 이 브라우저에만 남으며 자동으로 계정에 합쳐지지
+                    않아요. 로그인·로그아웃하면 표시할 기록을 전환해요.
                   </li>
                   <li>
                     북마크와 최근 500회 풀이 기록을 저장해요. 같은 문제를 여러
@@ -1073,11 +1187,23 @@ export default function PracticeApp({
               노력이 내일의 기회로.
             </span>
             <button onClick={() => navigate('guide')}>
-              학습 기록은 이 브라우저에 저장돼요 <Icon name="info" size={14} />
+              {account.user
+                ? '학습 기록을 내 계정에 저장해요'
+                : '게스트 기록은 이 브라우저에 저장돼요'}{' '}
+              <Icon name="info" size={14} />
             </button>
           </footer>
         </main>
       </div>
+      {authDialog && (
+        <AccountDialog
+          initialMode={authDialog}
+          onClose={() => {
+            setAuthDialog(null);
+            window.history.replaceState(null, '', '/');
+          }}
+        />
+      )}
       {toast && (
         <div className="toast" role="status">
           <Icon name="info" size={18} />

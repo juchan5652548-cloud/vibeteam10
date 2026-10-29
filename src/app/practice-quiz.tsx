@@ -11,17 +11,20 @@ import {
 } from '@/lib/practice-types';
 import { Icon } from './practice-icons';
 import AiHint from './ai-hint';
+import { z } from 'zod';
 
 export default function PracticeQuiz({
   questions,
   title,
   onAttempt,
   onClose,
+  signedIn = false,
 }: {
   questions: PublicQuestion[];
   title: string;
   onAttempt: (attempt: Attempt) => void;
   onClose: () => void;
+  signedIn?: boolean;
 }) {
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState('');
@@ -33,6 +36,7 @@ export default function PracticeQuiz({
   const [finished, setFinished] = useState(false);
   const startedAt = useRef(0);
   const locked = useRef(false);
+  const attemptKey = useRef<string | null>(null);
   const requestRef = useRef<AbortController | null>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const question = questions[index];
@@ -61,24 +65,33 @@ export default function PracticeQuiz({
       Math.max(0, Math.round((Date.now() - startedAt.current) / 1000)),
     );
     try {
+      attemptKey.current ??= crypto.randomUUID();
       const response = await fetch('/api/practice/check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ questionId: question.id, choiceId: selected }),
+        body: JSON.stringify({
+          questionId: question.id,
+          choiceId: selected,
+          attemptId: attemptKey.current,
+          elapsedSeconds: seconds,
+          requireAccount: signedIn,
+        }),
         signal: controller.signal,
       });
       if (!response.ok)
         throw new Error(
           '채점하지 못했어요. 선택한 답안은 유지돼요. 다시 시도해 주세요.',
         );
-      const result = gradeSchema.parse(await response.json());
+      const result = gradeSchema
+        .extend({ attemptId: z.uuid(), completedAt: z.iso.datetime() })
+        .parse(await response.json());
       if (result.questionId !== question.id || result.choiceId !== selected)
         throw new Error('채점 응답을 확인하지 못했어요. 다시 시도해 주세요.');
       const attempt: Attempt = {
         ...result,
-        attemptId: crypto.randomUUID(),
+        attemptId: result.attemptId,
         elapsedSeconds: seconds,
-        completedAt: new Date().toISOString(),
+        completedAt: result.completedAt,
       };
       setGrade(result);
       setResults((current) => [...current, attempt]);
@@ -105,6 +118,7 @@ export default function PracticeQuiz({
       return;
     }
     setIndex(index + 1);
+    attemptKey.current = null;
     setSelected('');
     setGrade(null);
     setElapsed(0);
@@ -222,7 +236,10 @@ export default function PracticeQuiz({
                   name={`answer-${question.id}`}
                   value={choice.id}
                   checked={selected === choice.id}
-                  onChange={() => setSelected(choice.id)}
+                  onChange={() => {
+                    setSelected(choice.id);
+                    attemptKey.current = null;
+                  }}
                 />
                 <span className="choice-marker">{i + 1}</span>
                 <span>{choice.text}</span>
@@ -330,7 +347,9 @@ export default function PracticeQuiz({
               <strong>왜 틀렸는지 이해하는 것.</strong>
             </p>
             <small>
-              각 문항을 채점하면 이 브라우저의 학습 기록에 저장돼요.
+              {signedIn
+                ? '각 문항을 채점하면 내 계정의 학습 기록에 저장돼요.'
+                : '각 문항을 채점하면 이 브라우저의 학습 기록에 저장돼요.'}
             </small>
           </div>
         </aside>

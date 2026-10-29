@@ -10,7 +10,7 @@ export const gradeSchema = z.object({
   feedback: z.string(),
   misconception: z.string().nullable(),
 });
-const progressSchema = z.object({
+export const progressSchema = z.object({
   version: z.literal(1),
   attempts: z
     .array(

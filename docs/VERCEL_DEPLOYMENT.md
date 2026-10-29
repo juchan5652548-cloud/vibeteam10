@@ -4,6 +4,8 @@
 
 앱 설치·실행은 [시작 안내](SETUP.md), Supabase 프로젝트 생성·CA 다운로드·로컬 .env·개발 테이블 생성은 [Supabase DB 설정과 연결하기](SUPABASE_SETUP.md)를 먼저 확인하세요. DB가 없는 기본 화면만 배포한다면 Supabase 설정은 생략할 수 있습니다.
 
+> JOBFIT AI 로그인 배포에는 `NEXT_PUBLIC_SUPABASE_URL`과 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`를 Production에 설정합니다. 관리자 키·DB 비밀번호는 이 로그인 구현에 필요하지 않습니다. 상세 구성은 [JOBFIT 로그인 안내](JOBFIT_AUTH.md)를 확인하세요.
+
 ## 1. 배포 전 로컬 확인
 
 package.json이 있는 프로젝트 폴더에서 실행합니다.

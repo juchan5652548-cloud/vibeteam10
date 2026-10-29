@@ -4,6 +4,8 @@
 
 Supabase 프로젝트를 만들면 PostgreSQL 데이터베이스가 준비됩니다. 그 안에 앱에서 사용할 `users` 테이블을 만드는 작업은 뒤의 별도 단계입니다. 안내서 작성만으로 실제 DB 생성·접속·마이그레이션이 수행되지는 않습니다.
 
+> JOBFIT AI 개인 학습 기록은 Supabase Auth와 RLS/Data API를 사용합니다. 해당 테이블의 원본 SQL·적용 상태는 [JOBFIT 로그인 안내](JOBFIT_AUTH.md)를 따릅니다. 아래 Prisma DB 연결 절차와 중복 적용하지 마세요.
+
 ## 준비하기
 
 - Supabase 계정과 개발·테스트용 프로젝트를 준비합니다.

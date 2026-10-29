@@ -4,6 +4,8 @@
 
 기본 실행은 [설치 안내](SETUP.md), DB 연결은 [Supabase 설정](SUPABASE_SETUP.md), 실제 배포는 [Vercel 배포 안내](VERCEL_DEPLOYMENT.md)를 참고하세요.
 
+> JOBFIT AI에는 Supabase Auth 로그인·개인 오답노트 연결이 추가되었습니다. 실제 구성과 검증 범위는 [JOBFIT 로그인 안내](JOBFIT_AUTH.md)를 확인하세요. 아래 상태는 기능 추가 전 초기 구성입니다.
+
 ## 현재 보일러플레이트 상태
 
 - Next.js, Prisma와 Supabase PostgreSQL 연결 구성이 있습니다.
