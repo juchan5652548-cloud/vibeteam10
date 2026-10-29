@@ -27,7 +27,9 @@
 2.
 3.
 
-배포 주소(있으면):
+배포 주소(있으면): [https://vibeteam10.vercel.app](https://vibeteam10.vercel.app)
+
+배포 설정과 수정 반영 방법: [JOBFIT AI 배포 기록](docs/JOBFIT_DEPLOYMENT.md)
 
 ## AI 활용 내역
 - 사용한 도구:
