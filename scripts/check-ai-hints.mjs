@@ -156,13 +156,13 @@ assert.deepEqual(sent, {
     area: question.area,
     passage: question.passage,
     prompt: question.prompt,
-    choices: question.choices,
   },
   previousConversation: input.history,
   learnerQuestion: input.message,
 });
 assert.ok(!call.init.body.includes(privateDetail));
 assert.ok(!call.init.body.includes('answer_id'));
+assert.ok(!call.init.body.includes('choices'));
 assert.ok(!call.init.body.includes('userId'));
 assert.ok(!call.init.body.includes(fakeKey));
 assert.equal(typeof payload.systemInstruction.parts[0].text, 'string');
