@@ -78,5 +78,12 @@
 - 변경 JSON·Markdown의 Prettier 서식 검사 및 정리 완료. 화면·API·DB·인증 코드는 변경하지 않았다.
 - `npm ci`는 공식 패키지 서버의 연결 종료·연결 시간 초과로 설치를 완료하지 못했다. 캐시 활용 재시도도 일부 패키지 다운로드가 멈춰 종료했다. `npm run check`와 `npm run build`는 필요한 `prisma` 실행 파일이 없어 초기 단계에서 실패했다. 타입·린트·빌드 통과로 보고하지 않는다.
 - 로컬 HTTP 채점 3,600개와 브라우저 화면 검증은 앱 설치·실행이 완료되지 않아 미실행이다. 기존 600개 요청 통과 기록은 150문항 버전의 이력이다.
-- GitHub 원격 최신 커밋은 시작 기준 `8feeee0`과 같음을 확인했다. 쓰기 연결 사전 검사에서 CLI 인증 미연결을 확인했고, 기기 인증 요청은 GitHub 연결 오류로 코드를 받기 전에 종료됐다. 커밋의 원격 반영·Vercel 배포·운영 사이트 900문항 표시는 아직 확인하지 못했다.
-- 후속 작업: 네트워크 복구 후 `npm ci`, `npm run check`, `npm run build`, 로컬 서버에서 `python scripts/check-question-bank.py --baseline 8feeee0 --base http://localhost:3100` 실행. 인증된 GitHub 연결로 검증한 변경을 Production 브랜치에 반영하고 사이트의 분야별 300문항 및 신규 문제 채점을 확인한다.
+- 최초 확인에서는 GitHub CLI 인증 미연결과 네트워크 오류로 원격 반영이 대기 상태였다. 이후 사용자의 브라우저 인증으로 연결을 완료하고 아래 Production 반영을 확인했다.
+- 로컬에서 추가 확인할 항목: 네트워크 복구 후 `npm ci`, `npm run check`, `npm run build`, 로컬 서버에서 `python scripts/check-question-bank.py --baseline 8feeee0 --base http://localhost:3100` 실행. 운영 환경 표본 채점 결과를 로컬 전체 3,600건 검증으로 확대 해석하지 않는다.
+
+### 900문항 Production 반영 확인
+
+- 소스 `0c6a2e31c5caa6f6e9b7c5fa15e0333156f24e8a`를 기존 `main`에 반영했다. Vercel 배포 `DwSM3RwidGFsdem1ZeMGj3L5x41a`의 GitHub 상태 `success`와 `Deployment has completed`를 확인했다. 개별 빌드 로그를 열어 확인한 것은 아니며, 로컬 check/build는 위의 환경 제약이 남아 있다.
+- 실제 사이트 `https://vibeteam10.vercel.app/`의 HTTP 200과 초기 공개 문항 데이터 E/P/H 각 300개, 총 900개를 확인했다. 초기 HTML에 `answer_id`, `misconception_tag`가 포함되지 않음을 확인했다.
+- 기존 E001/P001/H001 및 신규 E051/E175/E300/P051/P175/P300/H051/H175/H300에서 각 정답·오답을 제출했다. 총 24개 응답의 판정·정답 ID·해설·보기별 피드백이 저장소 데이터와 일치했다. 계정 쿠키 없이 게스트 요청으로 검사했다.
+- 로그인 저장·AI 공급자 왕복·모바일 화면 조작은 이번 데이터 확대 배포에서 재검증하지 않았다. 기존 ID와 API·인증 코드는 유지했다.
