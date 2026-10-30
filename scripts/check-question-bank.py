@@ -10,7 +10,7 @@ import urllib.request
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--base', help='Local app URL; no cookies or account writes')
 parser.add_argument('--baseline', help='Git revision whose existing questions must remain identical')
-parser.add_argument('--per-track', type=int, default=50)
+parser.add_argument('--per-track', type=int, default=300)
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 files = ['data/questions/enterprise-v1.json', 'data/questions/hospital-public-v1.json']
