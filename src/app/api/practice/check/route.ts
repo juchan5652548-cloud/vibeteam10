@@ -70,6 +70,7 @@ export async function POST(request: Request) {
         { status: 503, headers },
       );
     let completedAt = new Date().toISOString();
+    let elapsedSeconds = parsed.data.elapsedSeconds;
     if (authConfigured()) {
       try {
         const client = await authClient();
@@ -99,7 +100,7 @@ export async function POST(request: Request) {
           if (insert.error) throw new Error('ATTEMPT_SAVE_FAILED');
           const stored = await client
             .from('practice_attempts')
-            .select('question_id,choice_id,completed_at')
+            .select('question_id,choice_id,elapsed_seconds,completed_at')
             .eq('id', attemptId)
             .eq('user_id', data.user.id)
             .single();
@@ -110,6 +111,7 @@ export async function POST(request: Request) {
           )
             throw new Error('ATTEMPT_CONFLICT');
           completedAt = new Date(stored.data.completed_at).toISOString();
+          elapsedSeconds = stored.data.elapsed_seconds;
         }
       } catch {
         return Response.json(
@@ -121,7 +123,10 @@ export async function POST(request: Request) {
         );
       }
     }
-    return Response.json({ ...result, attemptId, completedAt }, { headers });
+    return Response.json(
+      { ...result, attemptId, completedAt, elapsedSeconds },
+      { headers },
+    );
   } catch {
     return Response.json(
       { error: '올바른 형식의 답안을 보내 주세요.' },

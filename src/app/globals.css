@@ -2,6 +2,7 @@
 @import './ai-hint.css';
 @import './account.css';
 @import './admin.css';
+@import './learning-analysis.css';
 
 .part-overview {
   padding: 20px 24px;

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { usePracticeAccount } from './use-practice-account';
 import AccountDialog from './account-dialog';
 import {
@@ -14,7 +15,26 @@ import {
   type Track,
 } from '@/lib/practice-types';
 import { Icon, type IconName } from './practice-icons';
-import PracticeQuiz from './practice-quiz';
+import {
+  buildLearningSummary,
+  diagnosticQuestions,
+  recommendQuestions,
+} from '@/lib/learning-analysis';
+
+const PracticeQuiz = dynamic(() => import('./practice-quiz'), {
+  loading: () => (
+    <p className="account-banner" role="status">
+      문제 풀이 화면을 준비하고 있어요…
+    </p>
+  ),
+});
+const AiLearningReview = dynamic(() => import('./ai-learning-review'), {
+  loading: () => (
+    <p className="account-banner" role="status">
+      학습 코치를 준비하고 있어요…
+    </p>
+  ),
+});
 
 const navigation: { id: PageView; label: string; icon: IconName }[] = [
   { id: 'home', label: '학습 대시보드', icon: 'grid' },
@@ -105,33 +125,16 @@ export default function PracticeApp({
         .map((q) => q.area),
     ),
   );
-  const areaStats = Array.from(new Set(questions.map((q) => q.area))).map(
-    (name) => {
-      const records = attempts.filter(
-        (a) => byId.get(a.questionId)?.area === name,
-      );
-      return {
-        name,
-        total: records.length,
-        correct: records.filter((a) => a.correct).length,
-        rate: records.length
-          ? Math.round(
-              (records.filter((a) => a.correct).length / records.length) * 100,
-            )
-          : null,
-      };
-    },
+  const learning = useMemo(
+    () => buildLearningSummary(questions, attempts, track),
+    [questions, attempts, track],
   );
-  const weakest = areaStats
-    .filter((a) => a.total >= 3)
-    .sort((a, b) => (a.rate ?? 100) - (b.rate ?? 100))[0];
-  const recommended = weakest
-    ? questions
-        .filter(
-          (q) => q.area === weakest.name && latest.get(q.id)?.correct !== true,
-        )
-        .slice(0, 3)
-    : questions.filter((q) => !latest.has(q.id)).slice(0, 3);
+  const areaStats = learning.areas;
+  const weakest = learning.weakest;
+  const recommended = useMemo(
+    () => recommendQuestions(questions, attempts, track, 5),
+    [questions, attempts, track],
+  );
   const visibleQuestions = questions.filter((q) => {
     if (view === 'mistakes' && latest.get(q.id)?.correct !== false)
       return false;
@@ -166,19 +169,21 @@ export default function PracticeApp({
     }, 0);
     return () => window.clearTimeout(timer);
   }, []);
-  function navigate(next: PageView) {
+  function navigate(next: PageView, targetTrack: Track | 'all' = track) {
     setView(next);
     setSession(null);
-    setTrack('all');
+    setTrack(targetTrack);
     setArea('all');
     setDifficulty('all');
     setSearch('');
     setVisibleCount(12);
     window.scrollTo({ top: 0, behavior: 'instant' });
+    window.requestAnimationFrame(() =>
+      document.getElementById('main-content')?.focus({ preventScroll: true }),
+    );
   }
   function chooseTrack(id: Track) {
-    navigate('bank');
-    setTrack(id);
+    navigate('bank', id);
   }
   function startPractice(items: PublicQuestion[], title: string) {
     if (!account.ready) {
@@ -196,12 +201,8 @@ export default function PracticeApp({
   }
   function diagnostic() {
     startPractice(
-      shuffle(
-        tracks.flatMap((t) =>
-          shuffle(questions.filter((q) => q.track === t.id)).slice(0, 2),
-        ),
-      ),
-      '6문항 빠른 진단',
+      diagnosticQuestions(questions, attempts, track),
+      `${track === 'all' ? '전체 분야' : tracks.find((t) => t.id === track)?.short} 6문항 빠른 진단`,
     );
   }
   function recordAttempt(attempt: Attempt) {
@@ -522,7 +523,7 @@ export default function PracticeApp({
             </div>
           </div>
         </header>
-        <main id="main-content" className="main-content">
+        <main id="main-content" className="main-content" tabIndex={-1}>
           {!account.ready && (
             <p className="account-banner" role="status">
               {account.error || '로그인 상태와 학습 기록을 확인하고 있어요…'}
@@ -557,6 +558,16 @@ export default function PracticeApp({
               title={session.title}
               onAttempt={recordAttempt}
               onClose={() => navigate('bank')}
+              onAnalyze={() =>
+                navigate(
+                  'stats',
+                  session.questions.every(
+                    (q) => q.track === session.questions[0].track,
+                  )
+                    ? session.questions[0].track
+                    : 'all',
+                )
+              }
               signedIn={Boolean(account.user)}
               aiReady={account.aiReady}
             />
@@ -607,7 +618,26 @@ export default function PracticeApp({
                       문제은행 둘러보기 <Icon name="chevron" size={15} />
                     </button>
                   </div>
-                  <small>3개 분야 · 6문항으로 가볍게 시작해요</small>
+                  <label className="diagnostic-choice">
+                    진단할 지원 분야
+                    <select
+                      value={track}
+                      onChange={(event) =>
+                        setTrack(event.target.value as Track | 'all')
+                      }
+                    >
+                      <option value="all">전체 분야 맛보기</option>
+                      {tracks.map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {item.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <small>
+                    여러 영역의 6문항으로 시작해요 · 간단한 학습 점검이며 공식
+                    역량검사가 아니에요
+                  </small>
                 </div>
                 <div className="hero-art" aria-hidden="true">
                   <div className="orbit orbit-one" />
@@ -718,12 +748,10 @@ export default function PracticeApp({
                   </div>
                   <p className="muted panel-description">
                     {weakest
-                      ? `${weakest.total}회 풀이 정답률 ${weakest.rate}%. 아직 표본이 적을 수 있어요.`
+                      ? `${tracks.find((t) => t.id === weakest.track)?.short} · 서로 다른 ${weakest.total}문제의 최근 정답률 ${weakest.rate}%. 작은 표본의 참고 분석이에요.`
                       : '서로 다른 유형을 만나며 나의 강점을 찾아보세요.'}
                   </p>
-                  {renderQuestions(
-                    recommended.length ? recommended : questions.slice(0, 3),
-                  )}
+                  {renderQuestions(recommended.slice(0, 3))}
                 </section>
                 <aside className="card daily-card">
                   <div className="daily-top">
@@ -795,51 +823,87 @@ export default function PracticeApp({
                 </button>
               </div>
               {metrics}
+              <p className="muted analysis-copy">
+                위 학습 현황은 전체 분야 기준이에요. 아래에서 분야별 분석과
+                추천을 확인하세요.
+              </p>
+              <label className="analysis-filter">
+                분석할 지원 분야
+                <select
+                  value={track}
+                  onChange={(event) =>
+                    setTrack(event.target.value as Track | 'all')
+                  }
+                >
+                  <option value="all">전체 분야</option>
+                  {tracks.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
               <div className="analysis-grid">
                 <section className="card analysis-card">
                   <div className="panel-heading">
                     <h2>영역별 정답률</h2>
-                    <span className="subtle">풀이 횟수 기준</span>
+                    <span className="subtle">
+                      서로 다른 문제의 마지막 답안 기준
+                    </span>
                   </div>
                   <div className="area-bars">
-                    {areaStats.map((item) => (
-                      <div key={item.name}>
-                        <div>
-                          <strong>{item.name}</strong>
-                          <span>
-                            {item.total
-                              ? `${item.correct}/${item.total}문항 · ${item.rate}%`
-                              : '아직 풀이 전'}
-                          </span>
+                    {!learning.uniqueQuestions && (
+                      <p className="muted">
+                        선택한 분야의 첫 진단을 풀면 정답률과 평균 풀이 시간이
+                        표시돼요.
+                      </p>
+                    )}
+                    {areaStats
+                      .filter((item) => item.total > 0)
+                      .map((item) => (
+                        <div key={`${item.track}:${item.name}`}>
+                          <div>
+                            <strong>
+                              {track === 'all'
+                                ? `${tracks.find((t) => t.id === item.track)?.short} · `
+                                : ''}
+                              {item.name}
+                            </strong>
+                            <span>
+                              {item.total
+                                ? `${item.correct}/${item.total}문항 · ${item.rate}% · 평균 ${formatTime(item.averageSeconds ?? 0)}`
+                                : '아직 풀이 전'}
+                            </span>
+                          </div>
+                          <div className="progress-track">
+                            <span style={{ width: `${item.rate ?? 0}%` }} />
+                          </div>
                         </div>
-                        <div className="progress-track">
-                          <span style={{ width: `${item.rate ?? 0}%` }} />
-                        </div>
-                      </div>
-                    ))}
+                      ))}
                   </div>
+                  <p className="muted analysis-copy">
+                    아직 풀지 않은 영역{' '}
+                    {areaStats.filter((item) => item.total === 0).length}개 ·
+                    평균 시간은 마지막 제출 기준이에요.
+                  </p>
                 </section>
                 <section className="card analysis-card">
                   <p className="eyebrow">NEXT STEP</p>
                   <h2>
                     {weakest
                       ? `${weakest.name} 연습을 추천해요`
-                      : '먼저 여러 유형을 만나보세요'}
+                      : '다음 유형을 만나보세요'}
                   </h2>
                   <p className="muted analysis-copy">
                     {weakest
-                      ? '3회 이상 풀이한 영역 중 정답률이 가장 낮은 영역이에요. 풀이 시간이 길었다는 이유만으로 약점이라고 판단하지 않아요.'
-                      : '영역별로 3문항 이상 풀면 정답률에 따라 다음 학습을 추천해요. 지금은 학습 기록을 쌓는 단계예요.'}
+                      ? `${tracks.find((t) => t.id === weakest.track)?.name}에서 서로 다른 3문제 이상 푼 영역 중 최근 정답률이 가장 낮아요. 같은 문제의 반복 제출을 표본 수로 부풀리지 않아요.`
+                      : '아직 복습할 영역을 특정하기 어려워요. 서로 다른 문제를 더 만나보며 기록을 쌓아보세요. 모두 맞힌 영역은 약점으로 분류하지 않아요.'}
                   </p>
                   <button
                     className="button primary"
                     onClick={() =>
                       startPractice(
-                        shuffle(
-                          weakest
-                            ? questions.filter((q) => q.area === weakest.name)
-                            : questions,
-                        ).slice(0, 5),
+                        recommended,
                         weakest
                           ? `${weakest.name} 집중 연습`
                           : '다양한 유형 연습',
@@ -851,16 +915,25 @@ export default function PracticeApp({
                   <div className="analysis-note">
                     <Icon name="info" size={17} />
                     <span>
-                      이 분석은 정답률을 계산한 학습 요약이에요. AI 모델
-                      분석이나 합격 가능성 예측이 아니에요.
+                      위 수치는 코드로 계산해요. 풀이 시간은 환경·난이도에 따라
+                      달라지는 참고값이며, 느리다는 이유만으로 약점이라 판단하지
+                      않아요. AI 조언은 아래에서 별도로 요청할 수 있어요.
                     </span>
                   </div>
                 </section>
               </div>
+              <AiLearningReview
+                key={`${account.user?.id ?? 'guest'}:${track}:${attempts.at(-1)?.attemptId ?? 'empty'}:${attempts.length}`}
+                track={track}
+                sampleSize={learning.uniqueQuestions}
+                signedIn={Boolean(account.user)}
+                ready={account.aiReady}
+                onLogin={() => setAuthDialog('login')}
+              />
               <section className="card analysis-card">
                 <div className="panel-heading">
                   <h2>최근 학습 기록</h2>
-                  <span className="subtle">최근 10회</span>
+                  <span className="subtle">전체 분야 · 최근 10회</span>
                 </div>
                 {!attempts.length ? (
                   <div className="empty-state">

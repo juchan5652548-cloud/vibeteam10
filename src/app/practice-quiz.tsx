@@ -18,6 +18,7 @@ export default function PracticeQuiz({
   title,
   onAttempt,
   onClose,
+  onAnalyze,
   signedIn = false,
   aiReady = false,
 }: {
@@ -25,6 +26,7 @@ export default function PracticeQuiz({
   title: string;
   onAttempt: (attempt: Attempt) => void;
   onClose: () => void;
+  onAnalyze: () => void;
   signedIn?: boolean;
   aiReady?: boolean;
 }) {
@@ -37,6 +39,7 @@ export default function PracticeQuiz({
   const [results, setResults] = useState<Attempt[]>([]);
   const [finished, setFinished] = useState(false);
   const startedAt = useRef(0);
+  const timerRef = useRef<number | null>(null);
   const locked = useRef(false);
   const attemptKey = useRef<string | null>(null);
   const requestRef = useRef<AbortController | null>(null);
@@ -46,11 +49,13 @@ export default function PracticeQuiz({
   useEffect(() => {
     startedAt.current = Date.now();
     heading.current?.focus();
-    const timer = window.setInterval(
+    timerRef.current = window.setInterval(
       () => setElapsed(Math.floor((Date.now() - startedAt.current) / 1000)),
       1000,
     );
-    return () => window.clearInterval(timer);
+    return () => {
+      if (timerRef.current !== null) window.clearInterval(timerRef.current);
+    };
   }, [index]);
   useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -85,17 +90,23 @@ export default function PracticeQuiz({
           '채점하지 못했어요. 선택한 답안은 유지돼요. 다시 시도해 주세요.',
         );
       const result = gradeSchema
-        .extend({ attemptId: z.uuid(), completedAt: z.iso.datetime() })
+        .extend({
+          attemptId: z.uuid(),
+          completedAt: z.iso.datetime(),
+          elapsedSeconds: z.number().int().min(0).max(86400),
+        })
         .parse(await response.json());
       if (result.questionId !== question.id || result.choiceId !== selected)
         throw new Error('채점 응답을 확인하지 못했어요. 다시 시도해 주세요.');
       const attempt: Attempt = {
         ...result,
         attemptId: result.attemptId,
-        elapsedSeconds: seconds,
+        elapsedSeconds: result.elapsedSeconds,
         completedAt: result.completedAt,
       };
       setGrade(result);
+      if (timerRef.current !== null) window.clearInterval(timerRef.current);
+      setElapsed(result.elapsedSeconds);
       setResults((current) => [...current, attempt]);
       onAttempt(attempt);
     } catch (cause) {
@@ -182,9 +193,14 @@ export default function PracticeQuiz({
             </div>
           ))}
         </div>
-        <button className="button primary" onClick={onClose}>
-          문제은행으로 돌아가기 <Icon name="arrow" size={17} />
-        </button>
+        <div className="result-actions">
+          <button className="button primary" onClick={onAnalyze}>
+            내 학습 분석 · 추천 복습 <Icon name="arrow" size={17} />
+          </button>
+          <button className="button secondary" onClick={onClose}>
+            문제은행으로 돌아가기
+          </button>
+        </div>
       </section>
     );
 
