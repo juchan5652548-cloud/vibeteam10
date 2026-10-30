@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
+import Link from 'next/link';
 import { usePracticeAccount } from './use-practice-account';
 import AccountDialog from './account-dialog';
 import {
@@ -427,6 +428,12 @@ export default function PracticeApp({
             </button>
           ))}
         </nav>
+        {account.isAdmin && (
+          <Link className="nav-item" href="/admin">
+            <Icon name="chart" size={19} />
+            <span>관리자 · 학습 현황</span>
+          </Link>
+        )}
         <div className="sidebar-bottom">
           <div className="sidebar-note">
             <span className="mini-spark">

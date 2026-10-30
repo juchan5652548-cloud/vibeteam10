@@ -33,6 +33,11 @@ const questionMap = new Map(
   questions.map((question) => [question.id, question]),
 );
 
+// Sent only server-to-database for the protected administrator report.
+export function getQuestionAnswerKey(): Record<string, string> {
+  return Object.fromEntries(questions.map((q) => [q.id, q.answer_id]));
+}
+
 export function getPublicQuestions(): PublicQuestion[] {
   return questions.map(
     ({ id, track, area, subtype, difficulty, passage, prompt, choices }) => ({

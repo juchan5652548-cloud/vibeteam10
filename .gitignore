@@ -43,4 +43,5 @@ next-env.d.ts
 # Boilerplate additions
 !.env.example
 /src/generated_prisma/
+/supabase/.temp/
 *.log

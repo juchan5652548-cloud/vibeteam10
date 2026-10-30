@@ -9,6 +9,7 @@ import { loadAccountProgress } from '@/lib/account-progress';
 import { readLimitedJson } from '@/lib/limited-json';
 import { getPublicQuestions } from '@/lib/question-bank';
 import { hintConfigured } from '@/lib/ai-hint';
+import { getAdminAccess } from '@/lib/admin-access';
 
 export async function GET() {
   const aiReady = hintConfigured();
@@ -36,13 +37,17 @@ export async function GET() {
       );
     }
     if (error) throw new Error('AUTH_UNAVAILABLE');
-    const progress = await loadAccountProgress(client, data.user.id);
+    const [progress, adminAccess] = await Promise.all([
+      loadAccountProgress(client, data.user.id),
+      getAdminAccess(client),
+    ]);
     return Response.json(
       {
         configured: true,
         aiReady,
         githubReady,
         user: { id: data.user.id, email: data.user.email ?? '' },
+        isAdmin: adminAccess === 'admin',
         progress,
       },
       { headers: privateHeaders },

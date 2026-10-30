@@ -17,6 +17,7 @@ const accountSchema = z.object({
   configured: z.boolean(),
   aiReady: z.boolean().default(false),
   githubReady: z.boolean().default(false),
+  isAdmin: z.boolean().default(false),
   user: z.object({ id: z.uuid(), email: z.string() }).nullable(),
   progress: progressSchema.optional(),
 });
@@ -129,6 +130,7 @@ export function usePracticeAccount() {
     configured: account?.configured ?? false,
     aiReady: account?.aiReady ?? false,
     githubReady: account?.githubReady ?? false,
+    isAdmin: account?.isAdmin ?? false,
     recordAttempt,
     bookmark,
   };
