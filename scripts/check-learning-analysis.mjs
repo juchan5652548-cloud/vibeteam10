@@ -196,6 +196,11 @@ assert.ok(
 );
 assert.ok(!JSON.stringify(providerCall).includes('attemptId'));
 assert.ok(!JSON.stringify(providerCall).includes('completedAt'));
+const coachEvidence = JSON.parse(providerCall.contents[0].parts[0].text);
+assert.equal(coachEvidence.지원분야, '대기업 인적성');
+assert.equal(coachEvidence.서로다른문항수, summary.uniqueQuestions);
+assert.ok(!JSON.stringify(coachEvidence).includes('priorityArea'));
+assert.ok(!JSON.stringify(coachEvidence).includes('submissions'));
 
 const privateHeaders = { 'Cache-Control': 'private, no-store', Vary: 'Cookie' };
 const actorId = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';

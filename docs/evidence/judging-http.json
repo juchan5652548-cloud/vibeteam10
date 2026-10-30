@@ -1,0 +1,124 @@
+{
+  "baseline": {
+    "commit": "5ec997d",
+    "checkedAt": "2026-10-30T02:37:05.493Z",
+    "method": "single Windows machine, sequential HTTP reads; not browser rendering or load testing",
+    "results": [
+      {
+        "path": "/",
+        "trial": 1,
+        "status": 200,
+        "ttfbMs": 2047,
+        "totalMs": 2859,
+        "decodedBytes": 593168,
+        "cache": "HIT"
+      },
+      {
+        "path": "/",
+        "trial": 2,
+        "status": 200,
+        "ttfbMs": 143,
+        "totalMs": 473,
+        "decodedBytes": 593168,
+        "cache": "HIT"
+      },
+      {
+        "path": "/",
+        "trial": 3,
+        "status": 200,
+        "ttfbMs": 320,
+        "totalMs": 847,
+        "decodedBytes": 593168,
+        "cache": "HIT"
+      },
+      {
+        "path": "/api/account",
+        "trial": 1,
+        "status": 200,
+        "ttfbMs": 342,
+        "totalMs": 344,
+        "decodedBytes": 65,
+        "cache": "MISS"
+      },
+      {
+        "path": "/api/account",
+        "trial": 2,
+        "status": 200,
+        "ttfbMs": 499,
+        "totalMs": 502,
+        "decodedBytes": 65,
+        "cache": "MISS"
+      },
+      {
+        "path": "/api/account",
+        "trial": 3,
+        "status": 200,
+        "ttfbMs": 636,
+        "totalMs": 637,
+        "decodedBytes": 65,
+        "cache": "MISS"
+      }
+    ]
+  },
+  "after": {
+    "commit": "49389be",
+    "checkedAt": "2026-10-30T03:01:10.318Z",
+    "method": "single Windows machine, sequential anonymous HTTP reads; not browser rendering or load testing",
+    "results": [
+      {
+        "path": "/",
+        "trial": 1,
+        "status": 200,
+        "ttfbMs": 2424,
+        "totalMs": 2657,
+        "decodedBytes": 593833,
+        "cache": "PRERENDER"
+      },
+      {
+        "path": "/",
+        "trial": 2,
+        "status": 200,
+        "ttfbMs": 29,
+        "totalMs": 261,
+        "decodedBytes": 593833,
+        "cache": "HIT"
+      },
+      {
+        "path": "/",
+        "trial": 3,
+        "status": 200,
+        "ttfbMs": 44,
+        "totalMs": 190,
+        "decodedBytes": 593833,
+        "cache": "HIT"
+      },
+      {
+        "path": "/api/account",
+        "trial": 1,
+        "status": 200,
+        "ttfbMs": 234,
+        "totalMs": 235,
+        "decodedBytes": 65,
+        "cache": "MISS"
+      },
+      {
+        "path": "/api/account",
+        "trial": 2,
+        "status": 200,
+        "ttfbMs": 218,
+        "totalMs": 221,
+        "decodedBytes": 65,
+        "cache": "MISS"
+      },
+      {
+        "path": "/api/account",
+        "trial": 3,
+        "status": 200,
+        "ttfbMs": 212,
+        "totalMs": 215,
+        "decodedBytes": 65,
+        "cache": "MISS"
+      }
+    ]
+  }
+}
